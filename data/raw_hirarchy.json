@@ -1,0 +1,6812 @@
+[
+  {
+    "id": 1610,
+    "parent_id": 1609,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 463,
+    "parent_id": 398,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 640,
+    "parent_id": 1,
+    "type": "Group::Ausbildungskommission"
+  },
+  {
+    "id": 1505,
+    "parent_id": 234,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 1571,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 1106,
+    "parent_id": 910,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1105,
+    "parent_id": 1099,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 234,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 915,
+    "parent_id": 906,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 916,
+    "parent_id": 906,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 917,
+    "parent_id": 907,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 918,
+    "parent_id": 907,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 919,
+    "parent_id": 907,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 920,
+    "parent_id": 909,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 921,
+    "parent_id": 909,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 922,
+    "parent_id": 909,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 923,
+    "parent_id": 916,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 924,
+    "parent_id": 916,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 925,
+    "parent_id": 916,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 926,
+    "parent_id": 918,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 932,
+    "parent_id": 912,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 933,
+    "parent_id": 911,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 934,
+    "parent_id": 911,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 935,
+    "parent_id": 914,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 936,
+    "parent_id": 914,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 937,
+    "parent_id": 910,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 938,
+    "parent_id": 910,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 939,
+    "parent_id": 908,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 940,
+    "parent_id": 908,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 941,
+    "parent_id": 913,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 948,
+    "parent_id": 909,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1042,
+    "parent_id": 906,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1043,
+    "parent_id": 1042,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1044,
+    "parent_id": 1042,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1045,
+    "parent_id": 906,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1046,
+    "parent_id": 1045,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1047,
+    "parent_id": 1045,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1048,
+    "parent_id": 906,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1049,
+    "parent_id": 1048,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1104,
+    "parent_id": 1050,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1112,
+    "parent_id": 910,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1512,
+    "parent_id": 938,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1513,
+    "parent_id": 938,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1515,
+    "parent_id": 938,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1522,
+    "parent_id": 910,
+    "type": "Group::ErziehungsberechtigtenGremium"
+  },
+  {
+    "id": 1051,
+    "parent_id": 1048,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1053,
+    "parent_id": 1052,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1052,
+    "parent_id": 906,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1054,
+    "parent_id": 1052,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1058,
+    "parent_id": 910,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 1099,
+    "parent_id": 906,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1514,
+    "parent_id": 938,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 930,
+    "parent_id": 915,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 235,
+    "parent_id": 234,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 236,
+    "parent_id": 235,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 237,
+    "parent_id": 235,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 35,
+    "parent_id": 11,
+    "type": "Group::Elternrat"
+  },
+  {
+    "id": 764,
+    "parent_id": 234,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 765,
+    "parent_id": 764,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 766,
+    "parent_id": 764,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 768,
+    "parent_id": 767,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 769,
+    "parent_id": 766,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 770,
+    "parent_id": 766,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 771,
+    "parent_id": 765,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 772,
+    "parent_id": 765,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 773,
+    "parent_id": 765,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 788,
+    "parent_id": 764,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 792,
+    "parent_id": 234,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 793,
+    "parent_id": 792,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 794,
+    "parent_id": 792,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 795,
+    "parent_id": 792,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 796,
+    "parent_id": 792,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 828,
+    "parent_id": 234,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 829,
+    "parent_id": 828,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 830,
+    "parent_id": 828,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 831,
+    "parent_id": 828,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 837,
+    "parent_id": 234,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 839,
+    "parent_id": 837,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 840,
+    "parent_id": 837,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 841,
+    "parent_id": 837,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 838,
+    "parent_id": 837,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 767,
+    "parent_id": 766,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1063,
+    "parent_id": 766,
+    "type": "Group::InternesAbteilungsGremium"
+  },
+  {
+    "id": 1057,
+    "parent_id": 234,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1101,
+    "parent_id": 837,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1622,
+    "parent_id": 838,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 1059,
+    "parent_id": 838,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1623,
+    "parent_id": 838,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 454,
+    "parent_id": 235,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 468,
+    "parent_id": 454,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 906,
+    "parent_id": 234,
+    "type": "Group::Region"
+  },
+  {
+    "id": 907,
+    "parent_id": 906,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 908,
+    "parent_id": 906,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 909,
+    "parent_id": 906,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 910,
+    "parent_id": 906,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 911,
+    "parent_id": 906,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 912,
+    "parent_id": 906,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 913,
+    "parent_id": 906,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 914,
+    "parent_id": 906,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 927,
+    "parent_id": 913,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 928,
+    "parent_id": 913,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 929,
+    "parent_id": 915,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 931,
+    "parent_id": 912,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1050,
+    "parent_id": 1048,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1609,
+    "parent_id": 234,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1746,
+    "parent_id": 1609,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1747,
+    "parent_id": 1609,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 1745,
+    "parent_id": 1609,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 57,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 58,
+    "parent_id": 57,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 59,
+    "parent_id": 57,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 60,
+    "parent_id": 57,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 61,
+    "parent_id": 58,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 62,
+    "parent_id": 58,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 63,
+    "parent_id": 58,
+    "type": "Group::Elternrat"
+  },
+  {
+    "id": 99,
+    "parent_id": 57,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 100,
+    "parent_id": 99,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 111,
+    "parent_id": 431,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 169,
+    "parent_id": 431,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 391,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 393,
+    "parent_id": 400,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 398,
+    "parent_id": 397,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 397,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 431,
+    "parent_id": 1,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 441,
+    "parent_id": 397,
+    "type": "Group::Region"
+  },
+  {
+    "id": 444,
+    "parent_id": 391,
+    "type": "Group::Region"
+  },
+  {
+    "id": 445,
+    "parent_id": 444,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 453,
+    "parent_id": 1,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 461,
+    "parent_id": 453,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 395,
+    "parent_id": 392,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 477,
+    "parent_id": 431,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 543,
+    "parent_id": 400,
+    "type": "Group::KantonaleKommission"
+  },
+  {
+    "id": 559,
+    "parent_id": 1,
+    "type": "Group::BundesKommission"
+  },
+  {
+    "id": 560,
+    "parent_id": 559,
+    "type": "Group::BundesKommission"
+  },
+  {
+    "id": 561,
+    "parent_id": 560,
+    "type": "Group::BundesKommission"
+  },
+  {
+    "id": 575,
+    "parent_id": 397,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 562,
+    "parent_id": 559,
+    "type": "Group::BundesKommission"
+  },
+  {
+    "id": 578,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 579,
+    "parent_id": 578,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 580,
+    "parent_id": 578,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 590,
+    "parent_id": 444,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 591,
+    "parent_id": 391,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 596,
+    "parent_id": 559,
+    "type": "Group::BundesKommission"
+  },
+  {
+    "id": 597,
+    "parent_id": 559,
+    "type": "Group::BundesKommission"
+  },
+  {
+    "id": 598,
+    "parent_id": 559,
+    "type": "Group::BundesKommission"
+  },
+  {
+    "id": 599,
+    "parent_id": 559,
+    "type": "Group::BundesKommission"
+  },
+  {
+    "id": 600,
+    "parent_id": 559,
+    "type": "Group::BundesKommission"
+  },
+  {
+    "id": 601,
+    "parent_id": 596,
+    "type": "Group::BundesKommission"
+  },
+  {
+    "id": 602,
+    "parent_id": 596,
+    "type": "Group::BundesKommission"
+  },
+  {
+    "id": 603,
+    "parent_id": 596,
+    "type": "Group::BundesKommission"
+  },
+  {
+    "id": 605,
+    "parent_id": 1,
+    "type": "Group::BundesKommission"
+  },
+  {
+    "id": 606,
+    "parent_id": 605,
+    "type": "Group::BundesKommission"
+  },
+  {
+    "id": 607,
+    "parent_id": 605,
+    "type": "Group::BundesKommission"
+  },
+  {
+    "id": 608,
+    "parent_id": 605,
+    "type": "Group::BundesKommission"
+  },
+  {
+    "id": 609,
+    "parent_id": 605,
+    "type": "Group::BundesKommission"
+  },
+  {
+    "id": 610,
+    "parent_id": 393,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 801,
+    "parent_id": 397,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 827,
+    "parent_id": 605,
+    "type": "Group::BundesKommission"
+  },
+  {
+    "id": 848,
+    "parent_id": 444,
+    "type": "Group::Region"
+  },
+  {
+    "id": 898,
+    "parent_id": 606,
+    "type": "Group::BundesKommission"
+  },
+  {
+    "id": 899,
+    "parent_id": 898,
+    "type": "Group::BundesKommission"
+  },
+  {
+    "id": 1081,
+    "parent_id": 58,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 589,
+    "parent_id": 391,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1748,
+    "parent_id": 397,
+    "type": "Group::InternesKantonalesGremium"
+  },
+  {
+    "id": 1749,
+    "parent_id": 397,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 966,
+    "parent_id": 964,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 964,
+    "parent_id": 398,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 965,
+    "parent_id": 964,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 847,
+    "parent_id": 398,
+    "type": "Group::InternesAbteilungsGremium"
+  },
+  {
+    "id": 1751,
+    "parent_id": 398,
+    "type": "Group::InternesAbteilungsGremium"
+  },
+  {
+    "id": 1752,
+    "parent_id": 398,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 593,
+    "parent_id": 400,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 413,
+    "parent_id": 405,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 436,
+    "parent_id": 396,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 455,
+    "parent_id": 392,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 456,
+    "parent_id": 455,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 392,
+    "parent_id": 394,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 394,
+    "parent_id": 400,
+    "type": "Group::Region"
+  },
+  {
+    "id": 401,
+    "parent_id": 400,
+    "type": "Group::Region"
+  },
+  {
+    "id": 402,
+    "parent_id": 401,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 403,
+    "parent_id": 402,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 404,
+    "parent_id": 400,
+    "type": "Group::Region"
+  },
+  {
+    "id": 405,
+    "parent_id": 404,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 410,
+    "parent_id": 402,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 411,
+    "parent_id": 402,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 412,
+    "parent_id": 405,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 1755,
+    "parent_id": 534,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 594,
+    "parent_id": 400,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 595,
+    "parent_id": 594,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 617,
+    "parent_id": 400,
+    "type": "Group::KantonaleKommission"
+  },
+  {
+    "id": 635,
+    "parent_id": 594,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 483,
+    "parent_id": 392,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 654,
+    "parent_id": 594,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 730,
+    "parent_id": 654,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 731,
+    "parent_id": 635,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 732,
+    "parent_id": 394,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 733,
+    "parent_id": 732,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 734,
+    "parent_id": 732,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 735,
+    "parent_id": 732,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 736,
+    "parent_id": 732,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 737,
+    "parent_id": 732,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 738,
+    "parent_id": 394,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 739,
+    "parent_id": 738,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 742,
+    "parent_id": 738,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 743,
+    "parent_id": 738,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 648,
+    "parent_id": 116,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 93,
+    "parent_id": 88,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 481,
+    "parent_id": 430,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 482,
+    "parent_id": 481,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 430,
+    "parent_id": 400,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 534,
+    "parent_id": 400,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 312,
+    "parent_id": 269,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 460,
+    "parent_id": 415,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 954,
+    "parent_id": 953,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 558,
+    "parent_id": 3,
+    "type": "Group::KantonaleKommission"
+  },
+  {
+    "id": 471,
+    "parent_id": 400,
+    "type": "Group::Region"
+  },
+  {
+    "id": 396,
+    "parent_id": 392,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1758,
+    "parent_id": 534,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 1756,
+    "parent_id": 534,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 535,
+    "parent_id": 534,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1759,
+    "parent_id": 534,
+    "type": "Group::Pta"
+  },
+  {
+    "id": 740,
+    "parent_id": 738,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 741,
+    "parent_id": 738,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1754,
+    "parent_id": 534,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1757,
+    "parent_id": 534,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 1562,
+    "parent_id": 1611,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 20,
+    "parent_id": 13,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 1760,
+    "parent_id": 166,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 265,
+    "parent_id": 262,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 1615,
+    "parent_id": 506,
+    "type": "Group::ErziehungsberechtigtenGremium"
+  },
+  {
+    "id": 446,
+    "parent_id": 116,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1743,
+    "parent_id": 1740,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1742,
+    "parent_id": 1740,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 377,
+    "parent_id": 378,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 344,
+    "parent_id": 334,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 328,
+    "parent_id": 326,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1641,
+    "parent_id": 334,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 133,
+    "parent_id": 64,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 121,
+    "parent_id": 66,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 1074,
+    "parent_id": 372,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1023,
+    "parent_id": 1020,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 32,
+    "parent_id": 28,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 21,
+    "parent_id": 13,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 202,
+    "parent_id": 2,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 356,
+    "parent_id": 2,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 357,
+    "parent_id": 356,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 451,
+    "parent_id": 2,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 425,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 448,
+    "parent_id": 2,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 449,
+    "parent_id": 2,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 450,
+    "parent_id": 2,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 293,
+    "parent_id": 263,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 407,
+    "parent_id": 3,
+    "type": "Group::Region"
+  },
+  {
+    "id": 462,
+    "parent_id": 2,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 379,
+    "parent_id": 2,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 400,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 443,
+    "parent_id": 2,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 250,
+    "parent_id": 248,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1744,
+    "parent_id": 1740,
+    "type": "Group::Ehemalige"
+  },
+  {
+    "id": 540,
+    "parent_id": 2,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 613,
+    "parent_id": 506,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 546,
+    "parent_id": 462,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 649,
+    "parent_id": 462,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 813,
+    "parent_id": 2,
+    "type": "Group::Region"
+  },
+  {
+    "id": 814,
+    "parent_id": 813,
+    "type": "Group::RegionalesGremium"
+  },
+  {
+    "id": 815,
+    "parent_id": 813,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 816,
+    "parent_id": 815,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 817,
+    "parent_id": 815,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 819,
+    "parent_id": 815,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 820,
+    "parent_id": 813,
+    "type": "Group::Region"
+  },
+  {
+    "id": 821,
+    "parent_id": 820,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 818,
+    "parent_id": 815,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 832,
+    "parent_id": 462,
+    "type": "Group::InternesAbteilungsGremium"
+  },
+  {
+    "id": 833,
+    "parent_id": 462,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 834,
+    "parent_id": 462,
+    "type": "Group::InternesAbteilungsGremium"
+  },
+  {
+    "id": 835,
+    "parent_id": 462,
+    "type": "Group::InternesAbteilungsGremium"
+  },
+  {
+    "id": 850,
+    "parent_id": 425,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 851,
+    "parent_id": 850,
+    "type": "Group::Pta"
+  },
+  {
+    "id": 852,
+    "parent_id": 850,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 39,
+    "parent_id": 13,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 853,
+    "parent_id": 850,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 854,
+    "parent_id": 425,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 855,
+    "parent_id": 854,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 856,
+    "parent_id": 462,
+    "type": "Group::Pta"
+  },
+  {
+    "id": 902,
+    "parent_id": 462,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 980,
+    "parent_id": 813,
+    "type": "Group::RegionalesGremium"
+  },
+  {
+    "id": 1079,
+    "parent_id": 462,
+    "type": "Group::InternesAbteilungsGremium"
+  },
+  {
+    "id": 1082,
+    "parent_id": 462,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 1083,
+    "parent_id": 820,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 298,
+    "parent_id": 297,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1084,
+    "parent_id": 462,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 36,
+    "parent_id": 12,
+    "type": "Group::Elternrat"
+  },
+  {
+    "id": 1499,
+    "parent_id": 451,
+    "type": "Group::Ehemalige"
+  },
+  {
+    "id": 1504,
+    "parent_id": 462,
+    "type": "Group::Ehemalige"
+  },
+  {
+    "id": 223,
+    "parent_id": 470,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1538,
+    "parent_id": 400,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1591,
+    "parent_id": 515,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 563,
+    "parent_id": 515,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 23,
+    "parent_id": 17,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 577,
+    "parent_id": 515,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1590,
+    "parent_id": 515,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 102,
+    "parent_id": 101,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 19,
+    "parent_id": 10,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 24,
+    "parent_id": 17,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 25,
+    "parent_id": 23,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 26,
+    "parent_id": 23,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 28,
+    "parent_id": 13,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 29,
+    "parent_id": 13,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 30,
+    "parent_id": 17,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 31,
+    "parent_id": 28,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 38,
+    "parent_id": 17,
+    "type": "Group::Elternrat"
+  },
+  {
+    "id": 41,
+    "parent_id": 24,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 42,
+    "parent_id": 17,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 43,
+    "parent_id": 17,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 45,
+    "parent_id": 15,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 46,
+    "parent_id": 2,
+    "type": "Group::Region"
+  },
+  {
+    "id": 47,
+    "parent_id": 46,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 48,
+    "parent_id": 47,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 55,
+    "parent_id": 15,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 117,
+    "parent_id": 116,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 56,
+    "parent_id": 15,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 163,
+    "parent_id": 159,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 69,
+    "parent_id": 10,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 75,
+    "parent_id": 15,
+    "type": "Group::Elternrat"
+  },
+  {
+    "id": 78,
+    "parent_id": 15,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 79,
+    "parent_id": 78,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 94,
+    "parent_id": 15,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 165,
+    "parent_id": 13,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 101,
+    "parent_id": 7,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 103,
+    "parent_id": 102,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 104,
+    "parent_id": 101,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 112,
+    "parent_id": 20,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 113,
+    "parent_id": 101,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1563,
+    "parent_id": 426,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1564,
+    "parent_id": 1100,
+    "type": "Group::Pta"
+  },
+  {
+    "id": 1565,
+    "parent_id": 1564,
+    "type": "Group::Pta"
+  },
+  {
+    "id": 1566,
+    "parent_id": 1564,
+    "type": "Group::Pta"
+  },
+  {
+    "id": 125,
+    "parent_id": 11,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 126,
+    "parent_id": 11,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 146,
+    "parent_id": 15,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 147,
+    "parent_id": 470,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 148,
+    "parent_id": 470,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 149,
+    "parent_id": 15,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 150,
+    "parent_id": 149,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 151,
+    "parent_id": 149,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 152,
+    "parent_id": 15,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 153,
+    "parent_id": 152,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 154,
+    "parent_id": 7,
+    "type": "Group::Region"
+  },
+  {
+    "id": 155,
+    "parent_id": 46,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 158,
+    "parent_id": 12,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 159,
+    "parent_id": 7,
+    "type": "Group::Region"
+  },
+  {
+    "id": 160,
+    "parent_id": 159,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 162,
+    "parent_id": 160,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 164,
+    "parent_id": 160,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 174,
+    "parent_id": 8,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 175,
+    "parent_id": 174,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 176,
+    "parent_id": 174,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 177,
+    "parent_id": 175,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 209,
+    "parent_id": 15,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 224,
+    "parent_id": 15,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 225,
+    "parent_id": 15,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 226,
+    "parent_id": 15,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 227,
+    "parent_id": 226,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 228,
+    "parent_id": 226,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 229,
+    "parent_id": 15,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 230,
+    "parent_id": 229,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 231,
+    "parent_id": 229,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 232,
+    "parent_id": 15,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 233,
+    "parent_id": 232,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 242,
+    "parent_id": 15,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 259,
+    "parent_id": 147,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 428,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 353,
+    "parent_id": 223,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 354,
+    "parent_id": 15,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 355,
+    "parent_id": 15,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 358,
+    "parent_id": 15,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 359,
+    "parent_id": 2,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 360,
+    "parent_id": 15,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 363,
+    "parent_id": 15,
+    "type": "Group::Pta"
+  },
+  {
+    "id": 364,
+    "parent_id": 363,
+    "type": "Group::Pta"
+  },
+  {
+    "id": 365,
+    "parent_id": 360,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 366,
+    "parent_id": 360,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 367,
+    "parent_id": 15,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 368,
+    "parent_id": 8,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 369,
+    "parent_id": 368,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 370,
+    "parent_id": 368,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 371,
+    "parent_id": 15,
+    "type": "Group::Pta"
+  },
+  {
+    "id": 380,
+    "parent_id": 15,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 399,
+    "parent_id": 8,
+    "type": "Group::RegionalesGremium"
+  },
+  {
+    "id": 758,
+    "parent_id": 426,
+    "type": "Group::Region"
+  },
+  {
+    "id": 779,
+    "parent_id": 428,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 780,
+    "parent_id": 428,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 781,
+    "parent_id": 779,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 782,
+    "parent_id": 428,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 783,
+    "parent_id": 782,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 784,
+    "parent_id": 783,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 810,
+    "parent_id": 782,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 811,
+    "parent_id": 428,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 970,
+    "parent_id": 967,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 452,
+    "parent_id": 14,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 457,
+    "parent_id": 15,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 459,
+    "parent_id": 8,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 469,
+    "parent_id": 15,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 470,
+    "parent_id": 15,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 473,
+    "parent_id": 8,
+    "type": "Group::RegionaleRover"
+  },
+  {
+    "id": 476,
+    "parent_id": 13,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 484,
+    "parent_id": 101,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 485,
+    "parent_id": 2,
+    "type": "Group::Region"
+  },
+  {
+    "id": 486,
+    "parent_id": 485,
+    "type": "Group::Region"
+  },
+  {
+    "id": 487,
+    "parent_id": 486,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 489,
+    "parent_id": 487,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 488,
+    "parent_id": 487,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 490,
+    "parent_id": 486,
+    "type": "Group::RegionalesGremium"
+  },
+  {
+    "id": 491,
+    "parent_id": 489,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 492,
+    "parent_id": 487,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 493,
+    "parent_id": 487,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 494,
+    "parent_id": 486,
+    "type": "Group::RegionaleRover"
+  },
+  {
+    "id": 495,
+    "parent_id": 487,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 724,
+    "parent_id": 716,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 505,
+    "parent_id": 2,
+    "type": "Group::Region"
+  },
+  {
+    "id": 506,
+    "parent_id": 505,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 509,
+    "parent_id": 15,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 581,
+    "parent_id": 846,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 582,
+    "parent_id": 581,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 586,
+    "parent_id": 69,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 587,
+    "parent_id": 459,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 592,
+    "parent_id": 15,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 611,
+    "parent_id": 505,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 612,
+    "parent_id": 611,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 620,
+    "parent_id": 459,
+    "type": "Group::Elternrat"
+  },
+  {
+    "id": 621,
+    "parent_id": 8,
+    "type": "Group::RegionaleKommission"
+  },
+  {
+    "id": 634,
+    "parent_id": 2,
+    "type": "Group::KantonaleKommission"
+  },
+  {
+    "id": 638,
+    "parent_id": 637,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 639,
+    "parent_id": 69,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 667,
+    "parent_id": 611,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 636,
+    "parent_id": 69,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1100,
+    "parent_id": 426,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1524,
+    "parent_id": 424,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 880,
+    "parent_id": 877,
+    "type": "Group::Region"
+  },
+  {
+    "id": 714,
+    "parent_id": 19,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 715,
+    "parent_id": 19,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 716,
+    "parent_id": 19,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 717,
+    "parent_id": 19,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 718,
+    "parent_id": 19,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 719,
+    "parent_id": 19,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 720,
+    "parent_id": 19,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 721,
+    "parent_id": 19,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 722,
+    "parent_id": 714,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 723,
+    "parent_id": 715,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 725,
+    "parent_id": 716,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 726,
+    "parent_id": 717,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 754,
+    "parent_id": 586,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 727,
+    "parent_id": 718,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 753,
+    "parent_id": 101,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 755,
+    "parent_id": 586,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 756,
+    "parent_id": 846,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 757,
+    "parent_id": 756,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 759,
+    "parent_id": 586,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1550,
+    "parent_id": 782,
+    "type": "Group::ErziehungsberechtigtenGremium"
+  },
+  {
+    "id": 836,
+    "parent_id": 2,
+    "type": "Group::InternesKantonalesGremium"
+  },
+  {
+    "id": 846,
+    "parent_id": 2,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 857,
+    "parent_id": 47,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 858,
+    "parent_id": 857,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 860,
+    "parent_id": 46,
+    "type": "Group::RegionaleKommission"
+  },
+  {
+    "id": 861,
+    "parent_id": 46,
+    "type": "Group::RegionalesGremium"
+  },
+  {
+    "id": 862,
+    "parent_id": 46,
+    "type": "Group::InternesRegionalesGremium"
+  },
+  {
+    "id": 863,
+    "parent_id": 46,
+    "type": "Group::RegionaleRover"
+  },
+  {
+    "id": 865,
+    "parent_id": 46,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 866,
+    "parent_id": 864,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 867,
+    "parent_id": 47,
+    "type": "Group::InternesAbteilungsGremium"
+  },
+  {
+    "id": 875,
+    "parent_id": 47,
+    "type": "Group::Elternrat"
+  },
+  {
+    "id": 876,
+    "parent_id": 47,
+    "type": "Group::InternesAbteilungsGremium"
+  },
+  {
+    "id": 864,
+    "parent_id": 46,
+    "type": "Group::Region"
+  },
+  {
+    "id": 877,
+    "parent_id": 46,
+    "type": "Group::Region"
+  },
+  {
+    "id": 878,
+    "parent_id": 877,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 879,
+    "parent_id": 877,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 881,
+    "parent_id": 877,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 882,
+    "parent_id": 877,
+    "type": "Group::RegionaleKommission"
+  },
+  {
+    "id": 883,
+    "parent_id": 2,
+    "type": "Group::Region"
+  },
+  {
+    "id": 884,
+    "parent_id": 883,
+    "type": "Group::Region"
+  },
+  {
+    "id": 885,
+    "parent_id": 884,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 886,
+    "parent_id": 884,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 887,
+    "parent_id": 884,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 890,
+    "parent_id": 884,
+    "type": "Group::RegionalesGremium"
+  },
+  {
+    "id": 891,
+    "parent_id": 894,
+    "type": "Group::Pta"
+  },
+  {
+    "id": 888,
+    "parent_id": 884,
+    "type": "Group::RegionaleKommission"
+  },
+  {
+    "id": 889,
+    "parent_id": 884,
+    "type": "Group::RegionaleRover"
+  },
+  {
+    "id": 893,
+    "parent_id": 894,
+    "type": "Group::InternesAbteilungsGremium"
+  },
+  {
+    "id": 894,
+    "parent_id": 884,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 895,
+    "parent_id": 894,
+    "type": "Group::Pta"
+  },
+  {
+    "id": 896,
+    "parent_id": 894,
+    "type": "Group::Pta"
+  },
+  {
+    "id": 897,
+    "parent_id": 894,
+    "type": "Group::Pta"
+  },
+  {
+    "id": 968,
+    "parent_id": 967,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 969,
+    "parent_id": 967,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1067,
+    "parent_id": 883,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1040,
+    "parent_id": 17,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 1041,
+    "parent_id": 17,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1068,
+    "parent_id": 1067,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 1080,
+    "parent_id": 12,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1107,
+    "parent_id": 69,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1518,
+    "parent_id": 69,
+    "type": "Group::ErziehungsberechtigtenGremium"
+  },
+  {
+    "id": 1519,
+    "parent_id": 69,
+    "type": "Group::ErziehungsberechtigtenGremium"
+  },
+  {
+    "id": 1568,
+    "parent_id": 2,
+    "type": "Group::KantonaleKommission"
+  },
+  {
+    "id": 1569,
+    "parent_id": 2,
+    "type": "Group::KantonaleKommission"
+  },
+  {
+    "id": 967,
+    "parent_id": 8,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 2,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 27,
+    "parent_id": 23,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 7,
+    "parent_id": 2,
+    "type": "Group::Region"
+  },
+  {
+    "id": 8,
+    "parent_id": 2,
+    "type": "Group::Region"
+  },
+  {
+    "id": 10,
+    "parent_id": 8,
+    "type": "Group::Region"
+  },
+  {
+    "id": 11,
+    "parent_id": 7,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 351,
+    "parent_id": 346,
+    "type": "Group::Elternrat"
+  },
+  {
+    "id": 424,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 12,
+    "parent_id": 7,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1530,
+    "parent_id": 501,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 13,
+    "parent_id": 7,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 14,
+    "parent_id": 8,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 15,
+    "parent_id": 8,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 17,
+    "parent_id": 10,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 173,
+    "parent_id": 2,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 216,
+    "parent_id": 215,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 219,
+    "parent_id": 215,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 115,
+    "parent_id": 429,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 253,
+    "parent_id": 211,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 254,
+    "parent_id": 253,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 330,
+    "parent_id": 329,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 331,
+    "parent_id": 330,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 22,
+    "parent_id": 13,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 333,
+    "parent_id": 429,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 346,
+    "parent_id": 144,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 349,
+    "parent_id": 346,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 614,
+    "parent_id": 506,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1616,
+    "parent_id": 616,
+    "type": "Group::InternesAbteilungsGremium"
+  },
+  {
+    "id": 616,
+    "parent_id": 506,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 1617,
+    "parent_id": 506,
+    "type": "Group::Ehemalige"
+  },
+  {
+    "id": 576,
+    "parent_id": 508,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 508,
+    "parent_id": 507,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 507,
+    "parent_id": 506,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 583,
+    "parent_id": 506,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 615,
+    "parent_id": 506,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 347,
+    "parent_id": 346,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 348,
+    "parent_id": 349,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 350,
+    "parent_id": 346,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 625,
+    "parent_id": 632,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 626,
+    "parent_id": 633,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 729,
+    "parent_id": 69,
+    "type": "Group::Elternrat"
+  },
+  {
+    "id": 1532,
+    "parent_id": 501,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 627,
+    "parent_id": 633,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 628,
+    "parent_id": 632,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 629,
+    "parent_id": 632,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 631,
+    "parent_id": 632,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 632,
+    "parent_id": 144,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 633,
+    "parent_id": 632,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 641,
+    "parent_id": 329,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 642,
+    "parent_id": 211,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 643,
+    "parent_id": 642,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 804,
+    "parent_id": 803,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 803,
+    "parent_id": 243,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 844,
+    "parent_id": 243,
+    "type": "Group::Elternrat"
+  },
+  {
+    "id": 849,
+    "parent_id": 205,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 1527,
+    "parent_id": 429,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 1528,
+    "parent_id": 1527,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 1529,
+    "parent_id": 1527,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 760,
+    "parent_id": 648,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 630,
+    "parent_id": 633,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 211,
+    "parent_id": 429,
+    "type": "Group::Region"
+  },
+  {
+    "id": 212,
+    "parent_id": 211,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 213,
+    "parent_id": 212,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 215,
+    "parent_id": 211,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 217,
+    "parent_id": 215,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 218,
+    "parent_id": 215,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 220,
+    "parent_id": 215,
+    "type": "Group::Elternrat"
+  },
+  {
+    "id": 221,
+    "parent_id": 215,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 245,
+    "parent_id": 243,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 246,
+    "parent_id": 245,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 222,
+    "parent_id": 215,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 205,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 206,
+    "parent_id": 205,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 207,
+    "parent_id": 206,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 208,
+    "parent_id": 206,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 352,
+    "parent_id": 212,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 214,
+    "parent_id": 213,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 336,
+    "parent_id": 334,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 337,
+    "parent_id": 336,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 338,
+    "parent_id": 336,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 339,
+    "parent_id": 336,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 340,
+    "parent_id": 338,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 341,
+    "parent_id": 338,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 342,
+    "parent_id": 336,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 343,
+    "parent_id": 336,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 345,
+    "parent_id": 344,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 522,
+    "parent_id": 429,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 447,
+    "parent_id": 446,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 622,
+    "parent_id": 144,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 623,
+    "parent_id": 144,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 644,
+    "parent_id": 116,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 645,
+    "parent_id": 116,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 646,
+    "parent_id": 648,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 647,
+    "parent_id": 116,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 713,
+    "parent_id": 429,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 761,
+    "parent_id": 648,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 762,
+    "parent_id": 648,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 763,
+    "parent_id": 648,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 1523,
+    "parent_id": 429,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 144,
+    "parent_id": 429,
+    "type": "Group::Region"
+  },
+  {
+    "id": 145,
+    "parent_id": 144,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 243,
+    "parent_id": 144,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1613,
+    "parent_id": 243,
+    "type": "Group::Pta"
+  },
+  {
+    "id": 244,
+    "parent_id": 243,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 92,
+    "parent_id": 88,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 362,
+    "parent_id": 95,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 1644,
+    "parent_id": 1641,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 1645,
+    "parent_id": 1641,
+    "type": "Group::Ehemalige"
+  },
+  {
+    "id": 134,
+    "parent_id": 64,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 1642,
+    "parent_id": 1641,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1643,
+    "parent_id": 1641,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 137,
+    "parent_id": 64,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 474,
+    "parent_id": 66,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 114,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 332,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 475,
+    "parent_id": 66,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 116,
+    "parent_id": 429,
+    "type": "Group::Region"
+  },
+  {
+    "id": 334,
+    "parent_id": 429,
+    "type": "Group::Region"
+  },
+  {
+    "id": 429,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 900,
+    "parent_id": 424,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 901,
+    "parent_id": 900,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1701,
+    "parent_id": 424,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 873,
+    "parent_id": 1701,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 872,
+    "parent_id": 1701,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1525,
+    "parent_id": 1701,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 871,
+    "parent_id": 424,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 458,
+    "parent_id": 424,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 335,
+    "parent_id": 334,
+    "type": "Group::Region"
+  },
+  {
+    "id": 1703,
+    "parent_id": 334,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1718,
+    "parent_id": 1717,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 1717,
+    "parent_id": 1712,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 823,
+    "parent_id": 822,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 513,
+    "parent_id": 512,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 89,
+    "parent_id": 87,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 88,
+    "parent_id": 86,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 91,
+    "parent_id": 90,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 86,
+    "parent_id": 65,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 87,
+    "parent_id": 86,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 95,
+    "parent_id": 86,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 96,
+    "parent_id": 86,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 97,
+    "parent_id": 86,
+    "type": "Group::Elternrat"
+  },
+  {
+    "id": 98,
+    "parent_id": 86,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 140,
+    "parent_id": 66,
+    "type": "Group::Elternrat"
+  },
+  {
+    "id": 68,
+    "parent_id": 66,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 143,
+    "parent_id": 141,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1712,
+    "parent_id": 64,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 66,
+    "parent_id": 65,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1714,
+    "parent_id": 1712,
+    "type": "Group::InternesKantonalesGremium"
+  },
+  {
+    "id": 1715,
+    "parent_id": 1712,
+    "type": "Group::InternesKantonalesGremium"
+  },
+  {
+    "id": 1719,
+    "parent_id": 1712,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 136,
+    "parent_id": 64,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 239,
+    "parent_id": 238,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 1713,
+    "parent_id": 1712,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 1716,
+    "parent_id": 1712,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 119,
+    "parent_id": 66,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 120,
+    "parent_id": 66,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 122,
+    "parent_id": 66,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 123,
+    "parent_id": 66,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 124,
+    "parent_id": 66,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 67,
+    "parent_id": 66,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 131,
+    "parent_id": 64,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 138,
+    "parent_id": 64,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 139,
+    "parent_id": 66,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 132,
+    "parent_id": 64,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 141,
+    "parent_id": 66,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 142,
+    "parent_id": 141,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 118,
+    "parent_id": 66,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 90,
+    "parent_id": 88,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 514,
+    "parent_id": 513,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 85,
+    "parent_id": 84,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1741,
+    "parent_id": 1740,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 105,
+    "parent_id": 80,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 64,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 81,
+    "parent_id": 80,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 83,
+    "parent_id": 80,
+    "type": "Group::Region"
+  },
+  {
+    "id": 108,
+    "parent_id": 80,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 84,
+    "parent_id": 82,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 824,
+    "parent_id": 326,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 946,
+    "parent_id": 868,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 9,
+    "parent_id": 3,
+    "type": "Group::Region"
+  },
+  {
+    "id": 16,
+    "parent_id": 9,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1554,
+    "parent_id": 952,
+    "type": "Group::ErziehungsberechtigtenGremium"
+  },
+  {
+    "id": 238,
+    "parent_id": 9,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 196,
+    "parent_id": 195,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 300,
+    "parent_id": 298,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 302,
+    "parent_id": 298,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 304,
+    "parent_id": 303,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 305,
+    "parent_id": 303,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 317,
+    "parent_id": 314,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 318,
+    "parent_id": 314,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 319,
+    "parent_id": 262,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 320,
+    "parent_id": 314,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 321,
+    "parent_id": 319,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 1567,
+    "parent_id": 323,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 947,
+    "parent_id": 868,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1582,
+    "parent_id": 868,
+    "type": "Group::ErziehungsberechtigtenGremium"
+  },
+  {
+    "id": 269,
+    "parent_id": 262,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 277,
+    "parent_id": 264,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 280,
+    "parent_id": 264,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 266,
+    "parent_id": 262,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1555,
+    "parent_id": 52,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 80,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 166,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 361,
+    "parent_id": 3,
+    "type": "Group::Region"
+  },
+  {
+    "id": 167,
+    "parent_id": 166,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 76,
+    "parent_id": 52,
+    "type": "Group::Region"
+  },
+  {
+    "id": 210,
+    "parent_id": 167,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 53,
+    "parent_id": 52,
+    "type": "Group::Region"
+  },
+  {
+    "id": 516,
+    "parent_id": 325,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 874,
+    "parent_id": 1611,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 74,
+    "parent_id": 73,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 82,
+    "parent_id": 80,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 71,
+    "parent_id": 3,
+    "type": "Group::Region"
+  },
+  {
+    "id": 180,
+    "parent_id": 178,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1102,
+    "parent_id": 1073,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 963,
+    "parent_id": 953,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 502,
+    "parent_id": 501,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 275,
+    "parent_id": 268,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 518,
+    "parent_id": 516,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 251,
+    "parent_id": 250,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 260,
+    "parent_id": 3,
+    "type": "Group::Region"
+  },
+  {
+    "id": 323,
+    "parent_id": 3,
+    "type": "Group::Region"
+  },
+  {
+    "id": 324,
+    "parent_id": 323,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 415,
+    "parent_id": 323,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1693,
+    "parent_id": 1699,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 416,
+    "parent_id": 323,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 422,
+    "parent_id": 416,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 503,
+    "parent_id": 325,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 517,
+    "parent_id": 516,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 519,
+    "parent_id": 516,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 520,
+    "parent_id": 516,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 822,
+    "parent_id": 326,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 285,
+    "parent_id": 278,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 301,
+    "parent_id": 298,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 296,
+    "parent_id": 263,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 299,
+    "parent_id": 298,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 263,
+    "parent_id": 261,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 264,
+    "parent_id": 261,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 267,
+    "parent_id": 262,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1688,
+    "parent_id": 3,
+    "type": "Group::Region"
+  },
+  {
+    "id": 1595,
+    "parent_id": 702,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1661,
+    "parent_id": 3,
+    "type": "Group::Region"
+  },
+  {
+    "id": 1689,
+    "parent_id": 3,
+    "type": "Group::Region"
+  },
+  {
+    "id": 1656,
+    "parent_id": 3,
+    "type": "Group::Region"
+  },
+  {
+    "id": 705,
+    "parent_id": 703,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 702,
+    "parent_id": 3,
+    "type": "Group::Region"
+  },
+  {
+    "id": 1549,
+    "parent_id": 702,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1678,
+    "parent_id": 3,
+    "type": "Group::Region"
+  },
+  {
+    "id": 268,
+    "parent_id": 262,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 274,
+    "parent_id": 267,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1699,
+    "parent_id": 3,
+    "type": "Group::Region"
+  },
+  {
+    "id": 270,
+    "parent_id": 265,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 271,
+    "parent_id": 265,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 272,
+    "parent_id": 265,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 273,
+    "parent_id": 267,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 6,
+    "parent_id": 3,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 276,
+    "parent_id": 268,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 281,
+    "parent_id": 277,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 1695,
+    "parent_id": 3,
+    "type": "Group::Region"
+  },
+  {
+    "id": 1594,
+    "parent_id": 1593,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 521,
+    "parent_id": 516,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 1694,
+    "parent_id": 3,
+    "type": "Group::Region"
+  },
+  {
+    "id": 282,
+    "parent_id": 277,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 283,
+    "parent_id": 264,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 284,
+    "parent_id": 278,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 313,
+    "parent_id": 269,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 316,
+    "parent_id": 265,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 303,
+    "parent_id": 296,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 197,
+    "parent_id": 195,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 200,
+    "parent_id": 179,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 261,
+    "parent_id": 260,
+    "type": "Group::Region"
+  },
+  {
+    "id": 201,
+    "parent_id": 200,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 194,
+    "parent_id": 192,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1698,
+    "parent_id": 3,
+    "type": "Group::Region"
+  },
+  {
+    "id": 278,
+    "parent_id": 264,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 409,
+    "parent_id": 406,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 327,
+    "parent_id": 326,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 1592,
+    "parent_id": 515,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 5,
+    "parent_id": 2,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 18,
+    "parent_id": 10,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 178,
+    "parent_id": 3,
+    "type": "Group::Region"
+  },
+  {
+    "id": 870,
+    "parent_id": 868,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1624,
+    "parent_id": 260,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 287,
+    "parent_id": 279,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 198,
+    "parent_id": 179,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 183,
+    "parent_id": 178,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 295,
+    "parent_id": 293,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 291,
+    "parent_id": 277,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 869,
+    "parent_id": 868,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 290,
+    "parent_id": 277,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 868,
+    "parent_id": 261,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1090,
+    "parent_id": 1088,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1070,
+    "parent_id": 261,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1095,
+    "parent_id": 1093,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1497,
+    "parent_id": 1496,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1547,
+    "parent_id": 1073,
+    "type": "Group::InternesAbteilungsGremium"
+  },
+  {
+    "id": 1596,
+    "parent_id": 372,
+    "type": "Group::RegionalesGremium"
+  },
+  {
+    "id": 378,
+    "parent_id": 372,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 373,
+    "parent_id": 372,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 374,
+    "parent_id": 372,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 376,
+    "parent_id": 378,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1075,
+    "parent_id": 1074,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 307,
+    "parent_id": 263,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 1072,
+    "parent_id": 372,
+    "type": "Group::Region"
+  },
+  {
+    "id": 52,
+    "parent_id": 3,
+    "type": "Group::Region"
+  },
+  {
+    "id": 1496,
+    "parent_id": 372,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 127,
+    "parent_id": 72,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 130,
+    "parent_id": 72,
+    "type": "Group::Elternrat"
+  },
+  {
+    "id": 72,
+    "parent_id": 71,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 73,
+    "parent_id": 72,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1662,
+    "parent_id": 1663,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1663,
+    "parent_id": 3,
+    "type": "Group::Region"
+  },
+  {
+    "id": 1679,
+    "parent_id": 3,
+    "type": "Group::Region"
+  },
+  {
+    "id": 1103,
+    "parent_id": 1073,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1498,
+    "parent_id": 1073,
+    "type": "Group::ErziehungsberechtigtenGremium"
+  },
+  {
+    "id": 1640,
+    "parent_id": 1073,
+    "type": "Group::ErziehungsberechtigtenGremium"
+  },
+  {
+    "id": 1691,
+    "parent_id": 1699,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1692,
+    "parent_id": 1699,
+    "type": "Group::InternesRegionalesGremium"
+  },
+  {
+    "id": 294,
+    "parent_id": 293,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 182,
+    "parent_id": 178,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 288,
+    "parent_id": 280,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 184,
+    "parent_id": 178,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 185,
+    "parent_id": 178,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 311,
+    "parent_id": 266,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 195,
+    "parent_id": 191,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 306,
+    "parent_id": 303,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 308,
+    "parent_id": 307,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 309,
+    "parent_id": 263,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 310,
+    "parent_id": 266,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 262,
+    "parent_id": 261,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1092,
+    "parent_id": 1091,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1093,
+    "parent_id": 1092,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1753,
+    "parent_id": 3,
+    "type": "Group::Ehemalige"
+  },
+  {
+    "id": 315,
+    "parent_id": 265,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 289,
+    "parent_id": 280,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 420,
+    "parent_id": 183,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 199,
+    "parent_id": 179,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 789,
+    "parent_id": 406,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 790,
+    "parent_id": 789,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1086,
+    "parent_id": 260,
+    "type": "Group::Region"
+  },
+  {
+    "id": 1089,
+    "parent_id": 1088,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1069,
+    "parent_id": 54,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 77,
+    "parent_id": 1611,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1520,
+    "parent_id": 54,
+    "type": "Group::ErziehungsberechtigtenGremium"
+  },
+  {
+    "id": 1561,
+    "parent_id": 1560,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1557,
+    "parent_id": 874,
+    "type": "Group::ErziehungsberechtigtenGremium"
+  },
+  {
+    "id": 386,
+    "parent_id": 77,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1611,
+    "parent_id": 3,
+    "type": "Group::Region"
+  },
+  {
+    "id": 1558,
+    "parent_id": 874,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 791,
+    "parent_id": 54,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1559,
+    "parent_id": 1558,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1091,
+    "parent_id": 260,
+    "type": "Group::Region"
+  },
+  {
+    "id": 110,
+    "parent_id": 109,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 651,
+    "parent_id": 80,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 106,
+    "parent_id": 80,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1094,
+    "parent_id": 1093,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 109,
+    "parent_id": 1700,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 418,
+    "parent_id": 414,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 257,
+    "parent_id": 250,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 187,
+    "parent_id": 189,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 188,
+    "parent_id": 189,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 189,
+    "parent_id": 179,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 190,
+    "parent_id": 189,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 193,
+    "parent_id": 192,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 191,
+    "parent_id": 179,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 504,
+    "parent_id": 503,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 286,
+    "parent_id": 279,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 421,
+    "parent_id": 182,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 192,
+    "parent_id": 191,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 256,
+    "parent_id": 248,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 406,
+    "parent_id": 3,
+    "type": "Group::Region"
+  },
+  {
+    "id": 292,
+    "parent_id": 277,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 952,
+    "parent_id": 325,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1553,
+    "parent_id": 1546,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 953,
+    "parent_id": 952,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 414,
+    "parent_id": 323,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 704,
+    "parent_id": 703,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 326,
+    "parent_id": 325,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 703,
+    "parent_id": 702,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1681,
+    "parent_id": 3,
+    "type": "Group::Region"
+  },
+  {
+    "id": 297,
+    "parent_id": 263,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 825,
+    "parent_id": 824,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 252,
+    "parent_id": 248,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 1071,
+    "parent_id": 1070,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1560,
+    "parent_id": 874,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 179,
+    "parent_id": 178,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 181,
+    "parent_id": 178,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1088,
+    "parent_id": 1087,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 186,
+    "parent_id": 179,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 1087,
+    "parent_id": 1086,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 240,
+    "parent_id": 238,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 241,
+    "parent_id": 240,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 247,
+    "parent_id": 9,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 248,
+    "parent_id": 9,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1073,
+    "parent_id": 372,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1654,
+    "parent_id": 3,
+    "type": "Group::Region"
+  },
+  {
+    "id": 1687,
+    "parent_id": 3,
+    "type": "Group::Region"
+  },
+  {
+    "id": 1677,
+    "parent_id": 3,
+    "type": "Group::Region"
+  },
+  {
+    "id": 1680,
+    "parent_id": 3,
+    "type": "Group::Region"
+  },
+  {
+    "id": 1660,
+    "parent_id": 1663,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1655,
+    "parent_id": 3,
+    "type": "Group::Region"
+  },
+  {
+    "id": 1659,
+    "parent_id": 3,
+    "type": "Group::Region"
+  },
+  {
+    "id": 419,
+    "parent_id": 181,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1531,
+    "parent_id": 501,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 129,
+    "parent_id": 3,
+    "type": "Group::Region"
+  },
+  {
+    "id": 1686,
+    "parent_id": 52,
+    "type": "Group::Region"
+  },
+  {
+    "id": 698,
+    "parent_id": 697,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 700,
+    "parent_id": 697,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 701,
+    "parent_id": 1700,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 845,
+    "parent_id": 697,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 905,
+    "parent_id": 697,
+    "type": "Group::InternesAbteilungsGremium"
+  },
+  {
+    "id": 903,
+    "parent_id": 697,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 904,
+    "parent_id": 697,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 842,
+    "parent_id": 1700,
+    "type": "Group::InternesAbteilungsGremium"
+  },
+  {
+    "id": 812,
+    "parent_id": 1700,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1062,
+    "parent_id": 1061,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 697,
+    "parent_id": 1700,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1061,
+    "parent_id": 1700,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 653,
+    "parent_id": 1700,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 699,
+    "parent_id": 697,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 696,
+    "parent_id": 1700,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 652,
+    "parent_id": 1700,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 107,
+    "parent_id": 80,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1700,
+    "parent_id": 80,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1541,
+    "parent_id": 1539,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1533,
+    "parent_id": 501,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 973,
+    "parent_id": 501,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 65,
+    "parent_id": 64,
+    "type": "Group::Region"
+  },
+  {
+    "id": 1534,
+    "parent_id": 501,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 1539,
+    "parent_id": 64,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1544,
+    "parent_id": 1539,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 1552,
+    "parent_id": 1546,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 826,
+    "parent_id": 326,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 325,
+    "parent_id": 3,
+    "type": "Group::Region"
+  },
+  {
+    "id": 1593,
+    "parent_id": 3,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 512,
+    "parent_id": 83,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 135,
+    "parent_id": 64,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 1546,
+    "parent_id": 64,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1542,
+    "parent_id": 1539,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1545,
+    "parent_id": 1539,
+    "type": "Group::Elternrat"
+  },
+  {
+    "id": 1540,
+    "parent_id": 1539,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 279,
+    "parent_id": 264,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1548,
+    "parent_id": 501,
+    "type": "Group::ErziehungsberechtigtenGremium"
+  },
+  {
+    "id": 974,
+    "parent_id": 501,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 501,
+    "parent_id": 64,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1543,
+    "parent_id": 1539,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 1004,
+    "parent_id": 999,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1039,
+    "parent_id": 972,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 956,
+    "parent_id": 955,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 440,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 1740,
+    "parent_id": 65,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1495,
+    "parent_id": 462,
+    "type": "Group::ErziehungsberechtigtenGremium"
+  },
+  {
+    "id": 37,
+    "parent_id": 13,
+    "type": "Group::Elternrat"
+  },
+  {
+    "id": 33,
+    "parent_id": 13,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 515,
+    "parent_id": 451,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 624,
+    "parent_id": 632,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 34,
+    "parent_id": 13,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 322,
+    "parent_id": 319,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 752,
+    "parent_id": 750,
+    "type": "Group::KantonaleKommission"
+  },
+  {
+    "id": 751,
+    "parent_id": 750,
+    "type": "Group::KantonaleKommission"
+  },
+  {
+    "id": 1607,
+    "parent_id": 1605,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1008,
+    "parent_id": 999,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 1683,
+    "parent_id": 1648,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 1605,
+    "parent_id": 511,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1006,
+    "parent_id": 1004,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 749,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 1022,
+    "parent_id": 1020,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 750,
+    "parent_id": 749,
+    "type": "Group::KantonaleKommission"
+  },
+  {
+    "id": 1021,
+    "parent_id": 1020,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1739,
+    "parent_id": 1738,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 156,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 157,
+    "parent_id": 156,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 172,
+    "parent_id": 156,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 423,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 383,
+    "parent_id": 381,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 385,
+    "parent_id": 381,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 381,
+    "parent_id": 156,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 70,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 843,
+    "parent_id": 172,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 170,
+    "parent_id": 156,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 384,
+    "parent_id": 381,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 382,
+    "parent_id": 381,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1735,
+    "parent_id": 1734,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 550,
+    "parent_id": 510,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 465,
+    "parent_id": 423,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 467,
+    "parent_id": 464,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 464,
+    "parent_id": 423,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 466,
+    "parent_id": 465,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1736,
+    "parent_id": 423,
+    "type": "Group::Region"
+  },
+  {
+    "id": 1734,
+    "parent_id": 423,
+    "type": "Group::Region"
+  },
+  {
+    "id": 1027,
+    "parent_id": 1025,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1648,
+    "parent_id": 1646,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 988,
+    "parent_id": 987,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1738,
+    "parent_id": 987,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 511,
+    "parent_id": 4,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1710,
+    "parent_id": 1647,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 991,
+    "parent_id": 989,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1711,
+    "parent_id": 1647,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 1005,
+    "parent_id": 1004,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 549,
+    "parent_id": 510,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1026,
+    "parent_id": 1025,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 659,
+    "parent_id": 511,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 1017,
+    "parent_id": 1010,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 1647,
+    "parent_id": 1646,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 996,
+    "parent_id": 995,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1601,
+    "parent_id": 511,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1015,
+    "parent_id": 1010,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1030,
+    "parent_id": 971,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 552,
+    "parent_id": 550,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 958,
+    "parent_id": 957,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1031,
+    "parent_id": 1030,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1033,
+    "parent_id": 1030,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 961,
+    "parent_id": 960,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 499,
+    "parent_id": 497,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 553,
+    "parent_id": 557,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1597,
+    "parent_id": 511,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 497,
+    "parent_id": 496,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 542,
+    "parent_id": 511,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 1682,
+    "parent_id": 1647,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 997,
+    "parent_id": 991,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1007,
+    "parent_id": 999,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 1009,
+    "parent_id": 999,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 943,
+    "parent_id": 511,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 1019,
+    "parent_id": 1011,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1010,
+    "parent_id": 971,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 962,
+    "parent_id": 961,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 992,
+    "parent_id": 989,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 1603,
+    "parent_id": 511,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 987,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 989,
+    "parent_id": 971,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 993,
+    "parent_id": 989,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 510,
+    "parent_id": 4,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1598,
+    "parent_id": 1605,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1032,
+    "parent_id": 1030,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1013,
+    "parent_id": 1012,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1025,
+    "parent_id": 971,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1028,
+    "parent_id": 1025,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 1035,
+    "parent_id": 1034,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1037,
+    "parent_id": 1034,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1014,
+    "parent_id": 1011,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 998,
+    "parent_id": 990,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 971,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 551,
+    "parent_id": 550,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1036,
+    "parent_id": 1034,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 999,
+    "parent_id": 971,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1599,
+    "parent_id": 511,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1029,
+    "parent_id": 1025,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 728,
+    "parent_id": 511,
+    "type": "Group::Elternrat"
+  },
+  {
+    "id": 995,
+    "parent_id": 991,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1038,
+    "parent_id": 972,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 4,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 1001,
+    "parent_id": 1000,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 314,
+    "parent_id": 262,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 1003,
+    "parent_id": 1000,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 960,
+    "parent_id": 955,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1602,
+    "parent_id": 511,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 496,
+    "parent_id": 4,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1020,
+    "parent_id": 971,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1024,
+    "parent_id": 1020,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 500,
+    "parent_id": 497,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 990,
+    "parent_id": 989,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1000,
+    "parent_id": 999,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 555,
+    "parent_id": 510,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1646,
+    "parent_id": 1,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 442,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 1011,
+    "parent_id": 1010,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1012,
+    "parent_id": 1011,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 983,
+    "parent_id": 981,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 1685,
+    "parent_id": 1648,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 957,
+    "parent_id": 956,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1706,
+    "parent_id": 1647,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 1704,
+    "parent_id": 1647,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 556,
+    "parent_id": 557,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1705,
+    "parent_id": 1647,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 1707,
+    "parent_id": 1647,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 1709,
+    "parent_id": 1647,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 955,
+    "parent_id": 4,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1002,
+    "parent_id": 1000,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1034,
+    "parent_id": 971,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 959,
+    "parent_id": 958,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 994,
+    "parent_id": 990,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 972,
+    "parent_id": 971,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1608,
+    "parent_id": 1605,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1606,
+    "parent_id": 1605,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 554,
+    "parent_id": 557,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1604,
+    "parent_id": 511,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1708,
+    "parent_id": 1647,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 1016,
+    "parent_id": 1010,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 498,
+    "parent_id": 496,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1018,
+    "parent_id": 1011,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 942,
+    "parent_id": 511,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1600,
+    "parent_id": 1605,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 541,
+    "parent_id": 511,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 548,
+    "parent_id": 511,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 557,
+    "parent_id": 510,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1684,
+    "parent_id": 1647,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 375,
+    "parent_id": 378,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 417,
+    "parent_id": 324,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 54,
+    "parent_id": 1611,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 249,
+    "parent_id": 248,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 372,
+    "parent_id": 3,
+    "type": "Group::Region"
+  },
+  {
+    "id": 1690,
+    "parent_id": 3,
+    "type": "Group::Region"
+  },
+  {
+    "id": 161,
+    "parent_id": 160,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 892,
+    "parent_id": 894,
+    "type": "Group::Pta"
+  },
+  {
+    "id": 637,
+    "parent_id": 636,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1761,
+    "parent_id": 1760,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 329,
+    "parent_id": 211,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 44,
+    "parent_id": 12,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1762,
+    "parent_id": 1538,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 426,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 3,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 1097,
+    "parent_id": 1096,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 408,
+    "parent_id": 407,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 588,
+    "parent_id": 408,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 797,
+    "parent_id": 408,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 798,
+    "parent_id": 797,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 800,
+    "parent_id": 797,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 390,
+    "parent_id": 388,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1637,
+    "parent_id": 1628,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 650,
+    "parent_id": 387,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 859,
+    "parent_id": 650,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1098,
+    "parent_id": 1097,
+    "type": "Group::InternesAbteilungsGremium"
+  },
+  {
+    "id": 1537,
+    "parent_id": 1502,
+    "type": "Group::ErziehungsberechtigtenGremium"
+  },
+  {
+    "id": 1503,
+    "parent_id": 1502,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1526,
+    "parent_id": 1502,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1630,
+    "parent_id": 1625,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1629,
+    "parent_id": 1625,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1638,
+    "parent_id": 1631,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1633,
+    "parent_id": 1625,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 1627,
+    "parent_id": 1625,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 1551,
+    "parent_id": 1502,
+    "type": "Group::Ehemalige"
+  },
+  {
+    "id": 1517,
+    "parent_id": 1502,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1628,
+    "parent_id": 1625,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1634,
+    "parent_id": 1625,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 1636,
+    "parent_id": 1628,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1096,
+    "parent_id": 650,
+    "type": "Group::Elternrat"
+  },
+  {
+    "id": 1535,
+    "parent_id": 1502,
+    "type": "Group::ErziehungsberechtigtenGremium"
+  },
+  {
+    "id": 1626,
+    "parent_id": 1625,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1085,
+    "parent_id": 650,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1632,
+    "parent_id": 1625,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 1631,
+    "parent_id": 1625,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1635,
+    "parent_id": 1625,
+    "type": "Group::ErziehungsberechtigtenGremium"
+  },
+  {
+    "id": 1639,
+    "parent_id": 1631,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1625,
+    "parent_id": 387,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1516,
+    "parent_id": 1502,
+    "type": "Group::ErziehungsberechtigtenGremium"
+  },
+  {
+    "id": 1502,
+    "parent_id": 387,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 388,
+    "parent_id": 387,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1702,
+    "parent_id": 387,
+    "type": "Group::RegionalesGremium"
+  },
+  {
+    "id": 389,
+    "parent_id": 388,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 387,
+    "parent_id": 3,
+    "type": "Group::Region"
+  },
+  {
+    "id": 1720,
+    "parent_id": 49,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 984,
+    "parent_id": 981,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1521,
+    "parent_id": 49,
+    "type": "Group::Region"
+  },
+  {
+    "id": 672,
+    "parent_id": 671,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1580,
+    "parent_id": 1521,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 951,
+    "parent_id": 950,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1060,
+    "parent_id": 951,
+    "type": "Group::InternesAbteilungsGremium"
+  },
+  {
+    "id": 1055,
+    "parent_id": 1,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 1619,
+    "parent_id": 1580,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1577,
+    "parent_id": 1521,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 985,
+    "parent_id": 981,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 1575,
+    "parent_id": 1521,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1573,
+    "parent_id": 1521,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1579,
+    "parent_id": 1521,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1536,
+    "parent_id": 658,
+    "type": "Group::ErziehungsberechtigtenGremium"
+  },
+  {
+    "id": 982,
+    "parent_id": 981,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 744,
+    "parent_id": 658,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1581,
+    "parent_id": 1521,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1620,
+    "parent_id": 1580,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 747,
+    "parent_id": 658,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 658,
+    "parent_id": 657,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 950,
+    "parent_id": 49,
+    "type": "Group::Region"
+  },
+  {
+    "id": 1621,
+    "parent_id": 1580,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 1618,
+    "parent_id": 1580,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1574,
+    "parent_id": 1521,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 986,
+    "parent_id": 981,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 657,
+    "parent_id": 49,
+    "type": "Group::Region"
+  },
+  {
+    "id": 748,
+    "parent_id": 747,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 1572,
+    "parent_id": 49,
+    "type": "Group::Region"
+  },
+  {
+    "id": 1721,
+    "parent_id": 49,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 1578,
+    "parent_id": 1521,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 981,
+    "parent_id": 657,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1576,
+    "parent_id": 1521,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1722,
+    "parent_id": 49,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 1723,
+    "parent_id": 49,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 1724,
+    "parent_id": 49,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 1612,
+    "parent_id": 1572,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 799,
+    "parent_id": 536,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1763,
+    "parent_id": 1055,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 1587,
+    "parent_id": 1585,
+    "type": "Group::KantonaleKommission"
+  },
+  {
+    "id": 1732,
+    "parent_id": 49,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 1064,
+    "parent_id": 949,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 523,
+    "parent_id": 1,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 690,
+    "parent_id": 687,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 683,
+    "parent_id": 661,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 808,
+    "parent_id": 536,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 539,
+    "parent_id": 536,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 432,
+    "parent_id": 604,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 433,
+    "parent_id": 604,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 1729,
+    "parent_id": 1726,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 785,
+    "parent_id": 776,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 708,
+    "parent_id": 707,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 545,
+    "parent_id": 529,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 1585,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 660,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 787,
+    "parent_id": 775,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 668,
+    "parent_id": 660,
+    "type": "Group::Region"
+  },
+  {
+    "id": 670,
+    "parent_id": 661,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 695,
+    "parent_id": 664,
+    "type": "Group::RegionalesGremium"
+  },
+  {
+    "id": 676,
+    "parent_id": 660,
+    "type": "Group::Region"
+  },
+  {
+    "id": 777,
+    "parent_id": 774,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 479,
+    "parent_id": 523,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 944,
+    "parent_id": 808,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 584,
+    "parent_id": 567,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1,
+    "parent_id": 1113,
+    "type": "Group::Bund"
+  },
+  {
+    "id": 786,
+    "parent_id": 776,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 571,
+    "parent_id": 570,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 688,
+    "parent_id": 687,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1583,
+    "parent_id": 1,
+    "type": "Group::Ausbildungskommission"
+  },
+  {
+    "id": 774,
+    "parent_id": 536,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1078,
+    "parent_id": 1076,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 709,
+    "parent_id": 707,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 574,
+    "parent_id": 573,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 679,
+    "parent_id": 668,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1113,
+    "parent_id": null,
+    "type": "Group::Root"
+  },
+  {
+    "id": 680,
+    "parent_id": 668,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 564,
+    "parent_id": 1,
+    "type": "Group::BundesKommission"
+  },
+  {
+    "id": 565,
+    "parent_id": 564,
+    "type": "Group::BundesKommission"
+  },
+  {
+    "id": 806,
+    "parent_id": 564,
+    "type": "Group::BundesKommission"
+  },
+  {
+    "id": 706,
+    "parent_id": 668,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 618,
+    "parent_id": 437,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 663,
+    "parent_id": 661,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1725,
+    "parent_id": 49,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 50,
+    "parent_id": 49,
+    "type": "Group::Region"
+  },
+  {
+    "id": 255,
+    "parent_id": 50,
+    "type": "Group::RegionalesGremium"
+  },
+  {
+    "id": 478,
+    "parent_id": 1,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 258,
+    "parent_id": 128,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 662,
+    "parent_id": 661,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 530,
+    "parent_id": 427,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 949,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 538,
+    "parent_id": 536,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 604,
+    "parent_id": 1,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 805,
+    "parent_id": 479,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 569,
+    "parent_id": 568,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1510,
+    "parent_id": 1114,
+    "type": "Group::SilverscoutsRegion"
+  },
+  {
+    "id": 945,
+    "parent_id": 808,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 694,
+    "parent_id": 530,
+    "type": "Group::Elternrat"
+  },
+  {
+    "id": 684,
+    "parent_id": 661,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 671,
+    "parent_id": 660,
+    "type": "Group::Region"
+  },
+  {
+    "id": 1066,
+    "parent_id": 427,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 204,
+    "parent_id": 128,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 1726,
+    "parent_id": 49,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 1728,
+    "parent_id": 1726,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 745,
+    "parent_id": 665,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1556,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 619,
+    "parent_id": 618,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 566,
+    "parent_id": 532,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 547,
+    "parent_id": 545,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 1077,
+    "parent_id": 1076,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 171,
+    "parent_id": 1,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 1727,
+    "parent_id": 1726,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 746,
+    "parent_id": 666,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 979,
+    "parent_id": 975,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 437,
+    "parent_id": 604,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 1589,
+    "parent_id": 1588,
+    "type": "Group::KantonaleKommission"
+  },
+  {
+    "id": 1076,
+    "parent_id": 536,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 128,
+    "parent_id": 171,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 1730,
+    "parent_id": 1726,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 976,
+    "parent_id": 975,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 977,
+    "parent_id": 975,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 692,
+    "parent_id": 668,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1501,
+    "parent_id": 1114,
+    "type": "Group::SilverscoutsRegion"
+  },
+  {
+    "id": 802,
+    "parent_id": 538,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 168,
+    "parent_id": 128,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 49,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 1114,
+    "parent_id": 1113,
+    "type": "Group::Silverscouts"
+  },
+  {
+    "id": 1509,
+    "parent_id": 1114,
+    "type": "Group::SilverscoutsRegion"
+  },
+  {
+    "id": 1731,
+    "parent_id": 1726,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 1508,
+    "parent_id": 1114,
+    "type": "Group::SilverscoutsRegion"
+  },
+  {
+    "id": 1511,
+    "parent_id": 1114,
+    "type": "Group::SilverscoutsRegion"
+  },
+  {
+    "id": 1570,
+    "parent_id": 1114,
+    "type": "Group::SilverscoutsRegion"
+  },
+  {
+    "id": 664,
+    "parent_id": 660,
+    "type": "Group::Region"
+  },
+  {
+    "id": 533,
+    "parent_id": 530,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1737,
+    "parent_id": 1114,
+    "type": "Group::SilverscoutsRegion"
+  },
+  {
+    "id": 776,
+    "parent_id": 774,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 666,
+    "parent_id": 664,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1056,
+    "parent_id": 1,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 775,
+    "parent_id": 774,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 532,
+    "parent_id": 530,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 685,
+    "parent_id": 661,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 524,
+    "parent_id": 523,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 673,
+    "parent_id": 671,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1111,
+    "parent_id": 1108,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 707,
+    "parent_id": 677,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 568,
+    "parent_id": 567,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 661,
+    "parent_id": 660,
+    "type": "Group::Region"
+  },
+  {
+    "id": 1506,
+    "parent_id": 1114,
+    "type": "Group::SilverscoutsRegion"
+  },
+  {
+    "id": 526,
+    "parent_id": 523,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 778,
+    "parent_id": 774,
+    "type": "Group::Pio"
+  },
+  {
+    "id": 472,
+    "parent_id": 604,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 434,
+    "parent_id": 433,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 682,
+    "parent_id": 661,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 693,
+    "parent_id": 686,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1110,
+    "parent_id": 1108,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 435,
+    "parent_id": 432,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 439,
+    "parent_id": 437,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 1614,
+    "parent_id": 1,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 1108,
+    "parent_id": 949,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1065,
+    "parent_id": 1064,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 544,
+    "parent_id": 529,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 1586,
+    "parent_id": 1585,
+    "type": "Group::KantonaleKommission"
+  },
+  {
+    "id": 40,
+    "parent_id": 432,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 203,
+    "parent_id": 128,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 567,
+    "parent_id": 427,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 677,
+    "parent_id": 676,
+    "type": "Group::Region"
+  },
+  {
+    "id": 656,
+    "parent_id": 523,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 678,
+    "parent_id": 676,
+    "type": "Group::Region"
+  },
+  {
+    "id": 675,
+    "parent_id": 671,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 438,
+    "parent_id": 437,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 665,
+    "parent_id": 664,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 527,
+    "parent_id": 523,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 570,
+    "parent_id": 427,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 975,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 1733,
+    "parent_id": 49,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 525,
+    "parent_id": 523,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 655,
+    "parent_id": 523,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 686,
+    "parent_id": 660,
+    "type": "Group::Region"
+  },
+  {
+    "id": 529,
+    "parent_id": 1,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 1584,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 585,
+    "parent_id": 538,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 536,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 978,
+    "parent_id": 975,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1507,
+    "parent_id": 1114,
+    "type": "Group::SilverscoutsRegion"
+  },
+  {
+    "id": 669,
+    "parent_id": 668,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 427,
+    "parent_id": 1,
+    "type": "Group::Kantonalverband"
+  },
+  {
+    "id": 689,
+    "parent_id": 687,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 691,
+    "parent_id": 671,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 572,
+    "parent_id": 427,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 1588,
+    "parent_id": 1585,
+    "type": "Group::KantonaleKommission"
+  },
+  {
+    "id": 710,
+    "parent_id": 707,
+    "type": "Group::AbteilungsRover"
+  },
+  {
+    "id": 807,
+    "parent_id": 774,
+    "type": "Group::Elternrat"
+  },
+  {
+    "id": 531,
+    "parent_id": 530,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 711,
+    "parent_id": 710,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 674,
+    "parent_id": 671,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 480,
+    "parent_id": 478,
+    "type": "Group::BundesGremium"
+  },
+  {
+    "id": 681,
+    "parent_id": 661,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 537,
+    "parent_id": 536,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 809,
+    "parent_id": 808,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 712,
+    "parent_id": 707,
+    "type": "Group::AbteilungsGremium"
+  },
+  {
+    "id": 1500,
+    "parent_id": 1114,
+    "type": "Group::SilverscoutsRegion"
+  },
+  {
+    "id": 528,
+    "parent_id": 427,
+    "type": "Group::KantonalesGremium"
+  },
+  {
+    "id": 573,
+    "parent_id": 572,
+    "type": "Group::Woelfe"
+  },
+  {
+    "id": 1109,
+    "parent_id": 949,
+    "type": "Group::Abteilung"
+  },
+  {
+    "id": 687,
+    "parent_id": 676,
+    "type": "Group::Region"
+  },
+  {
+    "id": 1750,
+    "parent_id": 51,
+    "type": "Group::Pfadi"
+  },
+  {
+    "id": 1764,
+    "parent_id": 51,
+    "type": "Group::Biber"
+  },
+  {
+    "id": 51,
+    "parent_id": 50,
+    "type": "Group::Abteilung"
+  }
+]
