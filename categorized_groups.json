@@ -1,2258 +1,458 @@
 {
-  "id": 4691,
-  "parent_id": 2,
+  "id": 400,
+  "parent_id": 1,
   "type": "Group::Kantonalverband",
   "name": "Pfadi Aargau",
   "scout_groups": [
     {
-      "id": 5413,
-      "parent_id": 4691,
+      "id": 393,
+      "parent_id": 400,
       "type": "Group::Abteilung",
-      "name": "Gofers Lenzburg",
+      "name": "Abt 2",
       "agegroups": [
         {
-          "id": 11572,
-          "parent_id": 5413,
-          "type": "Group::Biber",
-          "name": "1. Biberstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5652,
-          "parent_id": 5413,
+          "id": 610,
+          "parent_id": 393,
           "type": "Group::Pfadi",
-          "name": "3. Pfadistufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5637,
-          "parent_id": 5413,
-          "type": "Group::Woelfe",
-          "name": "2. Wolfsstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5668,
-          "parent_id": 5413,
-          "type": "Group::Pio",
-          "name": "4. Piostufe",
+          "name": "Pfadi",
           "agegroup_responsibles": [],
           "agegroup_leaders": [],
           "agegroup_participants": []
         }
       ],
-      "committees": [
-        {
-          "id": 5958,
-          "parent_id": 5413,
-          "type": "Group::AbteilungsGremium",
-          "name": "Provisorische Anmeldungen",
-          "committees": []
-        },
-        {
-          "id": 5682,
-          "parent_id": 5413,
-          "type": "Group::AbteilungsGremium",
-          "name": "Heimverein",
-          "committees": [
-            {
-              "id": 7097,
-              "parent_id": 5682,
-              "type": "Group::AbteilungsGremium",
-              "name": "Mit_Buntspecht",
-              "committees": []
-            },
-            {
-              "id": 7098,
-              "parent_id": 5682,
-              "type": "Group::AbteilungsGremium",
-              "name": "Ohne_Buntspecht",
-              "committees": []
-            }
-          ]
-        },
-        {
-          "id": 6380,
-          "parent_id": 5413,
-          "type": "Group::AbteilungsGremium",
-          "name": "APV",
-          "committees": [
-            {
-              "id": 9705,
-              "parent_id": 6380,
-              "type": "Group::AbteilungsGremium",
-              "name": "APV Aktiv",
-              "committees": []
-            },
-            {
-              "id": 9707,
-              "parent_id": 6380,
-              "type": "Group::AbteilungsGremium",
-              "name": "APV Passiv",
-              "committees": []
-            }
-          ]
-        }
-      ]
+      "committees": [],
+      "events": []
     },
     {
-      "id": 5409,
-      "parent_id": 4691,
+      "id": 430,
+      "parent_id": 400,
       "type": "Group::Abteilung",
-      "name": "Pfadi Brugg",
+      "name": "Abteilung Aargau",
       "agegroups": [
         {
-          "id": 5677,
-          "parent_id": 5409,
+          "id": 481,
+          "parent_id": 430,
+          "type": "Group::Woelfe",
+          "name": "Wolfsstufe",
+          "agegroup_responsibles": [],
+          "agegroup_leaders": [],
+          "agegroup_participants": []
+        }
+      ],
+      "committees": [],
+      "events": []
+    },
+    {
+      "id": 534,
+      "parent_id": 400,
+      "type": "Group::Abteilung",
+      "name": "Abteilung Musterfels",
+      "agegroups": [
+        {
+          "id": 1755,
+          "parent_id": 534,
           "type": "Group::Biber",
-          "name": "0 Biberstufe",
+          "name": "Biber",
           "agegroup_responsibles": [],
           "agegroup_leaders": [],
           "agegroup_participants": []
         },
         {
-          "id": 5715,
-          "parent_id": 5409,
+          "id": 1758,
+          "parent_id": 534,
           "type": "Group::AbteilungsRover",
-          "name": "4 Roverstufe",
+          "name": "Rover",
           "agegroup_responsibles": [],
           "agegroup_leaders": [],
           "agegroup_participants": []
         },
         {
-          "id": 5703,
-          "parent_id": 5409,
-          "type": "Group::Pfadi",
-          "name": "2 Pfadistufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5684,
-          "parent_id": 5409,
+          "id": 1756,
+          "parent_id": 534,
           "type": "Group::Woelfe",
-          "name": "1 Wolfsstufe",
+          "name": "Wölfe",
           "agegroup_responsibles": [],
           "agegroup_leaders": [],
           "agegroup_participants": []
         },
         {
-          "id": 5709,
-          "parent_id": 5409,
-          "type": "Group::Pio",
-          "name": "3 Piostufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        }
-      ],
-      "committees": [
-        {
-          "id": 7000,
-          "parent_id": 5409,
-          "type": "Group::AbteilungsGremium",
-          "name": "Ehemalige_TN",
-          "committees": []
-        },
-        {
-          "id": 6999,
-          "parent_id": 5409,
-          "type": "Group::AbteilungsGremium",
-          "name": "Ehemalige_Leiter_und_Rover",
-          "committees": []
-        },
-        {
-          "id": 6186,
-          "parent_id": 5409,
-          "type": "Group::AbteilungsGremium",
-          "name": "APV",
-          "committees": []
-        },
-        {
-          "id": 6187,
-          "parent_id": 5409,
-          "type": "Group::AbteilungsGremium",
-          "name": "Heimverein",
-          "committees": []
-        }
-      ]
-    },
-    {
-      "id": 5410,
-      "parent_id": 4691,
-      "type": "Group::Abteilung",
-      "name": "Pfadi Hallwyl",
-      "agegroups": [
-        {
-          "id": 5502,
-          "parent_id": 5410,
-          "type": "Group::Woelfe",
-          "name": "1 Wölfe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5504,
-          "parent_id": 5410,
-          "type": "Group::Pio",
-          "name": "3 Pios",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5503,
-          "parent_id": 5410,
+          "id": 1754,
+          "parent_id": 534,
           "type": "Group::Pfadi",
-          "name": "2 Pfadi",
+          "name": "Pfadi",
           "agegroup_responsibles": [],
           "agegroup_leaders": [],
           "agegroup_participants": []
         },
         {
-          "id": 5500,
-          "parent_id": 5410,
-          "type": "Group::Biber",
-          "name": "0 Biber",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5505,
-          "parent_id": 5410,
-          "type": "Group::AbteilungsRover",
-          "name": "4 Rover",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        }
-      ],
-      "committees": [
-        {
-          "id": 11151,
-          "parent_id": 5410,
-          "type": "Group::AbteilungsGremium",
-          "name": "Alt Pfader Verein",
-          "committees": []
-        }
-      ]
-    },
-    {
-      "id": 5411,
-      "parent_id": 4691,
-      "type": "Group::Abteilung",
-      "name": "Hochwacht Baden",
-      "agegroups": [
-        {
-          "id": 5477,
-          "parent_id": 5411,
-          "type": "Group::Pfadi",
-          "name": "2. Pfadistufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 7712,
-          "parent_id": 5411,
-          "type": "Group::Biber",
-          "name": "0. Biberstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5474,
-          "parent_id": 5411,
-          "type": "Group::Woelfe",
-          "name": "1. Wolfsstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5479,
-          "parent_id": 5411,
+          "id": 1757,
+          "parent_id": 534,
           "type": "Group::Pio",
-          "name": "3. Piostufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5489,
-          "parent_id": 5411,
-          "type": "Group::AbteilungsRover",
-          "name": "4. Roverstufe",
+          "name": "Pio",
           "agegroup_responsibles": [],
           "agegroup_leaders": [],
           "agegroup_participants": []
         }
       ],
-      "committees": [
-        {
-          "id": 10160,
-          "parent_id": 5411,
-          "type": "Group::AbteilungsGremium",
-          "name": "Altpfadiverein ",
-          "committees": []
-        }
-      ]
+      "committees": [],
+      "events": []
     },
     {
-      "id": 5414,
-      "parent_id": 4691,
-      "type": "Group::Abteilung",
-      "name": "Riko Spreitenbach",
-      "agegroups": [
-        {
-          "id": 5660,
-          "parent_id": 5414,
-          "type": "Group::Pio",
-          "name": "3 Piostufe ",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5643,
-          "parent_id": 5414,
-          "type": "Group::Pfadi",
-          "name": "2 Pfadistufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5639,
-          "parent_id": 5414,
-          "type": "Group::Woelfe",
-          "name": "1 Wolfsstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        }
-      ],
-      "committees": [
-        {
-          "id": 10225,
-          "parent_id": 5414,
-          "type": "Group::AbteilungsGremium",
-          "name": "Helfer",
-          "committees": []
-        },
-        {
-          "id": 10458,
-          "parent_id": 5414,
-          "type": "Group::AbteilungsGremium",
-          "name": "4 Roverstufe",
-          "committees": [
-            {
-              "id": 12456,
-              "parent_id": 10458,
-              "type": "Group::AbteilungsGremium",
-              "name": "Roverchat",
-              "committees": []
-            },
-            {
-              "id": 10461,
-              "parent_id": 10458,
-              "type": "Group::AbteilungsGremium",
-              "name": "Panthera",
-              "committees": []
-            },
-            {
-              "id": 11545,
-              "parent_id": 10458,
-              "type": "Group::AbteilungsGremium",
-              "name": "Die stämmigi Eiche",
-              "committees": []
-            },
-            {
-              "id": 10459,
-              "parent_id": 10458,
-              "type": "Group::AbteilungsGremium",
-              "name": "Aquilla",
-              "committees": []
-            },
-            {
-              "id": 10460,
-              "parent_id": 10458,
-              "type": "Group::AbteilungsGremium",
-              "name": "Falkenstein",
-              "committees": []
-            },
-            {
-              "id": 10462,
-              "parent_id": 10458,
-              "type": "Group::AbteilungsGremium",
-              "name": "Zum tänzelnden Pony",
-              "committees": []
-            },
-            {
-              "id": 10463,
-              "parent_id": 10458,
-              "type": "Group::AbteilungsGremium",
-              "name": "de stinkend Mischtchäfer",
-              "committees": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 5405,
-      "parent_id": 4691,
-      "type": "Group::Abteilung",
-      "name": "Blaustein Gränichen",
-      "agegroups": [
-        {
-          "id": 5653,
-          "parent_id": 5405,
-          "type": "Group::Woelfe",
-          "name": "1 Wölfe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5650,
-          "parent_id": 5405,
-          "type": "Group::Pfadi",
-          "name": "2 Pfadis",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5649,
-          "parent_id": 5405,
-          "type": "Group::Pio",
-          "name": "3 Pios",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5646,
-          "parent_id": 5405,
-          "type": "Group::AbteilungsRover",
-          "name": "4 Leitende",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 8179,
-          "parent_id": 5405,
-          "type": "Group::Biber",
-          "name": "0 Biber",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        }
-      ],
-      "committees": [
-        {
-          "id": 5644,
-          "parent_id": 5405,
-          "type": "Group::AbteilungsGremium",
-          "name": "5 APV",
-          "committees": []
-        },
-        {
-          "id": 8163,
-          "parent_id": 5405,
-          "type": "Group::AbteilungsGremium",
-          "name": "6 Roverstufe",
-          "committees": []
-        },
-        {
-          "id": 11191,
-          "parent_id": 5405,
-          "type": "Group::InternesAbteilungsGremium",
-          "name": "OK (erweitert) Jugendfest 2025",
-          "committees": []
-        },
-        {
-          "id": 9701,
-          "parent_id": 5405,
-          "type": "Group::AbteilungsGremium",
-          "name": "Pool",
-          "committees": [
-            {
-              "id": 11637,
-              "parent_id": 9701,
-              "type": "Group::AbteilungsGremium",
-              "name": "Passive / Ausgetretene TN",
-              "committees": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 5424,
-      "parent_id": 4691,
-      "type": "Group::Abteilung",
-      "name": "Rymenzburg Korps",
-      "agegroups": [
-        {
-          "id": 5681,
-          "parent_id": 5424,
-          "type": "Group::Pio",
-          "name": "3 Piostufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        }
-      ],
-      "committees": [
-        {
-          "id": 5765,
-          "parent_id": 5424,
-          "type": "Group::AbteilungsGremium",
-          "name": "Pfadi-Verein Rymenzburg",
-          "committees": [
-            {
-              "id": 8923,
-              "parent_id": 5765,
-              "type": "Group::AbteilungsGremium",
-              "name": "Verstorbene",
-              "committees": []
-            }
-          ]
-        },
-        {
-          "id": 5800,
-          "parent_id": 5424,
-          "type": "Group::AbteilungsGremium",
-          "name": "RN-Versand",
-          "committees": []
-        },
-        {
-          "id": 5877,
-          "parent_id": 5424,
-          "type": "Group::AbteilungsGremium",
-          "name": "4 Roverstufe",
-          "committees": [
-            {
-              "id": 5882,
-              "parent_id": 5877,
-              "type": "Group::AbteilungsGremium",
-              "name": "Rotte SKOMER",
-              "committees": []
-            },
-            {
-              "id": 5883,
-              "parent_id": 5877,
-              "type": "Group::AbteilungsGremium",
-              "name": "Rotte verrottete Ratten Rotte",
-              "committees": []
-            },
-            {
-              "id": 5879,
-              "parent_id": 5877,
-              "type": "Group::AbteilungsGremium",
-              "name": "Rotte Langhals",
-              "committees": []
-            },
-            {
-              "id": 5881,
-              "parent_id": 5877,
-              "type": "Group::AbteilungsGremium",
-              "name": "Rotte Red Head",
-              "committees": []
-            },
-            {
-              "id": 8823,
-              "parent_id": 5877,
-              "type": "Group::AbteilungsGremium",
-              "name": "Rotte PicBull",
-              "committees": []
-            },
-            {
-              "id": 7861,
-              "parent_id": 5877,
-              "type": "Group::AbteilungsGremium",
-              "name": "Rotte Gwendolyn",
-              "committees": []
-            },
-            {
-              "id": 6461,
-              "parent_id": 5877,
-              "type": "Group::AbteilungsGremium",
-              "name": "Rotte El Poco Loco",
-              "committees": []
-            },
-            {
-              "id": 5880,
-              "parent_id": 5877,
-              "type": "Group::AbteilungsGremium",
-              "name": "Rotte Nagelpalme",
-              "committees": []
-            },
-            {
-              "id": 5878,
-              "parent_id": 5877,
-              "type": "Group::AbteilungsGremium",
-              "name": "Rotte HäH?",
-              "committees": []
-            }
-          ]
-        },
-        {
-          "id": 5798,
-          "parent_id": 5424,
-          "type": "Group::AbteilungsGremium",
-          "name": "Korpsrat",
-          "committees": []
-        },
-        {
-          "id": 5787,
-          "parent_id": 5424,
-          "type": "Group::AbteilungsGremium",
-          "name": "Ausgetretene",
-          "committees": []
-        }
-      ]
-    },
-    {
-      "id": 5404,
-      "parent_id": 4691,
-      "type": "Group::Abteilung",
-      "name": "Big Horn Lengnau",
-      "agegroups": [
-        {
-          "id": 11240,
-          "parent_id": 5404,
-          "type": "Group::Biber",
-          "name": "1 Biber",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5515,
-          "parent_id": 5404,
-          "type": "Group::Pio",
-          "name": "4 Pios",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5513,
-          "parent_id": 5404,
-          "type": "Group::Woelfe",
-          "name": "2 Wölfe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5514,
-          "parent_id": 5404,
-          "type": "Group::Pfadi",
-          "name": "3 Pfader",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        }
-      ],
-      "committees": []
-    },
-    {
-      "id": 5402,
-      "parent_id": 4691,
-      "type": "Group::Abteilung",
-      "name": "Adler Aarau",
-      "agegroups": [
-        {
-          "id": 5686,
-          "parent_id": 5402,
-          "type": "Group::Pfadi",
-          "name": "3 Pfadistufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5905,
-          "parent_id": 5402,
-          "type": "Group::Pio",
-          "name": "4 Piostufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5683,
-          "parent_id": 5402,
-          "type": "Group::Woelfe",
-          "name": "2 Wolfstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5679,
-          "parent_id": 5402,
-          "type": "Group::Biber",
-          "name": "1 Biberstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5694,
-          "parent_id": 5402,
-          "type": "Group::AbteilungsRover",
-          "name": "5 Roverstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        }
-      ],
-      "committees": [
-        {
-          "id": 10229,
-          "parent_id": 5402,
-          "type": "Group::AbteilungsGremium",
-          "name": "Passivmitglieder",
-          "committees": []
-        },
-        {
-          "id": 11884,
-          "parent_id": 5402,
-          "type": "Group::AbteilungsGremium",
-          "name": "Heimrat",
-          "committees": []
-        },
-        {
-          "id": 10388,
-          "parent_id": 5402,
-          "type": "Group::AbteilungsGremium",
-          "name": "Fondsleitung",
-          "committees": []
-        },
-        {
-          "id": 8292,
-          "parent_id": 5402,
-          "type": "Group::AbteilungsGremium",
-          "name": "Aktive Leiter",
-          "committees": []
-        },
-        {
-          "id": 11836,
-          "parent_id": 5402,
-          "type": "Group::InternesAbteilungsGremium",
-          "name": "Abteilungsrat",
-          "committees": []
-        },
-        {
-          "id": 5707,
-          "parent_id": 5402,
-          "type": "Group::AbteilungsGremium",
-          "name": "APV",
-          "committees": []
-        }
-      ]
-    },
-    {
-      "id": 4760,
-      "parent_id": 4691,
-      "type": "Group::Abteilung",
-      "name": "St. Peter Nussbaumen",
-      "agegroups": [
-        {
-          "id": 4771,
-          "parent_id": 4760,
-          "type": "Group::Pfadi",
-          "name": "2_Pfadistufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 4772,
-          "parent_id": 4760,
-          "type": "Group::Pio",
-          "name": "3_Piostufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 10149,
-          "parent_id": 4760,
-          "type": "Group::Biber",
-          "name": "0_Biberstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 4773,
-          "parent_id": 4760,
-          "type": "Group::AbteilungsRover",
-          "name": "4_Roverstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 4770,
-          "parent_id": 4760,
-          "type": "Group::Woelfe",
-          "name": "1_Wolfstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        }
-      ],
-      "committees": [
-        {
-          "id": 11532,
-          "parent_id": 4760,
-          "type": "Group::InternesAbteilungsGremium",
-          "name": "APV",
-          "committees": [
-            {
-              "id": 11533,
-              "parent_id": 11532,
-              "type": "Group::InternesAbteilungsGremium",
-              "name": "Ehemalige APV Mitglieder",
-              "committees": []
-            }
-          ]
-        },
-        {
-          "id": 11829,
-          "parent_id": 4760,
-          "type": "Group::InternesAbteilungsGremium",
-          "name": "Ehemalige Leitende und Rover ohne Rollen",
-          "committees": []
-        },
-        {
-          "id": 9877,
-          "parent_id": 4760,
-          "type": "Group::AbteilungsGremium",
-          "name": "Passivmitglieder",
-          "committees": []
-        }
-      ]
-    },
-    {
-      "id": 4697,
-      "parent_id": 4691,
-      "type": "Group::Abteilung",
-      "name": "Rohrdorf Sodales",
-      "agegroups": [
-        {
-          "id": 4699,
-          "parent_id": 4697,
-          "type": "Group::AbteilungsRover",
-          "name": "4 Roverstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5568,
-          "parent_id": 4697,
-          "type": "Group::Pio",
-          "name": "3 Piostufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5531,
-          "parent_id": 4697,
-          "type": "Group::Biber",
-          "name": "0 Biberstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5530,
-          "parent_id": 4697,
-          "type": "Group::Pfadi",
-          "name": "2 Pfadistufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5529,
-          "parent_id": 4697,
-          "type": "Group::Woelfe",
-          "name": "1 Wolfsstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        }
-      ],
-      "committees": [
-        {
-          "id": 10260,
-          "parent_id": 4697,
-          "type": "Group::AbteilungsGremium",
-          "name": "Schnupper-TN",
-          "committees": [
-            {
-              "id": 10262,
-              "parent_id": 10260,
-              "type": "Group::AbteilungsGremium",
-              "name": "1 Bienli-Schnuppis",
-              "committees": []
-            },
-            {
-              "id": 10263,
-              "parent_id": 10260,
-              "type": "Group::AbteilungsGremium",
-              "name": "2 Pfadistufen-Schnuppis",
-              "committees": []
-            },
-            {
-              "id": 10261,
-              "parent_id": 10260,
-              "type": "Group::AbteilungsGremium",
-              "name": "0 Biber-Schnuppis",
-              "committees": []
-            }
-          ]
-        },
-        {
-          "id": 5747,
-          "parent_id": 4697,
-          "type": "Group::AbteilungsGremium",
-          "name": "APV",
-          "committees": []
-        },
-        {
-          "id": 5748,
-          "parent_id": 4697,
-          "type": "Group::AbteilungsGremium",
-          "name": "Ex-Rover",
-          "committees": [
-            {
-              "id": 5750,
-              "parent_id": 5748,
-              "type": "Group::AbteilungsGremium",
-              "name": "Rover mit Hintergrund",
-              "committees": []
-            }
-          ]
-        },
-        {
-          "id": 5752,
-          "parent_id": 4697,
-          "type": "Group::AbteilungsGremium",
-          "name": "Heimverein",
-          "committees": []
-        }
-      ]
-    },
-    {
-      "id": 5420,
-      "parent_id": 4691,
-      "type": "Group::Abteilung",
-      "name": "Pfadi Zofige",
-      "agegroups": [
-        {
-          "id": 5452,
-          "parent_id": 5420,
-          "type": "Group::Pio",
-          "name": "4 Pios",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5450,
-          "parent_id": 5420,
-          "type": "Group::Woelfe",
-          "name": "2 Wölfe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5451,
-          "parent_id": 5420,
-          "type": "Group::Pfadi",
-          "name": "3 Pfadi",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 10268,
-          "parent_id": 5420,
-          "type": "Group::Biber",
-          "name": "1 Biber",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5453,
-          "parent_id": 5420,
-          "type": "Group::AbteilungsRover",
-          "name": "5 Rover",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        }
-      ],
-      "committees": []
-    },
-    {
-      "id": 5422,
-      "parent_id": 4691,
-      "type": "Group::Abteilung",
-      "name": "Rymenzburg Wyna",
-      "agegroups": [
-        {
-          "id": 5658,
-          "parent_id": 5422,
-          "type": "Group::Biber",
-          "name": "0 Bibergruppe Äntliweiher",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5661,
-          "parent_id": 5422,
-          "type": "Group::Woelfe",
-          "name": "1 Wolfsmeute Sioni",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5665,
-          "parent_id": 5422,
-          "type": "Group::Pfadi",
-          "name": "2 Pfadistamm Pegasus",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        }
-      ],
-      "committees": []
-    },
-    {
-      "id": 5406,
-      "parent_id": 4691,
-      "type": "Group::Abteilung",
-      "name": "Burghorn Wettingen",
-      "agegroups": [
-        {
-          "id": 8928,
-          "parent_id": 5406,
-          "type": "Group::Biber",
-          "name": "0 Biberstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5732,
-          "parent_id": 5406,
-          "type": "Group::AbteilungsRover",
-          "name": "4 Roverstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5724,
-          "parent_id": 5406,
-          "type": "Group::Pio",
-          "name": "3 Piostufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5670,
-          "parent_id": 5406,
-          "type": "Group::Woelfe",
-          "name": "1 Wolfsstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5708,
-          "parent_id": 5406,
-          "type": "Group::Pfadi",
-          "name": "2 Pfadistufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        }
-      ],
-      "committees": [
-        {
-          "id": 8786,
-          "parent_id": 5406,
-          "type": "Group::AbteilungsGremium",
-          "name": "Rover/Passiv",
-          "committees": []
-        },
-        {
-          "id": 6919,
-          "parent_id": 5406,
-          "type": "Group::AbteilungsGremium",
-          "name": "Passiv",
-          "committees": []
-        },
-        {
-          "id": 12633,
-          "parent_id": 5406,
-          "type": "Group::AbteilungsGremium",
-          "name": "z_ehemalig Passiv",
-          "committees": []
-        },
-        {
-          "id": 12792,
-          "parent_id": 5406,
-          "type": "Group::AbteilungsGremium",
-          "name": "Heimverein Vorstand",
-          "committees": []
-        }
-      ]
-    },
-    {
-      "id": 5368,
-      "parent_id": 4691,
-      "type": "Group::Abteilung",
-      "name": "Pfadi Sins",
-      "agegroups": [
-        {
-          "id": 5458,
-          "parent_id": 5368,
-          "type": "Group::Woelfe",
-          "name": "1 Wölfe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5459,
-          "parent_id": 5368,
-          "type": "Group::Pfadi",
-          "name": "2 Pfader",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5461,
-          "parent_id": 5368,
-          "type": "Group::Pio",
-          "name": "3 Pios",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 10934,
-          "parent_id": 5368,
-          "type": "Group::AbteilungsRover",
-          "name": "4 Roverstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        }
-      ],
-      "committees": [
-        {
-          "id": 6754,
-          "parent_id": 5368,
-          "type": "Group::AbteilungsGremium",
-          "name": "Ehemalige",
-          "committees": []
-        },
-        {
-          "id": 7843,
-          "parent_id": 5368,
-          "type": "Group::AbteilungsGremium",
-          "name": "Jungwacht Sins",
-          "committees": []
-        },
-        {
-          "id": 6152,
-          "parent_id": 5368,
-          "type": "Group::AbteilungsGremium",
-          "name": "Lagerkinder",
-          "committees": []
-        }
-      ]
-    },
-    {
-      "id": 5416,
-      "parent_id": 4691,
+      "id": 594,
+      "parent_id": 400,
       "type": "Group::Abteilung",
       "name": "St. Georg Aarau",
       "agegroups": [
         {
-          "id": 5989,
-          "parent_id": 5416,
+          "id": 595,
+          "parent_id": 594,
+          "type": "Group::Pfadi",
+          "name": "Pfadistufe",
+          "agegroup_responsibles": [],
+          "agegroup_leaders": [],
+          "agegroup_participants": []
+        },
+        {
+          "id": 635,
+          "parent_id": 594,
+          "type": "Group::Woelfe",
+          "name": "Wolfsstufe",
+          "agegroup_responsibles": [],
+          "agegroup_leaders": [],
+          "agegroup_participants": []
+        },
+        {
+          "id": 654,
+          "parent_id": 594,
           "type": "Group::Biber",
-          "name": "0_Biberstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5988,
-          "parent_id": 5416,
-          "type": "Group::Pfadi",
-          "name": "2_Pfadistufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5964,
-          "parent_id": 5416,
-          "type": "Group::Woelfe",
-          "name": "1_Wolfsstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5972,
-          "parent_id": 5416,
-          "type": "Group::Pio",
-          "name": "3_Piostufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 7286,
-          "parent_id": 5416,
-          "type": "Group::AbteilungsRover",
-          "name": "4_Roverstufe",
+          "name": "biberstufe",
           "agegroup_responsibles": [],
           "agegroup_leaders": [],
           "agegroup_participants": []
         }
       ],
-      "committees": [
-        {
-          "id": 7402,
-          "parent_id": 5416,
-          "type": "Group::AbteilungsGremium",
-          "name": "Weitere",
-          "committees": [
-            {
-              "id": 6889,
-              "parent_id": 7402,
-              "type": "Group::AbteilungsGremium",
-              "name": "4_APV",
-              "committees": []
-            }
-          ]
-        },
-        {
-          "id": 12555,
-          "parent_id": 5416,
-          "type": "Group::AbteilungsGremium",
-          "name": "Bott 26 OK",
-          "committees": []
-        }
-      ]
+      "committees": [],
+      "events": []
     },
     {
-      "id": 5417,
-      "parent_id": 4691,
+      "id": 1538,
+      "parent_id": 400,
       "type": "Group::Abteilung",
-      "name": "St. Georg Safenwil",
+      "name": "Test Abteilung",
       "agegroups": [
         {
-          "id": 5711,
-          "parent_id": 5417,
-          "type": "Group::Woelfe",
-          "name": "1 Wolfsstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5713,
-          "parent_id": 5417,
-          "type": "Group::Pfadi",
-          "name": "2 Pfadistufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5717,
-          "parent_id": 5417,
+          "id": 1762,
+          "parent_id": 1538,
           "type": "Group::AbteilungsRover",
-          "name": "4 Rover",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5716,
-          "parent_id": 5417,
-          "type": "Group::Pio",
-          "name": "3 Piostufe",
+          "name": "Rover",
           "agegroup_responsibles": [],
           "agegroup_leaders": [],
           "agegroup_participants": []
         }
       ],
-      "committees": []
-    },
-    {
-      "id": 11377,
-      "parent_id": 4691,
-      "type": "Group::Abteilung",
-      "name": "Pfasyl Aargau",
-      "agegroups": [],
-      "committees": []
-    },
-    {
-      "id": 5425,
-      "parent_id": 4691,
-      "type": "Group::Abteilung",
-      "name": "PTA Baden",
-      "agegroups": [
-        {
-          "id": 5492,
-          "parent_id": 5425,
-          "type": "Group::AbteilungsRover",
-          "name": "2 Roverstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 12404,
-          "parent_id": 5425,
-          "type": "Group::Woelfe",
-          "name": "3 Schnupperlis",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        }
-      ],
-      "committees": []
-    },
-    {
-      "id": 5403,
-      "parent_id": 4691,
-      "type": "Group::Abteilung",
-      "name": "Baregg Baden",
-      "agegroups": [
-        {
-          "id": 5520,
-          "parent_id": 5403,
-          "type": "Group::AbteilungsRover",
-          "name": "4. Roverstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 7264,
-          "parent_id": 5403,
-          "type": "Group::Biber",
-          "name": "0. Biberstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5517,
-          "parent_id": 5403,
-          "type": "Group::Woelfe",
-          "name": "1. Wolfstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5519,
-          "parent_id": 5403,
-          "type": "Group::Pio",
-          "name": "3. Piostufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5518,
-          "parent_id": 5403,
-          "type": "Group::Pfadi",
-          "name": "2. Pfadistufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        }
-      ],
-      "committees": [
-        {
-          "id": 8884,
-          "parent_id": 5403,
-          "type": "Group::AbteilungsGremium",
-          "name": "5. APV",
-          "committees": [
-            {
-              "id": 12748,
-              "parent_id": 8884,
-              "type": "Group::InternesAbteilungsGremium",
-              "name": "APV Mitglieder",
-              "committees": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 5419,
-      "parent_id": 4691,
-      "type": "Group::Abteilung",
-      "name": "Barracuda Wildegg",
-      "agegroups": [
-        {
-          "id": 5973,
-          "parent_id": 5419,
-          "type": "Group::AbteilungsRover",
-          "name": "4 Rover",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5971,
-          "parent_id": 5419,
-          "type": "Group::Pfadi",
-          "name": "2 Pfadis",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5970,
-          "parent_id": 5419,
-          "type": "Group::Woelfe",
-          "name": "1 Wölfe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        }
-      ],
-      "committees": []
-    },
-    {
-      "id": 5408,
-      "parent_id": 4691,
-      "type": "Group::Abteilung",
-      "name": "Erdmändli Wallbach",
-      "agegroups": [
-        {
-          "id": 5457,
-          "parent_id": 5408,
-          "type": "Group::Pfadi",
-          "name": "2 Pfadistufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5464,
-          "parent_id": 5408,
-          "type": "Group::Pio",
-          "name": "3 Piostufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5456,
-          "parent_id": 5408,
-          "type": "Group::Woelfe",
-          "name": "1 Wolfsstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5467,
-          "parent_id": 5408,
-          "type": "Group::AbteilungsRover",
-          "name": "4 Roverstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        }
-      ],
-      "committees": []
-    },
-    {
-      "id": 5418,
-      "parent_id": 4691,
-      "type": "Group::Abteilung",
-      "name": "Thierstein Stein AG",
-      "agegroups": [
-        {
-          "id": 5524,
-          "parent_id": 5418,
-          "type": "Group::Woelfe",
-          "name": "1 Wolfsstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5525,
-          "parent_id": 5418,
-          "type": "Group::Pfadi",
-          "name": "2 Pfadistufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5528,
-          "parent_id": 5418,
-          "type": "Group::AbteilungsRover",
-          "name": "4 Roverstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        }
-      ],
-      "committees": [
-        {
-          "id": 7113,
-          "parent_id": 5418,
-          "type": "Group::AbteilungsGremium",
-          "name": "7 Leiter aktiv",
-          "committees": []
-        },
-        {
-          "id": 9852,
-          "parent_id": 5418,
-          "type": "Group::AbteilungsGremium",
-          "name": "Lager_Küche",
-          "committees": []
-        },
-        {
-          "id": 8291,
-          "parent_id": 5418,
-          "type": "Group::AbteilungsGremium",
-          "name": "8 Ehemalige Leiter",
-          "committees": []
-        }
-      ]
-    },
-    {
-      "id": 5412,
-      "parent_id": 4691,
-      "type": "Group::Abteilung",
-      "name": "Alpha Centauri ",
-      "agegroups": [
-        {
-          "id": 5465,
-          "parent_id": 5412,
-          "type": "Group::Pfadi",
-          "name": "2 Pfadistufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5476,
-          "parent_id": 5412,
-          "type": "Group::Pio",
-          "name": "3 Piostufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 8515,
-          "parent_id": 5412,
-          "type": "Group::Biber",
-          "name": "0 Biberstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5462,
-          "parent_id": 5412,
-          "type": "Group::Woelfe",
-          "name": "1 Wolfstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        }
-      ],
-      "committees": [
-        {
-          "id": 12288,
-          "parent_id": 5412,
-          "type": "Group::AbteilungsGremium",
-          "name": "Roverstufe *die Junge*",
-          "committees": []
-        },
-        {
-          "id": 8942,
-          "parent_id": 5412,
-          "type": "Group::AbteilungsGremium",
-          "name": "AltPfaderVerein",
-          "committees": []
-        },
-        {
-          "id": 12286,
-          "parent_id": 5412,
-          "type": "Group::AbteilungsGremium",
-          "name": "Roverstufe *die Alte*",
-          "committees": []
-        },
-        {
-          "id": 11473,
-          "parent_id": 5412,
-          "type": "Group::InternesAbteilungsGremium",
-          "name": "Heimverein",
-          "committees": []
-        },
-        {
-          "id": 6375,
-          "parent_id": 5412,
-          "type": "Group::AbteilungsGremium",
-          "name": "Ehemalige",
-          "committees": []
-        },
-        {
-          "id": 7793,
-          "parent_id": 5412,
-          "type": "Group::AbteilungsGremium",
-          "name": "Abteilungskomitee",
-          "committees": []
-        }
-      ]
-    },
-    {
-      "id": 4698,
-      "parent_id": 4691,
-      "type": "Group::Abteilung",
-      "name": "Rohrdorf Heitersberg",
-      "agegroups": [
-        {
-          "id": 5366,
-          "parent_id": 4698,
-          "type": "Group::Woelfe",
-          "name": "1 Wolfstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5367,
-          "parent_id": 4698,
-          "type": "Group::Pfadi",
-          "name": "2 Pfadistufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5488,
-          "parent_id": 4698,
-          "type": "Group::Pio",
-          "name": "3 Piostufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5485,
-          "parent_id": 4698,
-          "type": "Group::Biber",
-          "name": "0 Biberstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5491,
-          "parent_id": 4698,
-          "type": "Group::AbteilungsRover",
-          "name": "4 Roverstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        }
-      ],
-      "committees": [
-        {
-          "id": 5744,
-          "parent_id": 4698,
-          "type": "Group::AbteilungsGremium",
-          "name": "Ex-Rover",
-          "committees": [
-            {
-              "id": 5745,
-              "parent_id": 5744,
-              "type": "Group::AbteilungsGremium",
-              "name": "Rover mit Hintergrund",
-              "committees": []
-            }
-          ]
-        },
-        {
-          "id": 6666,
-          "parent_id": 4698,
-          "type": "Group::AbteilungsGremium",
-          "name": "Ex-Leiter",
-          "committees": []
-        },
-        {
-          "id": 10264,
-          "parent_id": 4698,
-          "type": "Group::AbteilungsGremium",
-          "name": "Schnupper-TN",
-          "committees": [
-            {
-              "id": 10267,
-              "parent_id": 10264,
-              "type": "Group::AbteilungsGremium",
-              "name": "2 Pfadistufen-Schnuppis",
-              "committees": []
-            },
-            {
-              "id": 10266,
-              "parent_id": 10264,
-              "type": "Group::AbteilungsGremium",
-              "name": "1 Wölfli-Schnuppis",
-              "committees": []
-            },
-            {
-              "id": 10265,
-              "parent_id": 10264,
-              "type": "Group::AbteilungsGremium",
-              "name": "0 Biber-Schnuppis",
-              "committees": []
-            }
-          ]
-        },
-        {
-          "id": 5751,
-          "parent_id": 4698,
-          "type": "Group::AbteilungsGremium",
-          "name": "Heimverein",
-          "committees": []
-        },
-        {
-          "id": 5746,
-          "parent_id": 4698,
-          "type": "Group::AbteilungsGremium",
-          "name": "APV",
-          "committees": []
-        }
-      ]
-    },
-    {
-      "id": 5415,
-      "parent_id": 4691,
-      "type": "Group::Abteilung",
-      "name": "Pfadi Wohle",
-      "agegroups": [
-        {
-          "id": 5455,
-          "parent_id": 5415,
-          "type": "Group::Biber",
-          "name": "0 Biberstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5463,
-          "parent_id": 5415,
-          "type": "Group::Woelfe",
-          "name": "1 Wolfsstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 11322,
-          "parent_id": 5415,
-          "type": "Group::Pfadi",
-          "name": "2 Pfadistufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5473,
-          "parent_id": 5415,
-          "type": "Group::Pio",
-          "name": "3 Piosstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5475,
-          "parent_id": 5415,
-          "type": "Group::AbteilungsRover",
-          "name": "4 Roverstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        }
-      ],
-      "committees": [
-        {
-          "id": 11965,
-          "parent_id": 5415,
-          "type": "Group::AbteilungsGremium",
-          "name": "Merch",
-          "committees": []
-        },
-        {
-          "id": 7265,
-          "parent_id": 5415,
-          "type": "Group::AbteilungsGremium",
-          "name": "5 Heimverein (Altpfadfinder-Stiftung)",
-          "committees": []
-        },
-        {
-          "id": 5851,
-          "parent_id": 5415,
-          "type": "Group::AbteilungsGremium",
-          "name": "Prov. Anmeldungen (Alle Personen als \"Mitglieder\" erfassen, nicht als \"Leitung\")",
-          "committees": []
-        },
-        {
-          "id": 8529,
-          "parent_id": 5415,
-          "type": "Group::AbteilungsGremium",
-          "name": "6 Team Integration",
-          "committees": []
-        },
-        {
-          "id": 5796,
-          "parent_id": 5415,
-          "type": "Group::AbteilungsGremium",
-          "name": "5 Altpfaderverein",
-          "committees": []
-        },
-        {
-          "id": 7705,
-          "parent_id": 5415,
-          "type": "Group::AbteilungsGremium",
-          "name": "6 Abteilungszeitung",
-          "committees": []
-        },
-        {
-          "id": 11328,
-          "parent_id": 5415,
-          "type": "Group::AbteilungsGremium",
-          "name": "5 Pfadiheim 2025",
-          "committees": []
-        }
-      ]
-    },
-    {
-      "id": 5407,
-      "parent_id": 4691,
-      "type": "Group::Abteilung",
-      "name": "Pfadi Schöftland Diana von May",
-      "agegroups": [
-        {
-          "id": 5685,
-          "parent_id": 5407,
-          "type": "Group::AbteilungsRover",
-          "name": "4 Roverstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5672,
-          "parent_id": 5407,
-          "type": "Group::Pio",
-          "name": "3 Piostufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5666,
-          "parent_id": 5407,
-          "type": "Group::Pfadi",
-          "name": "2 Pfadistufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5655,
-          "parent_id": 5407,
-          "type": "Group::Woelfe",
-          "name": "1 Wolfsstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 7850,
-          "parent_id": 5407,
-          "type": "Group::Biber",
-          "name": "0 Biberstufe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        }
-      ],
-      "committees": [
-        {
-          "id": 5950,
-          "parent_id": 5407,
-          "type": "Group::AbteilungsGremium",
-          "name": "Passivmitglieder",
-          "committees": []
-        },
-        {
-          "id": 5692,
-          "parent_id": 5407,
-          "type": "Group::AbteilungsGremium",
-          "name": "APV",
-          "committees": [
-            {
-              "id": 7857,
-              "parent_id": 5692,
-              "type": "Group::AbteilungsGremium",
-              "name": "Aktive Leiter 18-23",
-              "committees": []
-            }
-          ]
-        },
-        {
-          "id": 9100,
-          "parent_id": 5407,
-          "type": "Group::AbteilungsGremium",
-          "name": "Aktivmitglieder",
-          "committees": []
-        }
-      ]
-    },
-    {
-      "id": 5421,
-      "parent_id": 4691,
-      "type": "Group::Abteilung",
-      "name": "Rymenzburg Kulm",
-      "agegroups": [
-        {
-          "id": 5675,
-          "parent_id": 5421,
-          "type": "Group::Woelfe",
-          "name": "1. Wölfe",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5678,
-          "parent_id": 5421,
-          "type": "Group::Pfadi",
-          "name": "2. Pfadi",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5687,
-          "parent_id": 5421,
-          "type": "Group::AbteilungsRover",
-          "name": "4. Leitende",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        },
-        {
-          "id": 5667,
-          "parent_id": 5421,
-          "type": "Group::Biber",
-          "name": "0. Biber",
-          "agegroup_responsibles": [],
-          "agegroup_leaders": [],
-          "agegroup_participants": []
-        }
-      ],
-      "committees": [
-        {
-          "id": 8389,
-          "parent_id": 5421,
-          "type": "Group::AbteilungsGremium",
-          "name": "Rover/APV Pfadi Kulm (Gremium)",
-          "committees": []
-        }
-      ]
+      "committees": [],
+      "events": []
     }
   ],
   "committees": [
     {
-      "id": 5548,
-      "parent_id": 4691,
+      "id": 593,
+      "parent_id": 400,
       "type": "Group::KantonalesGremium",
-      "name": "1 Vorstand",
-      "committees": [
-        {
-          "id": 5547,
-          "parent_id": 5548,
-          "type": "Group::KantonalesGremium",
-          "name": "Krisenteam",
-          "committees": [
-            {
-              "id": 5962,
-              "parent_id": 5547,
-              "type": "Group::KantonalesGremium",
-              "name": "Erweitertes Krisenteam",
-              "committees": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 6002,
-      "parent_id": 4691,
-      "type": "Group::KantonalesGremium",
-      "name": "3 Verschiedene",
-      "committees": [
-        {
-          "id": 6143,
-          "parent_id": 6002,
-          "type": "Group::KantonalesGremium",
-          "name": "Coachs",
-          "committees": [
-            {
-              "id": 10140,
-              "parent_id": 6143,
-              "type": "Group::KantonalesGremium",
-              "name": "Liste Krisencoachs",
-              "committees": []
-            }
-          ]
-        },
-        {
-          "id": 9908,
-          "parent_id": 6002,
-          "type": "Group::KantonalesGremium",
-          "name": "Pfaditechnikmodul",
-          "committees": []
-        },
-        {
-          "id": 11247,
-          "parent_id": 6002,
-          "type": "Group::InternesKantonalesGremium",
-          "name": "Externe",
-          "committees": []
-        },
-        {
-          "id": 10474,
-          "parent_id": 6002,
-          "type": "Group::KantonalesGremium",
-          "name": "Projekte",
-          "committees": [
-            {
-              "id": 10475,
-              "parent_id": 10474,
-              "type": "Group::KantonalesGremium",
-              "name": "Aktivitätenvorschläge PT",
-              "committees": []
-            }
-          ]
-        },
-        {
-          "id": 5852,
-          "parent_id": 6002,
-          "type": "Group::KantonalesGremium",
-          "name": "Kursleitende",
-          "committees": []
-        },
-        {
-          "id": 8399,
-          "parent_id": 6002,
-          "type": "Group::KantonalesGremium",
-          "name": "Sekretariat",
-          "committees": []
-        },
-        {
-          "id": 9217,
-          "parent_id": 6002,
-          "type": "Group::KantonalesGremium",
-          "name": "Ehemalige",
-          "committees": []
-        },
-        {
-          "id": 6410,
-          "parent_id": 6002,
-          "type": "Group::KantonalesGremium",
-          "name": "Diverse",
-          "committees": []
-        },
-        {
-          "id": 8321,
-          "parent_id": 6002,
-          "type": "Group::KantonalesGremium",
-          "name": "Voilà Aargau",
-          "committees": []
-        },
-        {
-          "id": 5951,
-          "parent_id": 6002,
-          "type": "Group::KantonalesGremium",
-          "name": "LKB",
-          "committees": []
-        }
-      ]
-    },
-    {
-      "id": 5539,
-      "parent_id": 4691,
-      "type": "Group::KantonalesGremium",
-      "name": "2 Kantonalleitung",
-      "committees": [
-        {
-          "id": 5543,
-          "parent_id": 5539,
-          "type": "Group::KantonalesGremium",
-          "name": "2 Pfadistufe (PST)",
-          "committees": []
-        },
-        {
-          "id": 5544,
-          "parent_id": 5539,
-          "type": "Group::KantonalesGremium",
-          "name": "Ausbildung (Aargauer Korsorganisations- ond Usbeldigsteam)",
-          "committees": []
-        },
-        {
-          "id": 5780,
-          "parent_id": 5539,
-          "type": "Group::KantonalesGremium",
-          "name": "Information",
-          "committees": [
-            {
-              "id": 5782,
-              "parent_id": 5780,
-              "type": "Group::KantonalesGremium",
-              "name": "Webteam",
-              "committees": []
-            },
-            {
-              "id": 5783,
-              "parent_id": 5780,
-              "type": "Group::KantonalesGremium",
-              "name": "Infoteam",
-              "committees": []
-            }
-          ]
-        },
-        {
-          "id": 5546,
-          "parent_id": 5539,
-          "type": "Group::KantonalesGremium",
-          "name": "Betreuung",
-          "committees": []
-        },
-        {
-          "id": 10292,
-          "parent_id": 5539,
-          "type": "Group::KantonalesGremium",
-          "name": "AL-Gremium",
-          "committees": []
-        },
-        {
-          "id": 5540,
-          "parent_id": 5539,
-          "type": "Group::KantonalesGremium",
-          "name": "1 Wolfsstufe (WUDU)",
-          "committees": []
-        },
-        {
-          "id": 7337,
-          "parent_id": 5539,
-          "type": "Group::KantonalesGremium",
-          "name": "Integration (Topf )",
-          "committees": []
-        },
-        {
-          "id": 5952,
-          "parent_id": 5539,
-          "type": "Group::KantonalesGremium",
-          "name": "0 Biberstufe (BiPA)",
-          "committees": []
-        },
-        {
-          "id": 6711,
-          "parent_id": 5539,
-          "type": "Group::KantonalesGremium",
-          "name": "MAIN",
-          "committees": []
-        },
-        {
-          "id": 10624,
-          "parent_id": 5539,
-          "type": "Group::KantonalesGremium",
-          "name": "Wasserzunft",
-          "committees": []
-        },
-        {
-          "id": 5541,
-          "parent_id": 5539,
-          "type": "Group::KantonalesGremium",
-          "name": "3 Piostufe (PioLetti)",
-          "committees": []
-        },
-        {
-          "id": 12396,
-          "parent_id": 5539,
-          "type": "Group::KantonalesGremium",
-          "name": "Umwelt",
-          "committees": []
-        },
-        {
-          "id": 5542,
-          "parent_id": 5539,
-          "type": "Group::KantonalesGremium",
-          "name": "4 Roverstufe (Staar)",
-          "committees": []
-        }
-      ]
+      "name": "Krisenteam",
+      "committees": []
     }
   ],
-  "regions": []
+  "regions": [
+    {
+      "id": 394,
+      "parent_id": 400,
+      "type": "Group::Region",
+      "name": "Region 1",
+      "scout_groups": [
+        {
+          "id": 392,
+          "parent_id": 394,
+          "type": "Group::Abteilung",
+          "name": "Abteilung Hering",
+          "agegroups": [
+            {
+              "id": 395,
+              "parent_id": 392,
+              "type": "Group::Biber",
+              "name": "Biber",
+              "agegroup_responsibles": [],
+              "agegroup_leaders": [],
+              "agegroup_participants": []
+            },
+            {
+              "id": 455,
+              "parent_id": 392,
+              "type": "Group::AbteilungsRover",
+              "name": "Rover",
+              "agegroup_responsibles": [],
+              "agegroup_leaders": [],
+              "agegroup_participants": []
+            },
+            {
+              "id": 483,
+              "parent_id": 392,
+              "type": "Group::Woelfe",
+              "name": "Wölfe",
+              "agegroup_responsibles": [],
+              "agegroup_leaders": [],
+              "agegroup_participants": []
+            },
+            {
+              "id": 396,
+              "parent_id": 392,
+              "type": "Group::Pfadi",
+              "name": "Pfadi",
+              "agegroup_responsibles": [],
+              "agegroup_leaders": [],
+              "agegroup_participants": []
+            }
+          ],
+          "committees": [],
+          "events": []
+        },
+        {
+          "id": 732,
+          "parent_id": 394,
+          "type": "Group::Abteilung",
+          "name": "Groupe Sardine",
+          "agegroups": [
+            {
+              "id": 733,
+              "parent_id": 732,
+              "type": "Group::Biber",
+              "name": "Castors Sardine",
+              "agegroup_responsibles": [],
+              "agegroup_leaders": [],
+              "agegroup_participants": []
+            },
+            {
+              "id": 734,
+              "parent_id": 732,
+              "type": "Group::Woelfe",
+              "name": "Louveteaux Sardine",
+              "agegroup_responsibles": [],
+              "agegroup_leaders": [],
+              "agegroup_participants": []
+            },
+            {
+              "id": 735,
+              "parent_id": 732,
+              "type": "Group::Pfadi",
+              "name": "Eclaireurs Sardine",
+              "agegroup_responsibles": [],
+              "agegroup_leaders": [],
+              "agegroup_participants": []
+            },
+            {
+              "id": 736,
+              "parent_id": 732,
+              "type": "Group::Pio",
+              "name": "Picos Sardine",
+              "agegroup_responsibles": [],
+              "agegroup_leaders": [],
+              "agegroup_participants": []
+            },
+            {
+              "id": 737,
+              "parent_id": 732,
+              "type": "Group::AbteilungsRover",
+              "name": "Routiers Sardine",
+              "agegroup_responsibles": [],
+              "agegroup_leaders": [],
+              "agegroup_participants": []
+            }
+          ],
+          "committees": [],
+          "events": []
+        },
+        {
+          "id": 738,
+          "parent_id": 394,
+          "type": "Group::Abteilung",
+          "name": "Sezione Sardina",
+          "agegroups": [
+            {
+              "id": 739,
+              "parent_id": 738,
+              "type": "Group::Biber",
+              "name": "Castoro",
+              "agegroup_responsibles": [],
+              "agegroup_leaders": [],
+              "agegroup_participants": []
+            },
+            {
+              "id": 742,
+              "parent_id": 738,
+              "type": "Group::Pio",
+              "name": "Pionieri",
+              "agegroup_responsibles": [],
+              "agegroup_leaders": [],
+              "agegroup_participants": []
+            },
+            {
+              "id": 743,
+              "parent_id": 738,
+              "type": "Group::AbteilungsRover",
+              "name": "Rover",
+              "agegroup_responsibles": [],
+              "agegroup_leaders": [],
+              "agegroup_participants": []
+            },
+            {
+              "id": 740,
+              "parent_id": 738,
+              "type": "Group::Woelfe",
+              "name": "Lupetti",
+              "agegroup_responsibles": [],
+              "agegroup_leaders": [],
+              "agegroup_participants": []
+            },
+            {
+              "id": 741,
+              "parent_id": 738,
+              "type": "Group::Pfadi",
+              "name": "Esploratori",
+              "agegroup_responsibles": [],
+              "agegroup_leaders": [],
+              "agegroup_participants": []
+            }
+          ],
+          "committees": [],
+          "events": []
+        }
+      ],
+      "committees": [],
+      "agegroups": [],
+      "events": []
+    },
+    {
+      "id": 471,
+      "parent_id": 400,
+      "type": "Group::Region",
+      "name": "NORD",
+      "scout_groups": [],
+      "committees": [],
+      "agegroups": [],
+      "events": []
+    },
+    {
+      "id": 401,
+      "parent_id": 400,
+      "type": "Group::Region",
+      "name": "Region Baden",
+      "scout_groups": [
+        {
+          "id": 1771,
+          "parent_id": 401,
+          "type": "Group::Abteilung",
+          "name": "Pfadi Baden",
+          "agegroups": [
+            {
+              "id": 410,
+              "parent_id": 1771,
+              "type": "Group::Pfadi",
+              "name": "Pfadistufe",
+              "agegroup_responsibles": [],
+              "agegroup_leaders": [],
+              "agegroup_participants": []
+            },
+            {
+              "id": 403,
+              "parent_id": 1771,
+              "type": "Group::AbteilungsRover",
+              "name": "Roverstufe",
+              "agegroup_responsibles": [],
+              "agegroup_leaders": [],
+              "agegroup_participants": []
+            },
+            {
+              "id": 411,
+              "parent_id": 1771,
+              "type": "Group::Woelfe",
+              "name": "Wolfsstufe",
+              "agegroup_responsibles": [],
+              "agegroup_leaders": [],
+              "agegroup_participants": []
+            }
+          ],
+          "committees": [],
+          "events": []
+        }
+      ],
+      "committees": [
+        {
+          "id": 1766,
+          "parent_id": 401,
+          "type": "Group::RegionalesGremium",
+          "name": "Gremium",
+          "committees": []
+        }
+      ],
+      "agegroups": [
+        {
+          "id": 1765,
+          "parent_id": 401,
+          "type": "Group::RegionaleRover",
+          "name": "Rover",
+          "agegroup_responsibles": [],
+          "agegroup_leaders": [],
+          "agegroup_participants": []
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": 404,
+      "parent_id": 400,
+      "type": "Group::Region",
+      "name": "Region Brugg",
+      "scout_groups": [
+        {
+          "id": 405,
+          "parent_id": 404,
+          "type": "Group::Abteilung",
+          "name": "Pfadi Brugg",
+          "agegroups": [
+            {
+              "id": 413,
+              "parent_id": 405,
+              "type": "Group::AbteilungsRover",
+              "name": "Roverstufe",
+              "agegroup_responsibles": [],
+              "agegroup_leaders": [],
+              "agegroup_participants": []
+            },
+            {
+              "id": 412,
+              "parent_id": 405,
+              "type": "Group::Biber",
+              "name": "Biberstufe",
+              "agegroup_responsibles": [],
+              "agegroup_leaders": [],
+              "agegroup_participants": []
+            }
+          ],
+          "committees": [],
+          "events": []
+        }
+      ],
+      "committees": [],
+      "agegroups": [],
+      "events": []
+    }
+  ],
+  "events": [
+    {
+      "id": "2688",
+      "short_name": "AG-111-26",
+      "type": "Event::Course",
+      "name": "AG-111-26"
+    }
+  ]
 }

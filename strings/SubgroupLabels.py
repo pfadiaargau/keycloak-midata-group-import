@@ -3,4 +3,5 @@ CATEGORY_LABELS = {
     "scout_groups": "Abteilungen",
     "agegroups": "Stufen",
     "committees": "Gremien",
+    "events": "Anlässe"
 }

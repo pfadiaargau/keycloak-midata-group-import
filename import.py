@@ -13,6 +13,10 @@ KEYCLOAK_GROUP_ROOT = os.getenv("KEYCLOAK_GROUP_ROOT", "midata")
 
 MIDATA_ROOT_GROUP_ID = int(os.getenv("MIDATA_ROOT_GROUP_ID", 4691))
 
+events_to_sync = [
+    {"group_id": 400, "event_id": 2688, "short_name": "AG-111-26"},
+]
+
 
 def main():
     start_time = os.times()
@@ -106,6 +110,7 @@ def main():
             group["scout_groups"] = []
             group["committees"] = []
             group["regions"] = []
+            # group["events"] = get_group_events_info(group["id"], MIDATA_SERVICE)
 
             for child in group.get("children", []):
                 if is_committee(child):
@@ -114,12 +119,15 @@ def main():
                     group["scout_groups"].append(child)
                 elif child["type"] == GroupType.REGION.value:
                     group["regions"].append(child)
+                    
+            
 
         # --- REGION ---
         elif t == GroupType.REGION.value:
             group["scout_groups"] = []
             group["committees"] = []
             group["agegroups"] = []
+            # group["events"] = get_group_events_info(group["id"], MIDATA_SERVICE)
 
             for child in group.get("children", []):
                 if is_committee(child):
@@ -133,6 +141,7 @@ def main():
         elif t == GroupType.ABTEILUNG.value:
             group["agegroups"] = []
             group["committees"] = []
+            # group["events"] = get_group_events_info(group["id"], MIDATA_SERVICE)
 
             for child in group.get("children", []):
                 if is_committee(child):
@@ -305,6 +314,28 @@ def check_env_variables():
         print(f"Error: Missing environment variables: {', '.join(missing_vars)}")
         return False
     return True
+
+def get_group_events_info(group_id, midata_service: MidataAPIService):
+    try:
+        group_events_to_sync = [e for e in events_to_sync if e["group_id"] == group_id]
+        if group_events_to_sync:
+            events_info = []
+            for event in group_events_to_sync:
+                event_info = midata_service.get_event_info(event["event_id"])
+                if event_info:
+                    events_info.append({
+                        "id": event_info["id"],
+                        "short_name": event["short_name"],
+                        "type": event_info.get("attributes", {}).get("type"),
+                        "name": event["short_name"]
+                    })
+                else:
+                    print(f"Error fetching info for event ID {event['event_id']}")
+            return events_info
+        return []
+    except Exception as e:
+        print(f"Error fetching events for group ID {group_id}: {e}")
+        return []
 
 if __name__ == "__main__":
     if check_env_variables():
