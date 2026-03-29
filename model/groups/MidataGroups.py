@@ -39,3 +39,7 @@ class MidataGroups(Enum):
     EHEMALIGE = "Group::Ehemalige"
     ELTERNRAT = "Group::Elternrat"
     ERZIEHUNGSBERECHTIGTEN_GREMIUM = "Group::ErziehungsberechtigtenGremium"
+    
+    # Silverscouts
+    SILVERSCOUTS = "Group::Silverscouts"
+    SILVERSCOUTS_REGION = "Group::SilverscoutsRegion"

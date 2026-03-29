@@ -7,6 +7,7 @@ from model.roles.bund import (BundesGremiumRoles, BundesKommissionRoles,
 from model.roles.kanton import (InternesKantonalesGremiumRoles,
                                 KantonaleKommissionRoles,
                                 KantonalesGremiumRoles, KantonalverbandRoles)
+from model.roles.other import RootRoles
 from model.roles.region import (InternesRegionalesGremiumRoles,
                                 RegionaleKommissionRoles, RegionaleRoverRoles,
                                 RegionalesGremiumRoles)
@@ -38,6 +39,21 @@ def build_agegroup_definition(
                     MidataGroups.INTERNES_ABTEILUNGS_GREMIUM.value,
                 }),
             ),
+            
+            ChildCategoryDefinition(
+                key="agegroups",
+                label="Stufen",
+                allowed_types=frozenset({
+                    MidataGroups.BIBER.value,
+                    MidataGroups.WOELFE.value,
+                    MidataGroups.PFADI.value,
+                    MidataGroups.PIO.value,
+                    MidataGroups.ABTEILUNGS_ROVER.value,
+                    MidataGroups.PTA.value,
+                }),
+                create_folder_in_keycloak=False,
+                stack_same_category=True,
+            ),
         ),
     )
     
@@ -55,7 +71,9 @@ def build_committee_definition(
             ChildCategoryDefinition(
                 key="committees",
                 label="Gremien",
-                allowed_types=allowed_types
+                allowed_types=allowed_types,
+                create_folder_in_keycloak=False,
+                stack_same_category=True,
             ),
         }),
     )
@@ -129,7 +147,7 @@ GROUP_DEFINITIONS = {
                     MidataGroups.INTERNES_KANTONALES_GREMIUM.value,
                 }),
                 create_folder_in_keycloak=True,
-                stack_same_category=False,
+                stack_same_category=True,
             ),
             ChildCategoryDefinition(
                 key="comissions",
@@ -138,7 +156,7 @@ GROUP_DEFINITIONS = {
                     MidataGroups.KANTONALE_KOMMISSION.value,
                 }),
                 create_folder_in_keycloak=True,
-                stack_same_category=False,
+                stack_same_category=True,
             ),
             ChildCategoryDefinition(
                 key="regions",
@@ -295,6 +313,51 @@ GROUP_DEFINITIONS = {
         ),
     ),
     
+    MidataGroups.ROOT.value: GroupTypeDefinition(
+        type_key=MidataGroups.ROOT.value,
+        display_name="Root",
+        allowed_roles=GROUP_TYPE_ROLES.get(MidataGroups.ROOT.value, frozenset()),
+        default_roles=frozenset({
+            RootRoles.ADMIN.value,
+        }),
+        children=(
+            ChildCategoryDefinition(
+                key="bund",
+                label="Bund",
+                allowed_types=frozenset({
+                    MidataGroups.BUND.value,
+                }),
+                create_folder_in_keycloak=True,
+            ),
+            
+            ChildCategoryDefinition(
+                key="silverscouts",
+                label="Silverscouts",
+                allowed_types=frozenset({
+                    MidataGroups.SILVERSCOUTS.value,
+                }),
+                create_folder_in_keycloak=True,
+            ),
+        ),
+    ),
+    
+    MidataGroups.AUSBILDUNGSKOMMISSION.value: GroupTypeDefinition(
+        type_key=MidataGroups.AUSBILDUNGSKOMMISSION.value,
+        display_name="Ausbildungskommission",
+        allowed_roles=GROUP_TYPE_ROLES.get(MidataGroups.AUSBILDUNGSKOMMISSION.value, frozenset()),
+        default_roles=frozenset(),
+        children=(
+            ChildCategoryDefinition(
+                key="commissions",
+                label="Kommissionen",
+                allowed_types=frozenset({
+                    MidataGroups.AUSBILDUNGSKOMMISSION.value,
+                }),
+                create_folder_in_keycloak=False,
+                stack_same_category=True,
+            ),
+        ),
+    ),
     MidataGroups.BUNDES_KOMMISSION.value: GroupTypeDefinition(
         type_key=MidataGroups.BUNDES_KOMMISSION.value,
         display_name="Bundeskommission",
@@ -398,5 +461,28 @@ GROUP_DEFINITIONS = {
         allowed_types=frozenset({
             MidataGroups.INTERNES_ABTEILUNGS_GREMIUM.value,
         }),
+    ),
+    
+    MidataGroups.SILVERSCOUTS.value: GroupTypeDefinition(
+        type_key=MidataGroups.SILVERSCOUTS.value,
+        display_name="Silverscouts",
+        allowed_roles=GROUP_TYPE_ROLES.get(MidataGroups.SILVERSCOUTS.value, frozenset()),
+        default_roles=frozenset(),
+        children=(
+            ChildCategoryDefinition(
+                key="regions",
+                label="Regionen",
+                allowed_types=frozenset({
+                    MidataGroups.SILVERSCOUTS_REGION.value,
+                }),
+            ),
+        ),
+    ),
+    MidataGroups.SILVERSCOUTS_REGION.value: GroupTypeDefinition(
+        type_key=MidataGroups.SILVERSCOUTS_REGION.value,
+        display_name="Silverscouts Region",
+        allowed_roles=GROUP_TYPE_ROLES.get(MidataGroups.SILVERSCOUTS_REGION.value, frozenset()),
+        default_roles=frozenset(),
+        children=(),
     ),
 }
