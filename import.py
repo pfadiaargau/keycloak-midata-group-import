@@ -523,10 +523,10 @@ def main() -> None:
         # Optional Events pro Root-Knoten oder rekursiv später einbauen
         categorized_roots.append(categorized_tree)
 
-    # write_json_file("detailed_hierarchy.json", raw_roots)
-    # write_json_file("categorized_groups.json", categorized_roots)
+    write_json_file("detailed_hierarchy.json", raw_roots)
+    write_json_file("categorized_groups.json", categorized_roots)
 
-    # log_info(f"Wrote detailed_hierarchy.json and categorized_groups.json ({now_s(start_time)})")
+    log_info(f"Wrote detailed_hierarchy.json and categorized_groups.json ({now_s(start_time)})")
 
     # Keycloak Token laden
     keycloak_service.token = keycloak_service.get_token()
