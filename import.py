@@ -37,7 +37,8 @@ ROLE_SUBGROUP_NAME = "Rollen"
 
 # Optional: Events
 EVENTS_TO_SYNC = [
-    {"group_id": 4691, "event_id": 31599, "short_name": "AG251-26"},
+    # {"group_id": 4691, "event_id": 31599, "short_name": "AG251-26"},
+    # {"group_id": 400, "event_id": 2778, "short_name": "AG333-26"}
 ]
 
 # Override pro konkreter MIDATA-Gruppe
