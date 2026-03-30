@@ -7,14 +7,21 @@ from typing import Any
 import requests
 from dotenv import load_dotenv
 
+from model.EventDefinitions import EVENT_DEFINITIONS
 from model.GroupDefinitions import GROUP_DEFINITIONS
 from model.groups.MidataGroups import MidataGroups
 from model.roles.abteilung import AbteilungRoles
+from model.types.EventTypeDefinition import EventTypeDefinition
 from model.types.GroupTypeDefinition import GroupTypeDefinition
 from services.KeycloakApiService import KeycloakApiService
 from services.MidataApiService import MidataAPIService
 
 load_dotenv()
+
+RECREATE_HIRARCHY = True
+
+RAW_ROOTS_JSON_FILE = "detailed_hierarchy.json"
+CATEGORIZED_ROOTS_JSON_FILE = "categorized_groups.json"
 
 KEYCLOAK_GROUP_ROOT = os.getenv("KEYCLOAK_GROUP_ROOT", "midata")
 
@@ -30,7 +37,7 @@ ROLE_SUBGROUP_NAME = "Rollen"
 
 # Optional: Events
 EVENTS_TO_SYNC = [
-    # {"group_id": 400, "event_id": 2688, "short_name": "AG-111-26"},
+    {"group_id": 4691, "event_id": 31599, "short_name": "AG251-26"},
 ]
 
 # Override pro konkreter MIDATA-Gruppe
@@ -213,6 +220,10 @@ def get_group_definition_or_fallback(group_type: str) -> GroupTypeDefinition:
         children=(),
     )
 
+def get_event_definition(event_type: str | None) -> EventTypeDefinition:
+    if event_type and event_type in EVENT_DEFINITIONS:
+        return EVENT_DEFINITIONS[event_type]
+    return EVENT_DEFINITIONS["default"]
 
 def categorize_group_tree(node: dict[str, Any]) -> dict[str, Any]:
     group_type = node.get("type")
@@ -285,23 +296,57 @@ def get_group_events_info(group_id: int, midata_service: MidataAPIService) -> li
             return []
 
         events_info = []
+
         for event in matching:
-            event_info = midata_service.get_event_info(event["event_id"])
+            event_info = midata_service.get_event_info(event["event_id"], group_id)
             if not event_info:
                 log_warn(f"Could not fetch info for event ID {event['event_id']}")
                 continue
 
-            events_info.append({
-                "id": event_info["id"],
-                "short_name": event["short_name"],
-                "type": event_info.get("attributes", {}).get("type"),
-                "name": event["short_name"],
-            })
-        return events_info
-    except Exception as e:
-        log_error(f"Error fetching events for group ID {group_id}: {e}")
-        return []
+            event_participants = midata_service.get_event_participants(event["event_id"], group_id)
+            if event_participants is None:
+                log_warn(f"Could not fetch participants for event ID {event['event_id']}")
+                event_participants = []
 
+            normalized_participants = []
+            for participant in event_participants:
+                participant_id = participant.get("links", {}).get("person")
+                if participant_id is None:
+                    continue
+
+                participant_roles = sorted({
+                    role.get("type") or role.get("name")
+                    for role in participant.get("roles", [])
+                    if role.get("type") or role.get("name")
+                })
+
+                normalized_participants.append({
+                    "id": participant_id,
+                    "roles": participant_roles,
+                })
+
+            event_type = event_info.get("attributes", {}).get("type", "default") 
+            event_name_from_api = event_info.get("attributes", {}).get("name")
+
+            event_group_name = (
+                event.get("short_name")
+                or event_name_from_api
+                or f"Event {event_info.get('id')}"
+            )
+
+            events_info.append({
+                "id": event_info.get("id"),
+                "type": event_type,
+                "name": event_group_name,
+                "group_id": group_id,
+                "participants": normalized_participants,
+            })
+
+        return events_info
+
+    except Exception as e:
+        log_error(f"import: Error fetching events for group ID {group_id}: {e}")
+        return []
 
 def get_effective_role_groups_for_group(node: dict[str, Any]) -> list[str]:
     group_id = node.get("id")
@@ -379,11 +424,123 @@ def upsert_role_subgroups(
                 f"{node.get('name')} ({node.get('id')})"
             )
 
+def upsert_event_groups(
+    keycloak_service: KeycloakApiService,
+    real_group_id: str,
+    node: dict[str, Any],
+) -> None:
+    events = node.get("events") or []
+    if not events:
+        return
+
+    events_folder_id = keycloak_service.upsert_group(
+        parent_id=real_group_id,
+        name="Anlässe",
+        attributes=KeycloakApiService.kc_attr(
+            node_kind="category",
+            category_key="events",
+        ),
+    )
+
+    if not events_folder_id:
+        log_error(
+            f"Could not create events folder for group "
+            f"{node.get('name')} ({node.get('id')})"
+        )
+        return
+
+    for event in events:
+        event_id = event.get("id")
+        event_name = event.get("name")
+        event_type = event.get("type")
+
+        if event_id is None or not event_name:
+            log_warn(f"Skipping invalid event entry: {event}")
+            continue
+
+        event_definition = get_event_definition(event_type)
+
+        event_group_id = keycloak_service.upsert_group(
+            parent_id=events_folder_id,
+            name=event_name,
+            attributes=KeycloakApiService.kc_attr(
+                node_kind="event",
+                event_id=event_id,
+                event_type=event_type or "default",
+                source_group_id=node.get("id"),
+            ),
+        )
+
+        if not event_group_id:
+            log_warn(
+                f"Could not create event group '{event_name}' "
+                f"for group {node.get('name')} ({node.get('id')})"
+            )
+            continue
+
+        upsert_event_role_categories(
+            keycloak_service=keycloak_service,
+            event_group_id=event_group_id,
+            event=event,
+            event_definition=event_definition,
+        )
+        
+def build_participant_ids_string(participant_ids: list[int]) -> str:
+    seen = set()
+    ordered_ids: list[int] = []
+
+    for pid in participant_ids:
+        if pid is None or pid in seen:
+            continue
+        seen.add(pid)
+        ordered_ids.append(pid)
+
+    return ",".join(str(pid) for pid in ordered_ids)
+
+def upsert_event_role_categories(
+    keycloak_service: KeycloakApiService,
+    event_group_id: str,
+    event: dict[str, Any],
+    event_definition: EventTypeDefinition,
+) -> None:
+    participants = event.get("participants") or []
+
+    for category in event_definition.categories:
+        category_participant_ids: list[int] = []
+
+        for participant in participants:
+            participant_id = participant.get("id")
+            participant_roles = set(participant.get("roles") or [])
+
+            if participant_id is None:
+                continue
+
+            if participant_roles.intersection(category.event_roles):
+                category_participant_ids.append(participant_id)
+        participant_ids_string = build_participant_ids_string(category_participant_ids)
+
+        category_group_id = keycloak_service.upsert_group(
+            parent_id=event_group_id,
+            name=category.label,
+            attributes=KeycloakApiService.kc_attr(
+                node_kind="category",
+                category_key=category.key,
+                participant_ids=participant_ids_string,
+                event_type=event_definition.type_key,
+            ),
+        )
+
+        if not category_group_id:
+            log_warn(
+                f"Could not create event category '{category.label}' "
+                f"for event {event.get('name')} ({event.get('id')})"
+            )
 
 def import_group_tree_to_keycloak(
     node: dict[str, Any],
     parent_group_id: str,
     keycloak_service: KeycloakApiService,
+    midata_service: MidataAPIService,
 ) -> str | None:
     node_name = node.get("name")
     node_id = node.get("id")
@@ -415,6 +572,12 @@ def import_group_tree_to_keycloak(
 
         # Rollen-Container IMMER erstellen
         upsert_role_subgroups(
+            keycloak_service=keycloak_service,
+            real_group_id=real_group_id,
+            node=node,
+        )
+        
+        upsert_event_groups(
             keycloak_service=keycloak_service,
             real_group_id=real_group_id,
             node=node,
@@ -452,6 +615,7 @@ def import_group_tree_to_keycloak(
                     node=child,
                     parent_group_id=target_parent_id,
                     keycloak_service=keycloak_service,
+                    midata_service=midata_service,
                 )
 
         # unbekannte Kinder optional loggen
@@ -471,6 +635,27 @@ def import_group_tree_to_keycloak(
         )
         return None
 
+def enrich_tree_with_events(
+    node: dict[str, Any],
+    midata_service: MidataAPIService,
+) -> dict[str, Any]:
+    group_id = node.get("id")
+    if group_id is None:
+        return node
+
+    node["events"] = get_group_events_info(group_id, midata_service)
+
+    definition = get_group_definition_or_fallback(node.get("type"))
+    for child_def in definition.children:
+        items = node.get(child_def.key) or []
+        for child in items:
+            enrich_tree_with_events(child, midata_service)
+
+    # unknown_children optional auch mitnehmen
+    for child in node.get("unknown_children") or []:
+        enrich_tree_with_events(child, midata_service)
+
+    return node
 
 def write_json_file(filename: str, data: Any) -> None:
     with open(filename, "w", encoding="utf-8") as f:
@@ -508,25 +693,46 @@ def main() -> None:
     raw_roots: list[dict[str, Any]] = []
     categorized_roots: list[dict[str, Any]] = []
     
-    for root_id in MIDATA_ROOT_GROUP_IDS:
-        root_group = groups_by_id.get(root_id)
-        if not root_group:
-            log_warn(f"Root group with ID {root_id} not found in MIDATA group list. Skipping.")
-            continue
+    build_hierarchy_from_midata = True
+    
+    if not RECREATE_HIRARCHY:
+        log_info(f"Recreate hierarchy is disabled. ({now_s(start_time)})")
+        # Check if the json files exist then load them instead of building the hierarchy from MIDATA
+        if os.path.isfile(RAW_ROOTS_JSON_FILE) and os.path.isfile(CATEGORIZED_ROOTS_JSON_FILE):
+            log_info(f"Loading raw roots from {RAW_ROOTS_JSON_FILE}")
+            with open(RAW_ROOTS_JSON_FILE, "r", encoding="utf-8") as f:
+                raw_roots = json.load(f)
 
-        log_info(f"Building hierarchy for root ID {root_id}")
-        raw_tree = build_raw_tree(root_group, children_by_parent, midata_service)
-        raw_roots.append(raw_tree)
+            log_info(f"Loading categorized roots from {CATEGORIZED_ROOTS_JSON_FILE}")
+            with open(CATEGORIZED_ROOTS_JSON_FILE, "r", encoding="utf-8") as f:
+                categorized_roots = json.load(f)
+            build_hierarchy_from_midata = False
+        else:
+            log_warn(
+                f"Raw roots or categorized roots JSON files not found. Building hierarchy from MIDATA "
+                f"data instead. ({now_s(start_time)})"
+            )
+            build_hierarchy_from_midata = True
+    
+    if build_hierarchy_from_midata:
+        for root_id in MIDATA_ROOT_GROUP_IDS:
+            root_group = groups_by_id.get(root_id)
+            if not root_group:
+                log_warn(f"Root group with ID {root_id} not found in MIDATA group list. Skipping.")
+                continue
 
-        categorized_tree = categorize_group_tree(raw_tree)
+            log_info(f"Building hierarchy for root ID {root_id}")
+            raw_tree = build_raw_tree(root_group, children_by_parent, midata_service)
+            raw_roots.append(raw_tree)
 
-        # Optional Events pro Root-Knoten oder rekursiv später einbauen
-        categorized_roots.append(categorized_tree)
+            categorized_tree = categorize_group_tree(raw_tree)
+            categorized_tree = enrich_tree_with_events(categorized_tree, midata_service)
+            categorized_roots.append(categorized_tree)
 
-    write_json_file("detailed_hierarchy.json", raw_roots)
-    write_json_file("categorized_groups.json", categorized_roots)
+        write_json_file(RAW_ROOTS_JSON_FILE, raw_roots)
+        write_json_file(CATEGORIZED_ROOTS_JSON_FILE, categorized_roots)
 
-    log_info(f"Wrote detailed_hierarchy.json and categorized_groups.json ({now_s(start_time)})")
+        log_info(f"Wrote {RAW_ROOTS_JSON_FILE} and {CATEGORIZED_ROOTS_JSON_FILE} ({now_s(start_time)})")
 
     # Keycloak Token laden
     keycloak_service.token = keycloak_service.get_token()
@@ -537,6 +743,7 @@ def main() -> None:
             node=root,
             parent_group_id=root_kc_id,
             keycloak_service=keycloak_service,
+            midata_service=midata_service,
         )
 
     log_info(f"Import finished ({now_s(start_time)})")
