@@ -6,7 +6,6 @@ from typing import Any
 
 import requests
 from dotenv import load_dotenv
-
 from model.EventDefinitions import EVENT_DEFINITIONS
 from model.GroupDefinitions import GROUP_DEFINITIONS
 from model.groups.MidataGroups import MidataGroups
@@ -18,7 +17,7 @@ from services.MidataApiService import MidataAPIService
 
 load_dotenv()
 
-RECREATE_HIRARCHY = True
+RECREATE_HIRARCHY = False
 
 RAW_ROOTS_JSON_FILE = "detailed_hierarchy.json"
 CATEGORIZED_ROOTS_JSON_FILE = "categorized_groups.json"

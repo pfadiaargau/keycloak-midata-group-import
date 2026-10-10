@@ -37,6 +37,29 @@ class KeycloakApiService:
     def _admin_base(self) -> str:
         return f"{self.keycloak_url}/admin/realms/{self.keycloak_realm}"
 
+    def _request(self, method: str, url: str, *, json_body: dict | None = None, **kwargs):
+        """Make an authenticated request, refreshing the token once after a 401."""
+        headers = self._headers(json=json_body is not None)
+        response = requests.request(
+            method,
+            url,
+            headers=headers,
+            json=json_body,
+            **kwargs,
+        )
+
+        if response.status_code == 401:
+            self.token = self.get_token()
+            response = requests.request(
+                method,
+                url,
+                headers=self._headers(json=json_body is not None),
+                json=json_body,
+                **kwargs,
+            )
+
+        return response
+
     # --------- group attributes helper ---------
 
     @staticmethod
@@ -59,9 +82,9 @@ class KeycloakApiService:
         if search:
             params["search"] = search
 
-        r = requests.get(
+        r = self._request(
+            "GET",
             f"{self._admin_base()}/groups",
-            headers=self._headers(),
             params=params,
             timeout=30,
         )
@@ -69,19 +92,19 @@ class KeycloakApiService:
         return r.json()
 
     def get_group(self, group_id: str) -> dict:
-        r = requests.get(
+        r = self._request(
+            "GET",
             f"{self._admin_base()}/groups/{group_id}",
-            headers=self._headers(),
             timeout=30,
         )
         r.raise_for_status()
         return r.json()
 
     def get_group_children(self, group_id: str) -> list:
-        r = requests.get(
+        r = self._request(
+            "GET",
             f"{self._admin_base()}/groups/{group_id}/children",
             params={"max": 100},
-            headers=self._headers(),
             timeout=30,
         )
         r.raise_for_status()
@@ -98,10 +121,10 @@ class KeycloakApiService:
         else:
             url = f"{self._admin_base()}/groups/{parent_id}/children"
 
-        r = requests.post(
+        r = self._request(
+            "POST",
             url,
-            headers=self._headers(json=True),
-            json=payload,
+            json_body=payload,
             timeout=30,
         )
 
@@ -120,10 +143,10 @@ class KeycloakApiService:
         return created_id
 
     def update_group(self, group_id: str, payload: dict) -> None:
-        r = requests.put(
+        r = self._request(
+            "PUT",
             f"{self._admin_base()}/groups/{group_id}",
-            headers=self._headers(json=True),
-            json=payload,
+            json_body=payload,
             timeout=30,
         )
         r.raise_for_status()

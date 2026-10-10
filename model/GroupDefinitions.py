@@ -7,7 +7,7 @@ from model.roles.bund import (BundesGremiumRoles, BundesKommissionRoles,
 from model.roles.kanton import (InternesKantonalesGremiumRoles,
                                 KantonaleKommissionRoles,
                                 KantonalesGremiumRoles, KantonalverbandRoles)
-from model.roles.other import RootRoles
+from model.roles.other import ElternratRoles, RootRoles
 from model.roles.region import (InternesRegionalesGremiumRoles,
                                 RegionaleKommissionRoles, RegionaleRoverRoles,
                                 RegionalesGremiumRoles)
@@ -19,17 +19,13 @@ from model.types.GroupTypeDefinition import (ChildCategoryDefinition,
 def build_agegroup_definition(
     type_key: str,
     display_name: str,
-    address_role: str,
-    co_lead_role: str,
+    default_roles: frozenset[str],
 ) -> GroupTypeDefinition:
     return GroupTypeDefinition(
         type_key=type_key,
         display_name=display_name,
         allowed_roles=GROUP_TYPE_ROLES.get(type_key, frozenset()),
-        default_roles=frozenset({
-            address_role,
-            co_lead_role,
-        }),
+        default_roles=default_roles,
         children=(
             ChildCategoryDefinition(
                 key="committees",
@@ -133,9 +129,22 @@ GROUP_DEFINITIONS = {
         allowed_roles=GROUP_TYPE_ROLES.get(MidataGroups.KANTONALVERBAND.value, frozenset()),
         default_roles=frozenset({
             KantonalverbandRoles.ADRESSVERWALTUNG.value,
-            KantonalverbandRoles.SEKRETARIAT.value,
+            KantonalverbandRoles.POWER_USER.value,
+            KantonalverbandRoles.COACH.value,
             KantonalverbandRoles.KANTONSLEITUNG.value,
+            KantonalverbandRoles.KASSIER.value,
+            KantonalverbandRoles.MEDIENSPRECHER.value,
             KantonalverbandRoles.PRAESIDIUM.value,
+            KantonalverbandRoles.SEKRETARIAT.value,
+            KantonalverbandRoles.VERANTWORTUNG_AUSBILDUNG.value,
+            KantonalverbandRoles.VERANTWORTUNG_BETREUUNG.value,
+            KantonalverbandRoles.VERANTWORTUNG_BIBERSTUFE.value,
+            KantonalverbandRoles.VERANTWORTUNG_WOLFSTUFE.value,
+            KantonalverbandRoles.VERANTWORTUNG_PFADISTUFE.value,
+            KantonalverbandRoles.VERANTWORTUNG_PIOSTUFE.value,
+            KantonalverbandRoles.VERANTWORTUNG_ROVERSTUFE.value,
+            KantonalverbandRoles.VERANTWORTUNG_PROGRAMM.value,
+            KantonalverbandRoles.VERANTWORTUNG_IT.value,
             KantonalverbandRoles.WEBMASTER.value,
         }),
         children=(
@@ -182,8 +191,22 @@ GROUP_DEFINITIONS = {
         display_name="Abteilung",
         allowed_roles=GROUP_TYPE_ROLES.get(MidataGroups.ABTEILUNG.value, frozenset()),
         default_roles=frozenset({
+            AbteilungRoles.ABTEILUNGSLEITUNG.value,
+            AbteilungRoles.ABTEILUNGSLEITUNG_STV.value,
             AbteilungRoles.ADRESSVERWALTUNG.value,
+            AbteilungRoles.COACH.value,
+            AbteilungRoles.KASSIER.value,
+            AbteilungRoles.MATERIALWART.value,
+            AbteilungRoles.PRAESES.value,
             AbteilungRoles.SEKRETARIAT.value,
+            AbteilungRoles.STUFENLEITUNG_BIBER.value,
+            AbteilungRoles.STUFENLEITUNG_WOELFE.value,
+            AbteilungRoles.STUFENLEITUNG_PFADI.value,
+            AbteilungRoles.STUFENLEITUNG_PIO.value,
+            AbteilungRoles.STUFENLEITUNG_ROVER.value,
+            AbteilungRoles.STUFENLEITUNG_PTA.value,
+            AbteilungRoles.VERANTWORTUNG_IT.value,
+            AbteilungRoles.WEBMASTER.value,
         }),
         children=(
                 ChildCategoryDefinition(
@@ -192,6 +215,15 @@ GROUP_DEFINITIONS = {
                     allowed_types=frozenset({
                         MidataGroups.ABTEILUNGS_GREMIUM.value,
                         MidataGroups.INTERNES_ABTEILUNGS_GREMIUM.value,
+                    }),
+                    create_folder_in_keycloak=True,
+                    stack_same_category=True,
+                ),
+                ChildCategoryDefinition(
+                    key="elternrat",
+                    label="Elternrat",
+                    allowed_types=frozenset({
+                        MidataGroups.ELTERNRAT.value,
                     }),
                     create_folder_in_keycloak=True,
                     stack_same_category=True,
@@ -216,38 +248,64 @@ GROUP_DEFINITIONS = {
     MidataGroups.BIBER.value: build_agegroup_definition(
         type_key=MidataGroups.BIBER.value,
         display_name="Biber",
-        address_role=BiberRoles.ADRESSVERWALTUNG.value,
-        co_lead_role=BiberRoles.MITLEITUNG.value,
+        default_roles=frozenset({
+            BiberRoles.ADRESSVERWALTUNG.value,
+            BiberRoles.EINHEITSLEITUNG.value,
+            BiberRoles.MITLEITUNG.value,
+            BiberRoles.BIBER.value,
+        }),
     ),
     MidataGroups.WOELFE.value: build_agegroup_definition(
         type_key=MidataGroups.WOELFE.value,
         display_name="Wölfe",
-        address_role=WoelfeRoles.ADRESSVERWALTUNG.value,
-        co_lead_role=WoelfeRoles.MITLEITUNG.value,
+        default_roles=frozenset({
+            WoelfeRoles.ADRESSVERWALTUNG.value,
+            WoelfeRoles.EINHEITSLEITUNG.value,
+            WoelfeRoles.MITLEITUNG.value,
+            WoelfeRoles.LEITWOLF.value,
+            WoelfeRoles.WOLF.value,
+        }),
     ),
     MidataGroups.PFADI.value: build_agegroup_definition(
         type_key=MidataGroups.PFADI.value,
         display_name="Pfadi",
-        address_role=PfadiRoles.ADRESSVERWALTUNG.value,
-        co_lead_role=PfadiRoles.MITLEITUNG.value,
+        default_roles=frozenset({
+            PfadiRoles.ADRESSVERWALTUNG.value,
+            PfadiRoles.EINHEITSLEITUNG.value,
+            PfadiRoles.MITLEITUNG.value,
+            PfadiRoles.LEITPFADI.value,
+            PfadiRoles.PFADI.value,
+        }),
     ),
     MidataGroups.PIO.value: build_agegroup_definition(
         type_key=MidataGroups.PIO.value,
         display_name="Pio",
-        address_role=PioRoles.ADRESSVERWALTUNG.value,
-        co_lead_role=PioRoles.MITLEITUNG.value,
+        default_roles=frozenset({
+            PioRoles.ADRESSVERWALTUNG.value,
+            PioRoles.EINHEITSLEITUNG.value,
+            PioRoles.MITLEITUNG.value,
+            PioRoles.PIO.value,
+        }),
     ),
     MidataGroups.PTA.value: build_agegroup_definition(
         type_key=MidataGroups.PTA.value,
         display_name="PTA",
-        address_role=PtaRoles.ADRESSVERWALTUNG.value,
-        co_lead_role=PtaRoles.MITLEITUNG.value,
+        default_roles=frozenset({
+            PtaRoles.ADRESSVERWALTUNG.value,
+            PtaRoles.EINHEITSLEITUNG.value,
+            PtaRoles.MITLEITUNG.value,
+            PtaRoles.MITGLIED.value,
+        }),
     ),
     MidataGroups.ABTEILUNGS_ROVER.value: build_agegroup_definition(
         type_key=MidataGroups.ABTEILUNGS_ROVER.value,
         display_name="Rover",
-        address_role=RoverRoles.ADRESSVERWALTUNG.value,
-        co_lead_role=RoverRoles.MITLEITUNG.value,
+        default_roles=frozenset({
+            RoverRoles.ADRESSVERWALTUNG.value,
+            RoverRoles.EINHEITSLEITUNG.value,
+            RoverRoles.MITLEITUNG.value,
+            RoverRoles.ROVER.value,
+        }),
     ),
     
     MidataGroups.REGION.value: GroupTypeDefinition(
@@ -299,7 +357,9 @@ GROUP_DEFINITIONS = {
         allowed_roles=GROUP_TYPE_ROLES.get(MidataGroups.REGIONALE_ROVER.value, frozenset()),
         default_roles=frozenset({
             RegionaleRoverRoles.ADRESSVERWALTUNG.value,
+            RegionaleRoverRoles.EINHEITSLEITUNG.value,
             RegionaleRoverRoles.MITLEITUNG.value,
+            RegionaleRoverRoles.ROVER.value,
         }),
         children=(
             ChildCategoryDefinition(
@@ -461,6 +521,16 @@ GROUP_DEFINITIONS = {
         allowed_types=frozenset({
             MidataGroups.INTERNES_ABTEILUNGS_GREMIUM.value,
         }),
+    ),
+    MidataGroups.ELTERNRAT.value: GroupTypeDefinition(
+        type_key=MidataGroups.ELTERNRAT.value,
+        display_name="Elternrat",
+        allowed_roles=GROUP_TYPE_ROLES.get(MidataGroups.ELTERNRAT.value, frozenset()),
+        default_roles=frozenset({
+            ElternratRoles.PRAESIDIUM.value,
+            ElternratRoles.MITGLIED.value,
+        }),
+        children=(),
     ),
     
     MidataGroups.SILVERSCOUTS.value: GroupTypeDefinition(
