@@ -43,15 +43,3 @@ class MidataAPIService:
         except requests.exceptions.RequestException as e:
             print(f"MS: Error fetching midata event info for event ID {event_id}: {e}")
             return None
-        
-    def get_event_participants(self, event_id, group_id):
-        try:
-            response = requests.get(f"{self.midata_url}/de/groups/{group_id}/events/{event_id}/participations.json",
-                                    params={"token": self.midata_token})
-            response.raise_for_status()
-            return response.json()["event_participations"]
-        except requests.exceptions.RequestException as e:
-            print(f"MS: Error fetching midata event participants for event ID {event_id}: {e}")
-            return None
-    
-    

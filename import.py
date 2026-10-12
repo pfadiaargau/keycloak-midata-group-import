@@ -1,5 +1,6 @@
 import json
 import os
+import re
 import time
 from collections import defaultdict
 from typing import Any
@@ -11,7 +12,8 @@ from model.GroupDefinitions import GROUP_DEFINITIONS
 from model.groups.MidataGroups import MidataGroups
 from model.roles.abteilung import AbteilungRoles
 from model.types.EventTypeDefinition import EventTypeDefinition
-from model.types.GroupTypeDefinition import GroupTypeDefinition
+from model.types.GroupTypeDefinition import (CollectionDefinition,
+                                             GroupTypeDefinition)
 from services.KeycloakApiService import KeycloakApiService
 from services.MidataApiService import MidataAPIService
 
@@ -34,11 +36,47 @@ MIDATA_ROOT_GROUP_IDS = [
 # Rollen-Container wird immer erzeugt
 ROLE_SUBGROUP_NAME = "Rollen"
 
+# Container für Sammelgruppen, wird nur erzeugt wenn die Gruppe Sammlungen hat
+COLLECTION_SUBGROUP_NAME = "Sammlungen"
+
 # Optional: Events
+# - group_id: ID der MIDATA-Gruppe
+# - event_id: ID des Events
+# - short_name: optionaler kurzer Name des Events
 EVENTS_TO_SYNC = [
-    # {"group_id": 4691, "event_id": 31599, "short_name": "AG251-26"},
     # {"group_id": 400, "event_id": 2778, "short_name": "AG333-26"}
+    
+    # Zeltbasiskurs Pfadistufe (AG 121-27)
+    {"group_id": 4691, "event_id": 35221},
+    # Aufbau gemischt 2 (SO 252-27)
+    {"group_id": 4691, "event_id": 35081},
+    # Aufbau gemischt 3 (SO 253-27)
+    {"group_id": 4691, "event_id": 35083},
+    # Basiskurs gemischt 1 (AG 151-27)
+    {"group_id": 4691, "event_id": 35222},
+    # Aufbau gemischt 1 (SO 251-27)
+    {"group_id": 4691, "event_id": 35082},
+    # Basiskurs gemischt 2 (AG 152-27)
+    {"group_id": 4691, "event_id": 35223},
+    # Basiskurs Wolfstufe (AG 111-27)
+    {"group_id": 4691, "event_id": 34849},
 ]
+
+# Zusätzliche Sammelgruppen pro konkreter MIDATA-Gruppe (ergänzend zu GroupTypeDefinition.collections).
+# Mitglied wird, wer eine der Rollen in dieser Gruppe oder einer Gruppe darunter hat.
+COLLECTION_GROUPS: dict[int, tuple[CollectionDefinition, ...]] = {
+    # Beispiel:
+    # 400: (
+    #     CollectionDefinition(
+    #         key="all_leaders",
+    #         label="Alle Leitenden",
+    #         roles=frozenset({
+    #             "Group::Woelfe::Einheitsleitung",
+    #             "Group::Pfadi::Einheitsleitung",
+    #         }),
+    #     ),
+    # ),
+}
 
 # Override pro konkreter MIDATA-Gruppe
 ROLE_GROUP_OVERRIDES: dict[int, dict[str, set[str]]] = {
@@ -264,10 +302,29 @@ def categorize_group_tree(node: dict[str, Any]) -> dict[str, Any]:
     return node_copy
 
 
+def validate_collections(owner: str, collections: tuple[CollectionDefinition, ...]) -> None:
+    seen_keys: set[str] = set()
+    seen_labels: set[str] = set()
+    for collection in collections:
+        if collection.key in seen_keys:
+            raise ValueError(f"{owner}: duplicate collection key '{collection.key}'")
+        if collection.label in seen_labels:
+            raise ValueError(f"{owner}: duplicate collection label '{collection.label}'")
+        if not collection.roles:
+            log_warn(f"{owner}: collection '{collection.key}' has no roles and will stay empty")
+        seen_keys.add(collection.key)
+        seen_labels.add(collection.label)
+
+
 def validate_group_definitions() -> None:
     all_defined_types = set(GROUP_DEFINITIONS.keys())
 
+    for group_id, collections in COLLECTION_GROUPS.items():
+        validate_collections(f"COLLECTION_GROUPS[{group_id}]", collections)
+
     for group_type, definition in GROUP_DEFINITIONS.items():
+        validate_collections(group_type, definition.collections)
+
         invalid_defaults = definition.default_roles - definition.allowed_roles
         if invalid_defaults:
             raise ValueError(
@@ -289,6 +346,18 @@ def validate_group_definitions() -> None:
                 )
 
 
+COURSE_NUMBER_PREFIX = re.compile(r"^\s*PBS\s+CH\s+", re.IGNORECASE)
+
+
+def shorten_course_number(number: str | None) -> str | None:
+    """'PBS CH AG 251-26' -> 'AG251-26'. Andere Nummern bleiben unverändert."""
+    if not number:
+        return None
+    if not COURSE_NUMBER_PREFIX.match(number):
+        return number.strip()
+    return re.sub(r"\s+", "", COURSE_NUMBER_PREFIX.sub("", number))
+
+
 def get_group_events_info(group_id: int, midata_service: MidataAPIService) -> list[dict[str, Any]]:
     try:
         matching = [e for e in EVENTS_TO_SYNC if e["group_id"] == group_id]
@@ -303,33 +372,14 @@ def get_group_events_info(group_id: int, midata_service: MidataAPIService) -> li
                 log_warn(f"Could not fetch info for event ID {event['event_id']}")
                 continue
 
-            event_participants = midata_service.get_event_participants(event["event_id"], group_id)
-            if event_participants is None:
-                log_warn(f"Could not fetch participants for event ID {event['event_id']}")
-                event_participants = []
-
-            normalized_participants = []
-            for participant in event_participants:
-                participant_id = participant.get("links", {}).get("person")
-                if participant_id is None:
-                    continue
-
-                participant_roles = sorted({
-                    role.get("type") or role.get("name")
-                    for role in participant.get("roles", [])
-                    if role.get("type") or role.get("name")
-                })
-
-                normalized_participants.append({
-                    "id": participant_id,
-                    "roles": participant_roles,
-                })
-
             event_type = event_info.get("attributes", {}).get("type", "default") 
             event_name_from_api = event_info.get("attributes", {}).get("name")
+            # Nur Kurse (type "courses") haben eine Kursnummer, z.B. "PBS CH AG 251-26"
+            event_number_from_api = shorten_course_number(event_info.get("attributes", {}).get("number"))
 
             event_group_name = (
                 event.get("short_name")
+                or event_number_from_api
                 or event_name_from_api
                 or f"Event {event_info.get('id')}"
             )
@@ -339,7 +389,6 @@ def get_group_events_info(group_id: int, midata_service: MidataAPIService) -> li
                 "type": event_type,
                 "name": event_group_name,
                 "group_id": group_id,
-                "participants": normalized_participants,
             })
 
         return events_info
@@ -424,6 +473,60 @@ def upsert_role_subgroups(
                 f"{node.get('name')} ({node.get('id')})"
             )
 
+def get_collections_for_group(node: dict[str, Any]) -> tuple[CollectionDefinition, ...]:
+    definition = get_group_definition_or_fallback(node.get("type"))
+    collections = definition.collections + COLLECTION_GROUPS.get(node.get("id"), ())
+
+    # Gruppenspezifische Sammlungen überschreiben solche mit gleichem Key aus dem Gruppentyp
+    by_key: dict[str, CollectionDefinition] = {}
+    for collection in collections:
+        by_key[collection.key] = collection
+    return tuple(by_key.values())
+
+
+def upsert_collection_groups(
+    keycloak_service: KeycloakApiService,
+    real_group_id: str,
+    node: dict[str, Any],
+) -> None:
+    collections = get_collections_for_group(node)
+    if not collections:
+        return
+
+    collections_folder_id = keycloak_service.upsert_group(
+        parent_id=real_group_id,
+        name=COLLECTION_SUBGROUP_NAME,
+        attributes=KeycloakApiService.kc_attr(
+            node_kind="category",
+            category_key="collections",
+        ),
+    )
+
+    if not collections_folder_id:
+        log_error(
+            f"Could not create collections folder for group "
+            f"{node.get('name')} ({node.get('id')})"
+        )
+        return
+
+    for collection in collections:
+        collection_group_id = keycloak_service.upsert_group(
+            parent_id=collections_folder_id,
+            name=collection.label,
+            attributes=KeycloakApiService.kc_attr(
+                node_kind="collection",
+                collection_key=collection.key,
+                collection_roles=sorted(collection.roles),
+            ),
+        )
+
+        if not collection_group_id:
+            log_warn(
+                f"Could not create collection '{collection.label}' for group "
+                f"{node.get('name')} ({node.get('id')})"
+            )
+
+
 def upsert_event_groups(
     keycloak_service: KeycloakApiService,
     real_group_id: str,
@@ -485,49 +588,25 @@ def upsert_event_groups(
             event_definition=event_definition,
         )
         
-def build_participant_ids_string(participant_ids: list[int]) -> str:
-    seen = set()
-    ordered_ids: list[int] = []
-
-    for pid in participant_ids:
-        if pid is None or pid in seen:
-            continue
-        seen.add(pid)
-        ordered_ids.append(pid)
-
-    return ",".join(str(pid) for pid in ordered_ids)
-
 def upsert_event_role_categories(
     keycloak_service: KeycloakApiService,
     event_group_id: str,
     event: dict[str, Any],
     event_definition: EventTypeDefinition,
 ) -> None:
-    participants = event.get("participants") or []
-
+    # Die Teilnahmen werden beim Login vom Keycloak-Mapper direkt aus MIDATA geladen.
+    # Hier werden nur die Rollen pro Kategorie hinterlegt.
     for category in event_definition.categories:
-        category_participant_ids: list[int] = []
-
-        for participant in participants:
-            participant_id = participant.get("id")
-            participant_roles = set(participant.get("roles") or [])
-
-            if participant_id is None:
-                continue
-
-            if participant_roles.intersection(category.event_roles):
-                category_participant_ids.append(participant_id)
-        participant_ids_string = build_participant_ids_string(category_participant_ids)
-
         category_group_id = keycloak_service.upsert_group(
             parent_id=event_group_id,
             name=category.label,
             attributes=KeycloakApiService.kc_attr(
                 node_kind="category",
                 category_key=category.key,
-                participant_ids=participant_ids_string,
+                event_roles=sorted(category.event_roles),
                 event_type=event_definition.type_key,
             ),
+            remove_attributes={"participant_ids"},
         )
 
         if not category_group_id:
@@ -578,6 +657,12 @@ def import_group_tree_to_keycloak(
         )
         
         upsert_event_groups(
+            keycloak_service=keycloak_service,
+            real_group_id=real_group_id,
+            node=node,
+        )
+
+        upsert_collection_groups(
             keycloak_service=keycloak_service,
             real_group_id=real_group_id,
             node=node,

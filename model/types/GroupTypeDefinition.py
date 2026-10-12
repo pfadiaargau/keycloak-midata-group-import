@@ -13,6 +13,7 @@ class GroupTypeDefinition:
         default_roles: A set of role names that should be assigned by default to groups of this type when they are created.
         keycloak_sync: If True, groups of this type will be created/updated in Keycloak. If False, they will only exist in the local model and not be synced to Keycloak. This can be useful for defining abstract group types that are only used for categorization and don't have a direct representation in Keycloak.
         children: A set of ChildCategoryDefinition instances that define the allowed child categories under groups of this type.
+        collections: CollectionDefinition instances that are created under every group of this type.
     """
     type_key: str
     display_name: str
@@ -20,6 +21,7 @@ class GroupTypeDefinition:
     default_roles: frozenset[str] = field(default_factory=frozenset)
     keycloak_sync: bool = True
     children: frozenset["ChildCategoryDefinition"] = field(default_factory=frozenset)
+    collections: tuple["CollectionDefinition", ...] = field(default_factory=tuple)
     
     
 @dataclass(frozen=True)
@@ -41,3 +43,20 @@ class ChildCategoryDefinition:
     create_folder_in_keycloak: bool = True
     # Optional: Whether to enforce that all children of this category must have the same type. If False, children can have any allowed type, but if True, all children must have the same type (which is determined by the first child added).
     stack_same_category: bool = False
+
+
+@dataclass(frozen=True)
+class CollectionDefinition:
+    """
+    Represents a collection group in Keycloak. A user is assigned to the collection if they have at least one of
+    the given roles in the group where the collection is located or in any group below it.
+    For example, an "Alle Leitenden" collection on an Abteilung might include the Einheitsleitung roles of all Stufen.
+
+    Attributes:
+        key: A unique key for this collection within its group, used for lookup and reference.
+        label: The name of the collection group in Keycloak.
+        roles: The role values (e.g. "Group::Pfadi::Einheitsleitung") that grant membership in this collection.
+    """
+    key: str
+    label: str
+    roles: frozenset[str]

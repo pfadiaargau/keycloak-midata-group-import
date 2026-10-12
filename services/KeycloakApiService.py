@@ -195,9 +195,17 @@ class KeycloakApiService:
 
     # --------- upsert helper ---------
 
-    def upsert_group(self, parent_id: str | None, name: str, attributes: dict | None = None) -> str | None:
+    def upsert_group(
+        self,
+        parent_id: str | None,
+        name: str,
+        attributes: dict | None = None,
+        remove_attributes: set[str] | None = None,
+    ) -> str | None:
         """
         Create group if missing.
+
+        remove_attributes: attribute keys to drop from an existing group (e.g. obsolete attributes).
 
         If group with same name exists under same parent:
             - If same group_id attribute -> update normally
@@ -228,6 +236,8 @@ class KeycloakApiService:
             if attributes:
                 for k, v in attributes.items():
                     merged_attrs[k] = v
+            for k in remove_attributes or ():
+                merged_attrs.pop(k, None)
 
             self.update_group(existing_id, {"name": name, "attributes": merged_attrs})
             return existing_id
@@ -267,6 +277,8 @@ class KeycloakApiService:
         if attributes:
             for k, v in attributes.items():
                 merged_attrs[k] = v
+        for k in remove_attributes or ():
+            merged_attrs.pop(k, None)
 
         self.update_group(existing_id_after_conflict, {"name": name, "attributes": merged_attrs})
         return existing_id_after_conflict

@@ -7,13 +7,123 @@ from model.roles.bund import (BundesGremiumRoles, BundesKommissionRoles,
 from model.roles.kanton import (InternesKantonalesGremiumRoles,
                                 KantonaleKommissionRoles,
                                 KantonalesGremiumRoles, KantonalverbandRoles)
-from model.roles.other import ElternratRoles, RootRoles
+from model.roles.other import EhemaligeRoles, ElternratRoles, RootRoles
 from model.roles.region import (InternesRegionalesGremiumRoles,
                                 RegionaleKommissionRoles, RegionaleRoverRoles,
                                 RegionalesGremiumRoles)
-from model.roles.registry import GROUP_TYPE_ROLES
+from model.roles.registry import GROUP_TYPE_ROLES, ROLE_TO_GROUP_TYPE
 from model.types.GroupTypeDefinition import (ChildCategoryDefinition,
+                                             CollectionDefinition,
                                              GroupTypeDefinition)
+
+# Teilnehmenden-Rollen (Kinder und Jugendliche in den Stufen)
+TN_ROLES = frozenset({
+    BiberRoles.BIBER.value,
+    WoelfeRoles.WOLF.value,
+    WoelfeRoles.LEITWOLF.value,
+    PfadiRoles.PFADI.value,
+    PfadiRoles.LEITPFADI.value,
+    PioRoles.PIO.value,
+    RoverRoles.ROVER.value,
+    RegionaleRoverRoles.ROVER.value,
+    PtaRoles.MITGLIED.value,
+})
+
+# Eltern-Rollen
+PARENT_ROLES = frozenset({
+    ElternratRoles.PRAESIDIUM.value,
+    ElternratRoles.MITGLIED.value,
+    AbteilungRoles.PRASEIDIUM_ELTERNRAT.value,
+})
+
+# Rollen ohne aktive Funktion
+INACTIVE_ROLES = frozenset(
+    role for role in ROLE_TO_GROUP_TYPE
+    if role.split("::")[-1] in {"Selbstregistriert", "Passivmitglied", "Ehrenmitglied"}
+) | frozenset({
+    EhemaligeRoles.MITGLIED.value,
+})
+
+# Sammlung aller Rollen ausser TN, Eltern und inaktiven Rollen. Die Rollenliste enthält alle bekannten Rollen,
+# gezählt werden aber nur Rollen in der Gruppe der Sammlung und darunter.
+LEADERS_COLLECTION = CollectionDefinition(
+    key="leaders",
+    label="Leitende",
+    roles=frozenset(ROLE_TO_GROUP_TYPE) - TN_ROLES - PARENT_ROLES - INACTIVE_ROLES,
+)
+
+# Leitende beim Kanton: explizite Liste, damit neue Rollen nicht automatisch dazukommen.
+# Leitung in Stufen und Abteilung. Coaches zählen nicht dazu.
+KANTONAL_LEADERS_COLLECTION = CollectionDefinition(
+    key=LEADERS_COLLECTION.key,
+    label=LEADERS_COLLECTION.label,
+    roles=frozenset(
+        role.value
+        for age_group_roles in (BiberRoles, WoelfeRoles, PfadiRoles, PioRoles, RoverRoles, PtaRoles,
+                                RegionaleRoverRoles)
+        for role in (age_group_roles.EINHEITSLEITUNG, age_group_roles.MITLEITUNG)
+    ) | frozenset({
+        AbteilungRoles.ABTEILUNGSLEITUNG.value,
+        AbteilungRoles.ABTEILUNGSLEITUNG_STV.value,
+        AbteilungRoles.STUFENLEITUNG_BIBER.value,
+        AbteilungRoles.STUFENLEITUNG_WOELFE.value,
+        AbteilungRoles.STUFENLEITUNG_PFADI.value,
+        AbteilungRoles.STUFENLEITUNG_PIO.value,
+        AbteilungRoles.STUFENLEITUNG_ROVER.value,
+        AbteilungRoles.STUFENLEITUNG_PTA.value,
+    }),
+)
+
+ABTEILUNGSLEITENDE_COLLECTION = CollectionDefinition(
+    key="abteilungsleitende",
+    label="Abteilungsleitende",
+    roles=frozenset({
+        AbteilungRoles.ABTEILUNGSLEITUNG.value,
+        AbteilungRoles.ABTEILUNGSLEITUNG_STV.value,
+    }),
+)
+
+STUFENLEITENDE_COLLECTION = CollectionDefinition(
+    key="stufenleitende",
+    label="Stufenleitende",
+    roles=frozenset({
+        AbteilungRoles.STUFENLEITUNG_BIBER.value,
+        AbteilungRoles.STUFENLEITUNG_WOELFE.value,
+        AbteilungRoles.STUFENLEITUNG_PFADI.value,
+        AbteilungRoles.STUFENLEITUNG_PIO.value,
+        AbteilungRoles.STUFENLEITUNG_ROVER.value,
+        AbteilungRoles.STUFENLEITUNG_PTA.value,
+    }) | frozenset(
+        role.value
+        for age_group_roles in (BiberRoles, WoelfeRoles, PfadiRoles, PioRoles, RoverRoles, PtaRoles)
+        for role in (age_group_roles.EINHEITSLEITUNG, age_group_roles.ADRESSVERWALTUNG)
+    ),
+)
+
+
+def build_agegroup_leaders_collection(key: str, label: str, age_group_roles, stufenleitung: str) -> CollectionDefinition:
+    return CollectionDefinition(
+        key=key,
+        label=label,
+        roles=frozenset({
+            age_group_roles.EINHEITSLEITUNG.value,
+            age_group_roles.MITLEITUNG.value,
+            age_group_roles.ADRESSVERWALTUNG.value,
+            stufenleitung,
+        }),
+    )
+
+
+AGEGROUP_LEADERS_COLLECTIONS = (
+    build_agegroup_leaders_collection("leaders_biber", "Leitende Biberstufe",
+                                      BiberRoles, AbteilungRoles.STUFENLEITUNG_BIBER.value),
+    build_agegroup_leaders_collection("leaders_woelfe", "Leitende Wolfsstufe",
+                                      WoelfeRoles, AbteilungRoles.STUFENLEITUNG_WOELFE.value),
+    build_agegroup_leaders_collection("leaders_pfadi", "Leitende Pfadistufe",
+                                      PfadiRoles, AbteilungRoles.STUFENLEITUNG_PFADI.value),
+    build_agegroup_leaders_collection("leaders_pio", "Leitende Piostufe",
+                                      PioRoles, AbteilungRoles.STUFENLEITUNG_PIO.value),
+)
 
 
 def build_agegroup_definition(
@@ -184,6 +294,12 @@ GROUP_DEFINITIONS = {
                 create_folder_in_keycloak=True,
             ),
         ),
+        collections=(
+            KANTONAL_LEADERS_COLLECTION,
+            ABTEILUNGSLEITENDE_COLLECTION,
+            STUFENLEITENDE_COLLECTION,
+            *AGEGROUP_LEADERS_COLLECTIONS,
+        ),
     ),
     
     MidataGroups.ABTEILUNG.value: GroupTypeDefinition(
@@ -243,6 +359,10 @@ GROUP_DEFINITIONS = {
                     stack_same_category=True,
                 ),
             ),
+        collections=(
+            LEADERS_COLLECTION,
+            *AGEGROUP_LEADERS_COLLECTIONS,
+        ),
     ),
     
     MidataGroups.BIBER.value: build_agegroup_definition(
