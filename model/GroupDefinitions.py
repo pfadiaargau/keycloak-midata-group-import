@@ -115,13 +115,13 @@ def build_agegroup_leaders_collection(key: str, label: str, age_group_roles, stu
 
 
 AGEGROUP_LEADERS_COLLECTIONS = (
-    build_agegroup_leaders_collection("leaders_biber", "Leitende Biberstufe",
+    build_agegroup_leaders_collection("leaders_biber", "Biberstufe Leitende",
                                       BiberRoles, AbteilungRoles.STUFENLEITUNG_BIBER.value),
-    build_agegroup_leaders_collection("leaders_woelfe", "Leitende Wolfsstufe",
+    build_agegroup_leaders_collection("leaders_woelfe", "Wolfsstufe Leitende",
                                       WoelfeRoles, AbteilungRoles.STUFENLEITUNG_WOELFE.value),
-    build_agegroup_leaders_collection("leaders_pfadi", "Leitende Pfadistufe",
+    build_agegroup_leaders_collection("leaders_pfadi", "Pfadistufe Leitende",
                                       PfadiRoles, AbteilungRoles.STUFENLEITUNG_PFADI.value),
-    build_agegroup_leaders_collection("leaders_pio", "Leitende Piostufe",
+    build_agegroup_leaders_collection("leaders_pio", "Piostufe Leitende",
                                       PioRoles, AbteilungRoles.STUFENLEITUNG_PIO.value),
 )
 
@@ -359,8 +359,11 @@ GROUP_DEFINITIONS = {
                     stack_same_category=True,
                 ),
             ),
+        # AGEGROUP_LEADERS_COLLECTIONS ergeben <Abteilung>_<Stufe>_Leitende. Im Group-Name-Mapper
+        # "Emit Stufe leaders" ausschalten, sonst kommt der Name aus zwei Quellen.
         collections=(
             LEADERS_COLLECTION,
+            STUFENLEITENDE_COLLECTION,
             *AGEGROUP_LEADERS_COLLECTIONS,
         ),
     ),
