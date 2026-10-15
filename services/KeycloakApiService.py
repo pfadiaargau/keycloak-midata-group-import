@@ -8,6 +8,10 @@ class KeycloakApiService:
         self.keycloak_user_realm = keycloak_user_realm
         self.keycloak_username = keycloak_username
         self.keycloak_password = keycloak_password
+        # Eine Session für alle Requests: hält die Verbindung offen (kein neuer TCP/TLS-Handshake pro Request)
+        self.session = requests.Session()
+        # parent_id -> {name: group representation}; wird pro Parent einmal geladen
+        self._children_cache: dict[str, dict[str, dict]] = {}
         self.token = self.get_token()
 
     # --------- auth ---------
@@ -21,7 +25,7 @@ class KeycloakApiService:
             "password": self.keycloak_password
         }
         try:
-            response = requests.post(token_url, data=data, timeout=30)
+            response = self.session.post(token_url, data=data, timeout=30)
             response.raise_for_status()
             token_data = response.json()
             return token_data.get("access_token")
@@ -40,7 +44,7 @@ class KeycloakApiService:
     def _request(self, method: str, url: str, *, json_body: dict | None = None, **kwargs):
         """Make an authenticated request, refreshing the token once after a 401."""
         headers = self._headers(json=json_body is not None)
-        response = requests.request(
+        response = self.session.request(
             method,
             url,
             headers=headers,
@@ -50,7 +54,7 @@ class KeycloakApiService:
 
         if response.status_code == 401:
             self.token = self.get_token()
-            response = requests.request(
+            response = self.session.request(
                 method,
                 url,
                 headers=self._headers(json=json_body is not None),
@@ -100,15 +104,30 @@ class KeycloakApiService:
         r.raise_for_status()
         return r.json()
 
-    def get_group_children(self, group_id: str) -> list:
-        r = self._request(
-            "GET",
-            f"{self._admin_base()}/groups/{group_id}/children",
-            params={"max": 100},
-            timeout=30,
-        )
-        r.raise_for_status()
-        return r.json()
+    def get_group_children(self, group_id: str, page_size: int = 500) -> list:
+        """Lädt alle direkten Kinder inkl. Attribute (paginiert)."""
+        children: list = []
+        first = 0
+        while True:
+            r = self._request(
+                "GET",
+                f"{self._admin_base()}/groups/{group_id}/children",
+                params={"first": first, "max": page_size, "briefRepresentation": "false"},
+                timeout=30,
+            )
+            r.raise_for_status()
+            page = r.json()
+            children.extend(page)
+            if len(page) < page_size:
+                return children
+            first += page_size
+
+    def _get_children_map(self, parent_id: str, refresh: bool = False) -> dict[str, dict]:
+        if refresh or parent_id not in self._children_cache:
+            self._children_cache[parent_id] = {
+                g.get("name"): g for g in self.get_group_children(parent_id)
+            }
+        return self._children_cache[parent_id]
 
     def create_group(self, payload: dict, parent_id: str | None = None) -> str | None:
         """
@@ -165,11 +184,8 @@ class KeycloakApiService:
                     return g.get("id")
             return None
 
-        children = self.get_group_children(parent_id)
-        for g in children:
-            if g.get("name") == name:
-                return g.get("id")
-        return None
+        child = self._get_children_map(parent_id).get(name)
+        return child.get("id") if child else None
 
     def get_group_id_by_path(self, group_path: list[str]) -> str | None:
         parent_id = None
@@ -195,6 +211,54 @@ class KeycloakApiService:
 
     # --------- upsert helper ---------
 
+    def _find_child(self, parent_id: str | None, name: str, refresh: bool = False) -> dict | None:
+        """Liefert die Repräsentation eines direkten Kindes (inkl. Attribute) oder None."""
+        if parent_id is None:
+            gid = self.find_child_by_name(None, name)
+            return self.get_group(gid) if gid else None
+
+        child = self._get_children_map(parent_id, refresh=refresh).get(name)
+        if child is not None and "attributes" not in child:
+            # Ältere Keycloak-Versionen liefern evtl. keine Attribute in der Kinderliste
+            child = self.get_group(child["id"])
+            self._children_cache[parent_id][name] = child
+        return child
+
+    def _update_existing(
+        self,
+        parent_id: str | None,
+        current: dict,
+        name: str,
+        attributes: dict | None,
+        remove_attributes: set[str] | None,
+        incoming_group_id: str | None,
+        context: str,
+    ) -> str | None:
+        current_attrs = current.get("attributes") or {}
+        existing_group_id = self._extract_first_attr(current_attrs, "group_id")
+
+        # echter Namenskonflikt zwischen zwei realen MIDATA-Gruppen
+        if existing_group_id and incoming_group_id and existing_group_id != incoming_group_id:
+            print(
+                f"[ERROR] Duplicate group name detected {context}: "
+                f'name="{name}", existing_group_id={existing_group_id}, '
+                f'incoming_group_id={incoming_group_id}. Skipping.'
+            )
+            return None
+
+        merged_attrs = dict(current_attrs)
+        if attributes:
+            merged_attrs.update(attributes)
+        for k in remove_attributes or ():
+            merged_attrs.pop(k, None)
+
+        # Nur schreiben, wenn sich wirklich etwas geändert hat
+        if merged_attrs != current_attrs:
+            self.update_group(current["id"], {"name": name, "attributes": merged_attrs})
+            current["attributes"] = merged_attrs
+
+        return current["id"]
+
     def upsert_group(
         self,
         parent_id: str | None,
@@ -208,39 +272,20 @@ class KeycloakApiService:
         remove_attributes: attribute keys to drop from an existing group (e.g. obsolete attributes).
 
         If group with same name exists under same parent:
-            - If same group_id attribute -> update normally
+            - If same group_id attribute -> update (only if attributes changed)
             - If different group_id attribute -> skip and return None
 
         If a create hits 409, re-check the parent for an existing child with the same name
         and continue with that group. This makes the method idempotent.
         """
-        existing_id = self.find_child_by_name(parent_id, name)
-
         incoming_group_id = self._extract_first_attr(attributes, "group_id")
 
-        if existing_id:
-            current = self.get_group(existing_id)
-            current_attrs = current.get("attributes") or {}
-            existing_group_id = self._extract_first_attr(current_attrs, "group_id")
-
-            # echter Namenskonflikt zwischen zwei realen MIDATA-Gruppen
-            if existing_group_id and incoming_group_id and existing_group_id != incoming_group_id:
-                print(
-                    f"[ERROR] Duplicate group name detected under same parent: "
-                    f'name="{name}", existing_group_id={existing_group_id}, '
-                    f'incoming_group_id={incoming_group_id}. Skipping.'
-                )
-                return None
-
-            merged_attrs = dict(current_attrs)
-            if attributes:
-                for k, v in attributes.items():
-                    merged_attrs[k] = v
-            for k in remove_attributes or ():
-                merged_attrs.pop(k, None)
-
-            self.update_group(existing_id, {"name": name, "attributes": merged_attrs})
-            return existing_id
+        current = self._find_child(parent_id, name)
+        if current:
+            return self._update_existing(
+                parent_id, current, name, attributes, remove_attributes,
+                incoming_group_id, "under same parent",
+            )
 
         payload = {"name": name}
         if attributes:
@@ -250,38 +295,26 @@ class KeycloakApiService:
 
         # Erfolgreich neu erstellt
         if created_id:
+            if parent_id is not None:
+                self._children_cache[parent_id][name] = {
+                    "id": created_id,
+                    "name": name,
+                    "attributes": dict(attributes or {}),
+                }
             return created_id
 
-        # 409: jetzt nochmal nachschauen
-        existing_id_after_conflict = self.find_child_by_name(parent_id, name)
-        if not existing_id_after_conflict:
+        # 409: Cache ist veraltet -> Kinder neu laden und nochmal nachschauen
+        current = self._find_child(parent_id, name, refresh=True)
+        if not current:
             raise RuntimeError(
                 f"Keycloak returned 409 while creating group '{name}', "
                 f"but the group could not be found afterwards under parent '{parent_id}'."
             )
 
-        current = self.get_group(existing_id_after_conflict)
-        current_attrs = current.get("attributes") or {}
-        existing_group_id = self._extract_first_attr(current_attrs, "group_id")
-
-        # wenn nach 409 eine andere MIDATA-Gruppe mit gleichem Namen gefunden wurde -> skip
-        if existing_group_id and incoming_group_id and existing_group_id != incoming_group_id:
-            print(
-                f"[ERROR] Duplicate group name detected after 409 conflict: "
-                f'name="{name}", existing_group_id={existing_group_id}, '
-                f'incoming_group_id={incoming_group_id}. Skipping.'
-            )
-            return None
-
-        merged_attrs = dict(current_attrs)
-        if attributes:
-            for k, v in attributes.items():
-                merged_attrs[k] = v
-        for k in remove_attributes or ():
-            merged_attrs.pop(k, None)
-
-        self.update_group(existing_id_after_conflict, {"name": name, "attributes": merged_attrs})
-        return existing_id_after_conflict
+        return self._update_existing(
+            parent_id, current, name, attributes, remove_attributes,
+            incoming_group_id, "after 409 conflict",
+        )
 
     def check_keycloak_group_path(self, group_path):
         return self.get_group_id_by_path(group_path) is not None
@@ -295,6 +328,9 @@ class KeycloakApiService:
                 continue
 
             created = self.create_group({"name": group}, parent_id=parent_id)
+            if parent_id is not None:
+                # Kinderliste ist jetzt veraltet
+                self._children_cache.pop(parent_id, None)
             if created is None:
                 # Falls 409: nochmal auflösen
                 created = self.find_child_by_name(parent_id, group)
