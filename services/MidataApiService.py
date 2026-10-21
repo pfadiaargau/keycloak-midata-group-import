@@ -12,7 +12,7 @@ class MidataAPIService:
             "X-Token": self.midata_token,
             "Content-Type": "application/json"
         }
-        # Session hält Verbindungen offen; Pool gross genug für parallele Requests
+        # The session keeps connections open; pool large enough for parallel requests
         self.session = requests.Session()
         adapter = HTTPAdapter(pool_connections=max_connections, pool_maxsize=max_connections)
         self.session.mount("https://", adapter)

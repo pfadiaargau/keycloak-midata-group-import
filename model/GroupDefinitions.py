@@ -16,7 +16,7 @@ from model.types.GroupTypeDefinition import (ChildCategoryDefinition,
                                              CollectionDefinition,
                                              GroupTypeDefinition)
 
-# Teilnehmenden-Rollen (Kinder und Jugendliche in den Stufen)
+# Participant roles (children and youth in the age groups)
 TN_ROLES = frozenset({
     BiberRoles.BIBER.value,
     WoelfeRoles.WOLF.value,
@@ -29,14 +29,14 @@ TN_ROLES = frozenset({
     PtaRoles.MITGLIED.value,
 })
 
-# Eltern-Rollen
+# Parent roles
 PARENT_ROLES = frozenset({
     ElternratRoles.PRAESIDIUM.value,
     ElternratRoles.MITGLIED.value,
     AbteilungRoles.PRASEIDIUM_ELTERNRAT.value,
 })
 
-# Rollen ohne aktive Funktion
+# Roles without an active function
 INACTIVE_ROLES = frozenset(
     role for role in ROLE_TO_GROUP_TYPE
     if role.split("::")[-1] in {"Selbstregistriert", "Passivmitglied", "Ehrenmitglied"}
@@ -44,16 +44,16 @@ INACTIVE_ROLES = frozenset(
     EhemaligeRoles.MITGLIED.value,
 })
 
-# Sammlung aller Rollen ausser TN, Eltern und inaktiven Rollen. Die Rollenliste enthält alle bekannten Rollen,
-# gezählt werden aber nur Rollen in der Gruppe der Sammlung und darunter.
+# Collection of all roles except participants, parents and inactive roles. The role list contains all known roles,
+# but only roles in the collection's group and below are counted.
 LEADERS_COLLECTION = CollectionDefinition(
     key="leaders",
     label="Leitende",
     roles=frozenset(ROLE_TO_GROUP_TYPE) - TN_ROLES - PARENT_ROLES - INACTIVE_ROLES,
 )
 
-# Leitende beim Kanton: explizite Liste, damit neue Rollen nicht automatisch dazukommen.
-# Leitung in Stufen und Abteilung. Coaches zählen nicht dazu.
+# Leaders at Kanton level: explicit list, so that new roles are not added automatically.
+# Leaders of age groups and Abteilungen. Coaches are not included.
 KANTONAL_LEADERS_COLLECTION = CollectionDefinition(
     key=LEADERS_COLLECTION.key,
     label=LEADERS_COLLECTION.label,
@@ -359,8 +359,8 @@ GROUP_DEFINITIONS = {
                     stack_same_category=True,
                 ),
             ),
-        # AGEGROUP_LEADERS_COLLECTIONS ergeben <Abteilung>_<Stufe>_Leitende. Im Group-Name-Mapper
-        # "Emit Stufe leaders" ausschalten, sonst kommt der Name aus zwei Quellen.
+        # AGEGROUP_LEADERS_COLLECTIONS result in <Abteilung>_<Stufe>_Leitende. Disable "Emit Stufe leaders"
+        # in the group name mapper, otherwise the name comes from two sources.
         collections=(
             LEADERS_COLLECTION,
             STUFENLEITENDE_COLLECTION,

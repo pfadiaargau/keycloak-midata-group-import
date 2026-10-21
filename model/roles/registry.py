@@ -33,14 +33,14 @@ def _extract_string_meta(value, label: str, enum_cls: type[Enum]) -> str:
 
     raise ValueError(
         f"{enum_cls.__module__}.{enum_cls.__name__}: "
-        f"{label} muss ein String sein, ist aber {value!r}"
+        f"{label} must be a string, but is {value!r}"
     )
 
 
 def _get_group_type(enum_cls: type[Enum]) -> str:
     if not hasattr(enum_cls, "GROUP_TYPE"):
         raise ValueError(
-            f"{enum_cls.__module__}.{enum_cls.__name__}: GROUP_TYPE fehlt"
+            f"{enum_cls.__module__}.{enum_cls.__name__}: GROUP_TYPE is missing"
         )
 
     raw_group_type = getattr(enum_cls, "GROUP_TYPE")
@@ -48,7 +48,7 @@ def _get_group_type(enum_cls: type[Enum]) -> str:
 
     if not group_type.strip():
         raise ValueError(
-            f"{enum_cls.__module__}.{enum_cls.__name__}: GROUP_TYPE darf nicht leer sein"
+            f"{enum_cls.__module__}.{enum_cls.__name__}: GROUP_TYPE must not be empty"
         )
 
     return group_type
@@ -57,7 +57,7 @@ def _get_group_type(enum_cls: type[Enum]) -> str:
 def _get_group_prefix(enum_cls: type[Enum], group_type: str) -> str:
     if not hasattr(enum_cls, "GROUP_PREFIX"):
         raise ValueError(
-            f"{enum_cls.__module__}.{enum_cls.__name__}: GROUP_PREFIX fehlt"
+            f"{enum_cls.__module__}.{enum_cls.__name__}: GROUP_PREFIX is missing"
         )
 
     raw_group_prefix = getattr(enum_cls, "GROUP_PREFIX")
@@ -68,7 +68,7 @@ def _get_group_prefix(enum_cls: type[Enum], group_type: str) -> str:
     if group_prefix != expected_prefix:
         raise ValueError(
             f"{enum_cls.__module__}.{enum_cls.__name__}: "
-            f"GROUP_PREFIX ist {group_prefix!r}, erwartet wäre {expected_prefix!r}"
+            f"GROUP_PREFIX is {group_prefix!r}, expected {expected_prefix!r}"
         )
 
     return group_prefix
@@ -81,7 +81,7 @@ def load_role_definitions(package_name: str = "model.roles") -> None:
         package = importlib.import_module(package_name)
     except Exception as e:
         raise RuntimeError(
-            f"Das Paket {package_name!r} konnte nicht importiert werden:\n{e}"
+            f"Could not import package {package_name!r}:\n{e}"
         ) from e
 
     role_enum_classes: list[type[Enum]] = []
@@ -96,7 +96,7 @@ def load_role_definitions(package_name: str = "model.roles") -> None:
             module = importlib.import_module(module_name)
         except Exception as e:
             raise RuntimeError(
-                f"Fehler beim Import von Modul {module_name!r}:\n{e}"
+                f"Error importing module {module_name!r}:\n{e}"
             ) from e
 
         for _, obj in inspect.getmembers(module, inspect.isclass):
@@ -120,37 +120,37 @@ def load_role_definitions(package_name: str = "model.roles") -> None:
                 member_name = member.name
                 role_value = member.value
 
-                # Meta-Members überspringen
+                # Skip meta members
                 if member_name in {"GROUP_TYPE", "GROUP_PREFIX"}:
                     continue
 
                 if not isinstance(role_value, str):
                     raise ValueError(
-                        f"Ungültiger Rollenwert in {obj.__module__}.{obj.__name__}.{member_name}: "
-                        f"{role_value!r} ist kein String"
+                        f"Invalid role value in {obj.__module__}.{obj.__name__}.{member_name}: "
+                        f"{role_value!r} is not a string"
                     )
 
                 if not role_value.startswith(group_prefix):
                     raise ValueError(
-                        f"Ungültiger Rollenwert in {obj.__module__}.{obj.__name__}.{member_name}: "
-                        f"{role_value!r} beginnt nicht mit {group_prefix!r}"
+                        f"Invalid role value in {obj.__module__}.{obj.__name__}.{member_name}: "
+                        f"{role_value!r} does not start with {group_prefix!r}"
                     )
 
                 existing = role_locations.get(role_value)
                 if existing:
                     raise ValueError(
-                        "Doppelter Rollenwert erkannt.\n\n"
-                        f"Rollenwert: {role_value}\n\n"
-                        "Erste Definition:\n"
-                        f"  Modul:  {existing.module}\n"
-                        f"  Klasse: {existing.class_name}\n"
+                        "Duplicate role value detected.\n\n"
+                        f"Role value: {role_value}\n\n"
+                        "First definition:\n"
+                        f"  Module: {existing.module}\n"
+                        f"  Class:  {existing.class_name}\n"
                         f"  Member: {existing.member_name}\n"
-                        f"  Typ:    {existing.group_type}\n\n"
-                        "Zweite Definition:\n"
-                        f"  Modul:  {obj.__module__}\n"
-                        f"  Klasse: {obj.__name__}\n"
+                        f"  Type:   {existing.group_type}\n\n"
+                        "Second definition:\n"
+                        f"  Module: {obj.__module__}\n"
+                        f"  Class:  {obj.__name__}\n"
                         f"  Member: {member_name}\n"
-                        f"  Typ:    {group_type}\n"
+                        f"  Type:   {group_type}\n"
                     )
 
                 role_locations[role_value] = RoleLocation(
@@ -179,13 +179,13 @@ def load_role_definitions(package_name: str = "model.roles") -> None:
 def print_role_registry_summary() -> None:
     print("Role Registry Summary")
     print("====================")
-    print(f"Gefundene Rollenklassen: {len(ROLE_ENUM_CLASSES)}")
-    print(f"Gefundene Gruppentypen:  {len(GROUP_TYPE_ROLES)}")
-    print(f"Gefundene Rollen:        {len(ROLE_TO_GROUP_TYPE)}")
+    print(f"Role classes found: {len(ROLE_ENUM_CLASSES)}")
+    print(f"Group types found:  {len(GROUP_TYPE_ROLES)}")
+    print(f"Roles found:        {len(ROLE_TO_GROUP_TYPE)}")
     print()
 
     for group_type, roles in GROUP_TYPE_ROLES.items():
-        print(f"{group_type} ({len(roles)} Rollen)")
+        print(f"{group_type} ({len(roles)} roles)")
         for role in roles:
             loc = ROLE_LOCATIONS.get(role)
             if loc:

@@ -1,221 +1,32 @@
+import argparse
 import json
 import os
 import re
+import sys
 import time
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
 from typing import Any
 
 import requests
+from config import ConfigError, EventToSync, ImportConfig, load_config
 from dotenv import load_dotenv
 from model.EventDefinitions import EVENT_DEFINITIONS
 from model.GroupDefinitions import GROUP_DEFINITIONS
-from model.groups.MidataGroups import MidataGroups
-from model.roles.abteilung import AbteilungRoles
 from model.types.EventTypeDefinition import EventTypeDefinition
 from model.types.GroupTypeDefinition import (CollectionDefinition,
                                              GroupTypeDefinition)
 from services.KeycloakApiService import KeycloakApiService
 from services.MidataApiService import MidataAPIService
 
-load_dotenv()
-
-RECREATE_HIRARCHY = True
-
 RAW_ROOTS_JSON_FILE = "detailed_hierarchy.json"
 CATEGORIZED_ROOTS_JSON_FILE = "categorized_groups.json"
 
-# Anzahl paralleler Requests an MIDATA (Gruppennamen, Events)
-MIDATA_FETCH_WORKERS = 10
-
-KEYCLOAK_GROUP_ROOT = os.getenv("KEYCLOAK_GROUP_ROOT", "midata")
-
-# Mehrere Startknoten statt nur ein Root
-MIDATA_ROOT_GROUP_IDS = [
-    int(x.strip())
-    for x in os.getenv("MIDATA_ROOT_GROUP_IDS").split(",")
-    if x.strip()
-]
-
-# Rollen-Container wird immer erzeugt
+# The roles container is always created
 ROLE_SUBGROUP_NAME = "Rollen"
 
-# Container für Sammelgruppen, wird nur erzeugt wenn die Gruppe Sammlungen hat
+# Container for collection groups, only created if the group has collections
 COLLECTION_SUBGROUP_NAME = "Sammlungen"
-
-# Optional: Events
-# - group_id: ID der MIDATA-Gruppe
-# - event_id: ID des Events
-# - short_name: optionaler kurzer Name des Events
-# - comment: optionale Beschreibung, wird als Attribut "comment" in Keycloak gespeichert
-EVENTS_TO_SYNC = [
-    # {"group_id": 400, "event_id": 2778, "short_name": "AG333-26"}
-    
-    # 2027
-    # Zeltbasiskurs Pfadistufe (AG 121-27)
-    {"group_id": 4691, "event_id": 35221, "comment": "Zeltbasiskurs Pfadistufe (AG 121-27)"},
-    # Aufbau gemischt 2 (SO 252-27)
-    {"group_id": 4691, "event_id": 35081, "comment": "Aufbau gemischt 2 (SO 252-27)"},
-    # Aufbau gemischt 3 (SO 253-27)
-    {"group_id": 4691, "event_id": 35083, "comment": "Aufbau gemischt 3 (SO 253-27)"},
-    # Basiskurs gemischt 1 (AG 151-27)
-    {"group_id": 4691, "event_id": 35222, "comment": "Basiskurs gemischt 1 (AG 151-27)"},
-    # Aufbau gemischt 1 (SO 251-27)
-    {"group_id": 4691, "event_id": 35082, "comment": "Aufbau gemischt 1 (SO 251-27)"},
-    # Basiskurs gemischt 2 (AG 152-27)
-    {"group_id": 4691, "event_id": 35223, "comment": "Basiskurs gemischt 2 (AG 152-27)"},
-    # Basiskurs Wolfstufe (AG 111-27)
-    {"group_id": 4691, "event_id": 34849, "comment": "Basiskurs Wolfstufe (AG 111-27)"},
-    
-    # 2026
-    # Aufbaukurs Wolfstufe (AG 211-26)
-    {"group_id": 4691, "event_id": 31600, "comment": "Aufbaukurs Wolfstufe (AG 211-26)"},
-    # Aufbaukurs Pfadistufe (AG 221-26)
-    {"group_id": 4691, "event_id": 31598, "comment": "Aufbaukurs Pfadistufe (AG 221-26)"},
-    # Aufbaukurs gemischt (AG 251-26)
-    {"group_id": 4691, "event_id": 31599, "comment": "Aufbaukurs gemischt (AG 251-26)"},
-    # Sicherheitsmodul Berg 2026 (AG 563-26)
-    {"group_id": 4691, "event_id": 32108, "comment": "Sicherheitsmodul Berg 2026 (PBS CH AG 563-26)"},
-    # Basiskurs gemischt (SO 122-26)
-    {"group_id": 4691, "event_id": 31603, "comment": "Basiskurs gemischt (SO 122-26)"},
-
-    # 2025
-    # Futura 4 Herbst (AG 051-25)
-    {"group_id": 4691, "event_id": 29699, "comment": "Futura 4 Herbst (AG 051-25)"},
-    # Basiskurs Wolfsstufe 1 (AG 111-25)
-    {"group_id": 4691, "event_id": 27837, "comment": "Basiskurs Wolfsstufe 1 (AG 111-25)"},
-    # Zeltbasiskurs Pfadistufe (AG 121-25)
-    {"group_id": 4691, "event_id": 27830, "comment": "Zeltbasiskurs Pfadistufe (AG 121-25)"},
-    # Hausbasiskurs Pfadistufe (AG 122-25)
-    {"group_id": 4691, "event_id": 28224, "comment": "Hausbasiskurs Pfadistufe (AG 122-25)"},
-    # Aufbaukurs Pfadistufe (SO 221-25)
-    {"group_id": 4691, "event_id": 27831, "comment": "Aufbaukurs Pfadistufe (SO 221-25)"},
-    # Aufbaukurs gemischt (SO 252-25)
-    {"group_id": 4691, "event_id": 27832, "comment": "Aufbaukurs gemischt (SO 252-25)"},
-    # MF Inklusion (SO 555-25)
-    {"group_id": 4691, "event_id": 29069, "comment": "MF Inklusion (PBS CH SO 555-25)"},
-
-    # 2024
-    # Aufbaukurs Pfadistufe (AG 221-24)
-    {"group_id": 4691, "event_id": 24120, "comment": "Aufbaukurs Pfadistufe (AG 221-24)"},
-    # Wochenendaufbaukurs Pfadistufe (AG 222-24)
-    {"group_id": 4691, "event_id": 24121, "comment": "Wochenendaufbaukurs Pfadistufe (AG 222-24)"},
-    # Futura 1 (SO 051-24)
-    {"group_id": 4691, "event_id": 24161, "comment": "Futura 1 (SO 051-24)"},
-    # Basiskurs Wolfsstufe 1 (SO 111-24)
-    {"group_id": 4691, "event_id": 24114, "comment": "Basiskurs Wolfsstufe 1 (SO 111-24)"},
-    # Basiskurs Wolfsstufe 2 (SO 112-24)
-    {"group_id": 4691, "event_id": 24115, "comment": "Basiskurs Wolfsstufe 2 (SO 112-24)"},
-    # Hausbasiskurs Pfadistufe (SO 122-24)
-    {"group_id": 4691, "event_id": 24117, "comment": "Hausbasiskurs Pfadistufe (SO 122-24)"},
-
-    # 2023
-    # Basiskurs Wolfsstufe 1 (AG 111-23)
-    {"group_id": 4691, "event_id": 20799, "comment": "Basiskurs Wolfsstufe 1 (AG 111-23)"},
-    # Zeltbasiskurs Pfadistufe (AG 121-23)
-    {"group_id": 4691, "event_id": 20811, "comment": "Zeltbasiskurs Pfadistufe (AG 121-23)"},
-    # Basiskurs Pfadistufe (AG 122-23)
-    {"group_id": 4691, "event_id": 20812, "comment": "Basiskurs Pfadistufe (AG 122-23)"},
-    # Modul Sanität (AG 554-23)
-    {"group_id": 4691, "event_id": 21372, "comment": "Modul Sanität (PBS CH AG 554-23) KS"},
-    # Aufbaukurs Wolfsstufe (SO 211-23)
-    {"group_id": 4691, "event_id": 20797, "comment": "Aufbaukurs Wolfsstufe (SO 211-23)"},
-    # Aufbaukurs Pfadistufe (SO 221-23)
-    {"group_id": 4691, "event_id": 20798, "comment": "Aufbaukurs Pfadistufe (SO 221-23)"},
-    # Aufbaukurs Pfadistufe/Wolfsstufe (SO 251-23)
-    {"group_id": 4691, "event_id": 20800, "comment": "Aufbaukurs Pfadistufe/Wolfsstufe (SO 251-23)"},
-
-    # 2022
-    # Aufbaukurs Pfadistufe 1 (AG 221-22)
-    {"group_id": 4691, "event_id": 18059, "comment": "Aufbaukurs Pfadistufe 1 (AG 221-22)"},
-    # Aufbaukurs Pfadistufe/Wolfsstufe (AG 261-22)
-    {"group_id": 4691, "event_id": 18061, "comment": "Aufbaukurs Pfadistufe/Wolfsstufe (AG 261-22)"},
-    # Modul Sanität (AG 551-22)
-    {"group_id": 4691, "event_id": 18222, "comment": "Modul Sanität (PBS CH AG 551-22)"},
-    # Basiskurs Wolfsstufe 1 (SO 111-22)
-    {"group_id": 4691, "event_id": 18060, "comment": "Basiskurs Wolfsstufe 1 (SO 111-22)"},
-    # Basiskurs Wolfsstufe 2 (SO 112-22)
-    {"group_id": 4691, "event_id": 18065, "comment": "Basiskurs Wolfsstufe 2 (SO 112-22)"},
-    # Zeltbasiskurs Pfadistufe (SO 121-22)
-    {"group_id": 4691, "event_id": 18054, "comment": "Zeltbasiskurs Pfadistufe (SO 121-22)"},
-    # Wochenendbasis Pfadistufe (SO 122-22)
-    {"group_id": 4691, "event_id": 18057, "comment": "Wochenendbasis Pfadistufe (SO 122-22)"},
-
-    # 2021
-    # Futura 1 (AG 051-21 C-19)
-    {"group_id": 4691, "event_id": 14405, "comment": "Futura 1 (AG 051-21 C-19)"},
-    # Basiskurs Wolfsstufe (AG 111-21)
-    {"group_id": 4691, "event_id": 14056, "comment": "Basiskurs Wolfsstufe (AG 111-21)"},
-    # Zeltbasiskurs Pfadistufe (AG 121-21 C-19)
-    {"group_id": 4691, "event_id": 14060, "comment": "Zeltbasiskurs Pfadistufe (AG 121-21 C-19)"},
-    # Basiskurs Pfadistufe (AG 122-21)
-    {"group_id": 4691, "event_id": 14061, "comment": "Basiskurs Pfadistufe (AG 122-21) (teildigital)"},
-    # Modul Wasser inkl. SLRG (AG 551-21)
-    {"group_id": 4691, "event_id": 14276, "comment": "Modul Wasser inkl. SLRG (PBS CH AG 551-21)"},
-    # Aufbaukurs Wolfsstufe 2 (SO 212-21)
-    {"group_id": 4691, "event_id": 14063, "comment": "Aufbaukurs Wolfsstufe 2 (SO 212-21)"},
-    # Aufbaukurs Pfadistufe 1 (SO 221-21)
-    {"group_id": 4691, "event_id": 14055, "comment": "Aufbaukurs Pfadistufe 1 (SO 221-21)"},
-    # Aufbaukurs Pfadistufe 2 (SO 222-21)
-    {"group_id": 4691, "event_id": 14058, "comment": "Aufbaukurs Pfadistufe 2 (SO 222-21)"},
-
-    # 2020
-    # Sockout 2 (AG 032-20 C-19)
-    {"group_id": 4691, "event_id": 10589, "comment": "Sockout 2 (AG 032-20 C-19)"},
-    # Aufbaukurs Wolfsstufe 2 (AG 212-20 C-19)
-    {"group_id": 4691, "event_id": 10045, "comment": "Aufbaukurs Wolfsstufe 2 (AG 212-20 C-19)"},
-    # Aufbaukurs Pfadistufe 1 (AG 221-20 C-19)
-    {"group_id": 4691, "event_id": 10042, "comment": "Aufbaukurs Pfadistufe 1 (AG 221-20 C-19)"},
-    # Aufbaukurs Piostufe (AG 231-20 C-19)
-    {"group_id": 4691, "event_id": 10050, "comment": "Aufbaukurs Piostufe (AG 231-20 C-19)"},
-    # Basiskurs Wolfsstufe (SO 111-20 C-19)
-    {"group_id": 4691, "event_id": 10039, "comment": "Basiskurs Wolfsstufe (SO 111-20 C-19)"},
-    # Herbstbasis Wolfsstufe 2 (SO 113-20)
-    {"group_id": 4691, "event_id": 13115, "comment": "Herbstbasis Wolfsstufe 2 (SO 113-20)"},
-    # Basiskurs Pfadistufe Zelt (SO 121-20 C-19)
-    {"group_id": 4691, "event_id": 10046, "comment": "Basiskurs Pfadistufe Zelt (SO 121-20 C-19)"},
-    # Herbstbasis Pfadistufe (SO 124-20)
-    {"group_id": 4691, "event_id": 13116, "comment": "Herbstbasis Pfadistufe (SO 124-20)"},
-
-    # 2019
-    # Basiskurs Pfadistufe Haus (AG 122-19)
-    {"group_id": 4691, "event_id": 7262, "comment": "Basiskurs Pfadistufe Haus (AG 122-19)"},
-    # Aufbaukurs Wolfsstufe (SO 211-19)
-    {"group_id": 4691, "event_id": 7252, "comment": "Aufbaukurs Wolfsstufe (SO 211-19)"},
-    # Aufbaukurs Pfadistufe 2 (SO 222-19)
-    {"group_id": 4691, "event_id": 7258, "comment": "Aufbaukurs Pfadistufe 2 (SO 222-19)"},
-
-]
-
-# Zusätzliche Sammelgruppen pro konkreter MIDATA-Gruppe (ergänzend zu GroupTypeDefinition.collections).
-# Mitglied wird, wer eine der Rollen in dieser Gruppe oder einer Gruppe darunter hat.
-COLLECTION_GROUPS: dict[int, tuple[CollectionDefinition, ...]] = {
-    # Beispiel:
-    # 400: (
-    #     CollectionDefinition(
-    #         key="all_leaders",
-    #         label="Alle Leitenden",
-    #         roles=frozenset({
-    #             "Group::Woelfe::Einheitsleitung",
-    #             "Group::Pfadi::Einheitsleitung",
-    #         }),
-    #     ),
-    # ),
-}
-
-# Override pro konkreter MIDATA-Gruppe
-ROLE_GROUP_OVERRIDES: dict[int, dict[str, set[str]]] = {
-    # Beispiel:
-    # 400: {
-    #     "whitelist": {
-    #         "Group::Abteilung::Webmaster",
-    #         AbteilungRoles.MATERIALWART.value,
-    #     },
-    #     "blacklist": {
-    #         "Group::Abteilung::Sekretariat",
-    #     },
-    # },
-}
 
 
 def now_s(start_time: float) -> str:
@@ -238,7 +49,6 @@ def parse_env() -> dict[str, str]:
     load_dotenv()
 
     required_vars = [
-        "MIDATA_ROOT_GROUP_IDS",
         "MIDATA_SERVICE_ACCOUNT_TOKEN",
         "MIDATA_URL",
         "KEYCLOAK_URL",
@@ -335,11 +145,38 @@ def collect_subtree_ids(
     return ids
 
 
+def filter_children_index(
+    root_id: int,
+    include_ids: set[int],
+    children_by_parent: dict[int | None, list[dict[str, Any]]],
+    groups_by_id: dict[int, dict[str, Any]],
+) -> dict[int | None, list[dict[str, Any]]]:
+    """Reduces the index to the subtrees of include_ids plus their parents up to the root."""
+    keep: set[int] = set()
+    for group_id in include_ids:
+        path = [group_id]
+        current = groups_by_id.get(group_id)
+        while current and current["id"] != root_id:
+            current = groups_by_id.get(current.get("parent_id"))
+            if current:
+                path.append(current["id"])
+        if not current:
+            raise RuntimeError(f"Filter group ID {group_id} is not part of root group {root_id}")
+        keep.update(path)
+        keep.update(collect_subtree_ids(group_id, children_by_parent))
+
+    return {
+        parent_id: [child for child in children if child["id"] in keep]
+        for parent_id, children in children_by_parent.items()
+    }
+
+
 def fetch_group_names(
     midata_service: MidataAPIService,
     group_ids: list[int],
+    workers: int,
 ) -> dict[int, str | Exception]:
-    """Lädt die Namen parallel. Fehler werden als Exception im Ergebnis abgelegt."""
+    """Fetches the names in parallel. Errors are stored as an Exception in the result."""
 
     def fetch(group_id: int) -> str | Exception:
         try:
@@ -347,7 +184,7 @@ def fetch_group_names(
         except Exception as e:
             return e
 
-    with ThreadPoolExecutor(max_workers=MIDATA_FETCH_WORKERS) as executor:
+    with ThreadPoolExecutor(max_workers=workers) as executor:
         return dict(zip(group_ids, executor.map(fetch, group_ids)))
 
 
@@ -475,11 +312,11 @@ def validate_collections(owner: str, collections: tuple[CollectionDefinition, ..
         seen_labels.add(collection.label)
 
 
-def validate_group_definitions() -> None:
+def validate_group_definitions(config: ImportConfig) -> None:
     all_defined_types = set(GROUP_DEFINITIONS.keys())
 
-    for group_id, collections in COLLECTION_GROUPS.items():
-        validate_collections(f"COLLECTION_GROUPS[{group_id}]", collections)
+    for group_id, override in config.groups.items():
+        validate_collections(f"groups.{group_id}.extra_collections", override.extra_collections)
 
     for group_type, definition in GROUP_DEFINITIONS.items():
         validate_collections(group_type, definition.collections)
@@ -506,12 +343,12 @@ def validate_group_definitions() -> None:
 
 
 COURSE_NUMBER_PREFIX = re.compile(r"^\s*PBS\s+CH\s+", re.IGNORECASE)
-# Corona-Kurse 2020/21 haben den Zusatz "C-19", z.B. "PBS CH AG 221-20 C-19"
+# Covid courses 2020/21 have the suffix "C-19", e.g. "PBS CH AG 221-20 C-19"
 COURSE_NUMBER_COVID_SUFFIX = re.compile(r"\s+C-19\s*$", re.IGNORECASE)
 
 
 def shorten_course_number(number: str | None) -> str | None:
-    """'PBS CH AG 251-26' -> 'AG251-26', 'PBS CH AG 221-20 C-19' -> 'AG221-20'. Andere Nummern bleiben unverändert."""
+    """'PBS CH AG 251-26' -> 'AG251-26', 'PBS CH AG 221-20 C-19' -> 'AG221-20'. Other numbers stay unchanged."""
     if not number:
         return None
     if not COURSE_NUMBER_PREFIX.match(number):
@@ -522,46 +359,48 @@ def shorten_course_number(number: str | None) -> str | None:
 
 def fetch_event_infos(
     midata_service: MidataAPIService,
+    config: ImportConfig,
     group_ids: set[int],
 ) -> dict[int, dict[str, Any] | None]:
-    """Lädt alle EVENTS_TO_SYNC der gegebenen Gruppen parallel. Key ist die event_id."""
-    events = [e for e in EVENTS_TO_SYNC if e["group_id"] in group_ids]
+    """Fetches all configured events of the given groups in parallel. The key is the event_id."""
+    events = [e for e in config.events if e.group_id in group_ids]
 
-    def fetch(event: dict[str, Any]) -> dict[str, Any] | None:
+    def fetch(event: EventToSync) -> dict[str, Any] | None:
         try:
-            return midata_service.get_event_info(event["event_id"], event["group_id"])
+            return midata_service.get_event_info(event.event_id, event.group_id)
         except Exception as e:
-            log_error(f"import: Error fetching event ID {event['event_id']}: {e}")
+            log_error(f"import: Error fetching event ID {event.event_id}: {e}")
             return None
 
-    with ThreadPoolExecutor(max_workers=MIDATA_FETCH_WORKERS) as executor:
-        return dict(zip((e["event_id"] for e in events), executor.map(fetch, events)))
+    with ThreadPoolExecutor(max_workers=config.fetch_workers) as executor:
+        return dict(zip((e.event_id for e in events), executor.map(fetch, events)))
 
 
 def get_group_events_info(
     group_id: int,
+    config: ImportConfig,
     event_infos: dict[int, dict[str, Any] | None],
 ) -> list[dict[str, Any]]:
     try:
-        matching = [e for e in EVENTS_TO_SYNC if e["group_id"] == group_id]
+        matching = [e for e in config.events if e.group_id == group_id]
         if not matching:
             return []
 
         events_info = []
 
         for event in matching:
-            event_info = event_infos.get(event["event_id"])
+            event_info = event_infos.get(event.event_id)
             if not event_info:
-                log_warn(f"Could not fetch info for event ID {event['event_id']}")
+                log_warn(f"Could not fetch info for event ID {event.event_id}")
                 continue
 
             event_type = event_info.get("attributes", {}).get("type", "default") 
             event_name_from_api = event_info.get("attributes", {}).get("name")
-            # Nur Kurse (type "courses") haben eine Kursnummer, z.B. "PBS CH AG 251-26"
+            # Only courses (type "courses") have a course number, e.g. "PBS CH AG 251-26"
             event_number_from_api = shorten_course_number(event_info.get("attributes", {}).get("number"))
 
             event_group_name = (
-                event.get("short_name")
+                event.short_name
                 or event_number_from_api
                 or event_name_from_api
                 or f"Event {event_info.get('id')}"
@@ -572,7 +411,7 @@ def get_group_events_info(
                 "type": event_type,
                 "name": event_group_name,
                 "group_id": group_id,
-                "comment": event.get("comment"),
+                "comment": event.comment,
             })
 
         return events_info
@@ -581,33 +420,36 @@ def get_group_events_info(
         log_error(f"import: Error fetching events for group ID {group_id}: {e}")
         return []
 
-def get_effective_role_groups_for_group(node: dict[str, Any]) -> list[str]:
+def get_effective_role_groups_for_group(node: dict[str, Any], config: ImportConfig) -> list[str]:
     group_id = node.get("id")
     group_type = node.get("type")
+
+    override = config.group(group_id)
+    if not override.role_subgroups:
+        return []
 
     definition = get_group_definition_or_fallback(group_type)
     allowed_roles = set(definition.allowed_roles)
     default_roles = set(definition.default_roles)
 
-    override = ROLE_GROUP_OVERRIDES.get(group_id, {})
-    whitelist = set(override.get("whitelist", set()))
-    blacklist = set(override.get("blacklist", set()))
+    roles_add = set(override.roles_add)
+    roles_remove = set(override.roles_remove)
 
-    invalid_whitelist = whitelist - allowed_roles
-    if invalid_whitelist:
+    invalid_add = roles_add - allowed_roles
+    if invalid_add:
         log_warn(
-            f"Group ID {group_id} ({node.get('name')}): whitelist contains roles not allowed "
-            f"for type {group_type}: {sorted(invalid_whitelist)}"
+            f"Group ID {group_id} ({node.get('name')}): roles_add contains roles not allowed "
+            f"for type {group_type}: {sorted(invalid_add)}"
         )
 
-    invalid_blacklist = blacklist - allowed_roles
-    if invalid_blacklist:
+    invalid_remove = roles_remove - allowed_roles
+    if invalid_remove:
         log_warn(
-            f"Group ID {group_id} ({node.get('name')}): blacklist contains roles not allowed "
-            f"for type {group_type}: {sorted(invalid_blacklist)}"
+            f"Group ID {group_id} ({node.get('name')}): roles_remove contains roles not allowed "
+            f"for type {group_type}: {sorted(invalid_remove)}"
         )
 
-    effective_roles = (default_roles - blacklist) | (whitelist & allowed_roles)
+    effective_roles = (default_roles - roles_remove) | (roles_add & allowed_roles)
     effective_roles &= allowed_roles
 
     return sorted(effective_roles)
@@ -615,6 +457,7 @@ def get_effective_role_groups_for_group(node: dict[str, Any]) -> list[str]:
 
 def upsert_role_subgroups(
     keycloak_service: KeycloakApiService,
+    config: ImportConfig,
     real_group_id: str,
     node: dict[str, Any],
 ) -> None:
@@ -634,9 +477,9 @@ def upsert_role_subgroups(
         )
         return
 
-    effective_roles = get_effective_role_groups_for_group(node)
+    effective_roles = get_effective_role_groups_for_group(node, config)
 
-    # Rollen-Container wird immer erstellt, auch wenn effective_roles leer ist.
+    # The roles container is always created, even if effective_roles is empty.
     for role_value in effective_roles:
         role_name = role_value.split("::")[-1]
 
@@ -657,11 +500,15 @@ def upsert_role_subgroups(
                 f"{node.get('name')} ({node.get('id')})"
             )
 
-def get_collections_for_group(node: dict[str, Any]) -> tuple[CollectionDefinition, ...]:
-    definition = get_group_definition_or_fallback(node.get("type"))
-    collections = definition.collections + COLLECTION_GROUPS.get(node.get("id"), ())
+def get_collections_for_group(node: dict[str, Any], config: ImportConfig) -> tuple[CollectionDefinition, ...]:
+    override = config.group(node.get("id"))
+    if not override.collections:
+        return ()
 
-    # Gruppenspezifische Sammlungen überschreiben solche mit gleichem Key aus dem Gruppentyp
+    definition = get_group_definition_or_fallback(node.get("type"))
+    collections = definition.collections + override.extra_collections
+
+    # Group-specific collections override those with the same key from the group type
     by_key: dict[str, CollectionDefinition] = {}
     for collection in collections:
         by_key[collection.key] = collection
@@ -670,10 +517,11 @@ def get_collections_for_group(node: dict[str, Any]) -> tuple[CollectionDefinitio
 
 def upsert_collection_groups(
     keycloak_service: KeycloakApiService,
+    config: ImportConfig,
     real_group_id: str,
     node: dict[str, Any],
 ) -> None:
-    collections = get_collections_for_group(node)
+    collections = get_collections_for_group(node, config)
     if not collections:
         return
 
@@ -779,8 +627,8 @@ def upsert_event_role_categories(
     event: dict[str, Any],
     event_definition: EventTypeDefinition,
 ) -> None:
-    # Die Teilnahmen werden beim Login vom Keycloak-Mapper direkt aus MIDATA geladen.
-    # Hier werden nur die Rollen pro Kategorie hinterlegt.
+    # Participations are loaded directly from MIDATA by the Keycloak mapper at login.
+    # Only the roles per category are stored here.
     for category in event_definition.categories:
         category_group_id = keycloak_service.upsert_group(
             parent_id=event_group_id,
@@ -805,6 +653,7 @@ def import_group_tree_to_keycloak(
     parent_group_id: str,
     keycloak_service: KeycloakApiService,
     midata_service: MidataAPIService,
+    config: ImportConfig,
 ) -> str | None:
     node_name = node.get("name")
     node_id = node.get("id")
@@ -834,9 +683,10 @@ def import_group_tree_to_keycloak(
             )
             return None
 
-        # Rollen-Container IMMER erstellen
+        # ALWAYS create the roles container
         upsert_role_subgroups(
             keycloak_service=keycloak_service,
+            config=config,
             real_group_id=real_group_id,
             node=node,
         )
@@ -849,11 +699,12 @@ def import_group_tree_to_keycloak(
 
         upsert_collection_groups(
             keycloak_service=keycloak_service,
+            config=config,
             real_group_id=real_group_id,
             node=node,
         )
 
-        # Kategorien aus GroupDefinition ableiten
+        # Derive categories from the GroupDefinition
         for child_def in definition.children:
             items = node.get(child_def.key) or []
             if not items:
@@ -886,9 +737,10 @@ def import_group_tree_to_keycloak(
                     parent_group_id=target_parent_id,
                     keycloak_service=keycloak_service,
                     midata_service=midata_service,
+                    config=config,
                 )
 
-        # unbekannte Kinder optional loggen
+        # Log unknown children
         unknown_children = node.get("unknown_children") or []
         if unknown_children:
             log_warn(
@@ -907,23 +759,24 @@ def import_group_tree_to_keycloak(
 
 def enrich_tree_with_events(
     node: dict[str, Any],
+    config: ImportConfig,
     event_infos: dict[int, dict[str, Any] | None],
 ) -> dict[str, Any]:
     group_id = node.get("id")
     if group_id is None:
         return node
 
-    node["events"] = get_group_events_info(group_id, event_infos)
+    node["events"] = get_group_events_info(group_id, config, event_infos)
 
     definition = get_group_definition_or_fallback(node.get("type"))
     for child_def in definition.children:
         items = node.get(child_def.key) or []
         for child in items:
-            enrich_tree_with_events(child, event_infos)
+            enrich_tree_with_events(child, config, event_infos)
 
-    # unknown_children optional auch mitnehmen
+    # Include unknown_children as well
     for child in node.get("unknown_children") or []:
-        enrich_tree_with_events(child, event_infos)
+        enrich_tree_with_events(child, config, event_infos)
 
     return node
 
@@ -932,32 +785,57 @@ def write_json_file(filename: str, data: Any) -> None:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Import groups, roles and events from MiData into Keycloak.")
+    parser.add_argument(
+        "--config",
+        default="config.toml",
+        help="Path to the TOML config file (default: config.toml)",
+    )
+    parser.add_argument(
+        "--use-cache",
+        action="store_true",
+        help=(
+            f"Use the hierarchy from {RAW_ROOTS_JSON_FILE} and {CATEGORIZED_ROOTS_JSON_FILE} "
+            f"of the last run instead of fetching it from MiData"
+        ),
+    )
+    return parser.parse_args()
+
+
 def main() -> None:
     start_time = time.perf_counter()
 
-    config = parse_env()
-    validate_group_definitions()
+    args = parse_args()
+    try:
+        config = load_config(args.config)
+        validate_group_definitions(config)
+    except (ConfigError, ValueError) as e:
+        log_error(str(e))
+        sys.exit(1)
+
+    env = parse_env()
 
     keycloak_service = KeycloakApiService(
-        config["keycloak_url"],
-        config["keycloak_realm"],
-        config["keycloak_user_realm"],
-        config["keycloak_username"],
-        config["keycloak_password"],
+        env["keycloak_url"],
+        env["keycloak_realm"],
+        env["keycloak_user_realm"],
+        env["keycloak_username"],
+        env["keycloak_password"],
     )
 
     midata_service = MidataAPIService(
-        config["midata_url"],
-        config["midata_token"],
-        max_connections=MIDATA_FETCH_WORKERS,
+        env["midata_url"],
+        env["midata_token"],
+        max_connections=config.fetch_workers,
     )
 
     # Keycloak root
-    root_kc_id = ensure_keycloak_root(keycloak_service, KEYCLOAK_GROUP_ROOT)
-    log_info(f"Using Keycloak root '{KEYCLOAK_GROUP_ROOT}' ({now_s(start_time)})")
+    root_kc_id = ensure_keycloak_root(keycloak_service, config.keycloak_group_root)
+    log_info(f"Using Keycloak root '{config.keycloak_group_root}' ({now_s(start_time)})")
 
-    # MIDATA Gruppenliste einmal laden
-    all_groups = fetch_midata_group_list(config["midata_url"], config["midata_token"])
+    # Load the MIDATA group list once
+    all_groups = fetch_midata_group_list(env["midata_url"], env["midata_token"])
     children_by_parent = build_group_children_index(all_groups)
     groups_by_id = {g["id"]: g for g in all_groups}
 
@@ -966,8 +844,8 @@ def main() -> None:
     
     build_hierarchy_from_midata = True
     
-    if not RECREATE_HIRARCHY:
-        log_info(f"Recreate hierarchy is disabled. ({now_s(start_time)})")
+    if args.use_cache:
+        log_info(f"Using cached hierarchy. ({now_s(start_time)})")
         # Check if the json files exist then load them instead of building the hierarchy from MIDATA
         if os.path.isfile(RAW_ROOTS_JSON_FILE) and os.path.isfile(CATEGORIZED_ROOTS_JSON_FILE):
             log_info(f"Loading raw roots from {RAW_ROOTS_JSON_FILE}")
@@ -986,25 +864,31 @@ def main() -> None:
             build_hierarchy_from_midata = True
     
     if build_hierarchy_from_midata:
-        for root_id in MIDATA_ROOT_GROUP_IDS:
-            root_group = groups_by_id.get(root_id)
+        for root in config.roots:
+            root_group = groups_by_id.get(root.id)
             if not root_group:
-                log_warn(f"Root group with ID {root_id} not found in MIDATA group list. Skipping.")
+                log_warn(f"Root group with ID {root.id} not found in MIDATA group list. Skipping.")
                 continue
 
-            log_info(f"Building hierarchy for root ID {root_id}")
-            subtree_ids = collect_subtree_ids(root_id, children_by_parent)
-            group_names = fetch_group_names(midata_service, subtree_ids)
+            log_info(f"Building hierarchy for root ID {root.id}")
+            root_children_by_parent = children_by_parent
+            if root.only_subtrees:
+                root_children_by_parent = filter_children_index(
+                    root.id, root.only_subtrees, children_by_parent, groups_by_id
+                )
+                log_info(f"Filtering root ID {root.id} to subtrees {sorted(root.only_subtrees)}")
+            subtree_ids = collect_subtree_ids(root.id, root_children_by_parent)
+            group_names = fetch_group_names(midata_service, subtree_ids, config.fetch_workers)
             log_info(f"Fetched {len(group_names)} group names ({now_s(start_time)})")
 
-            raw_tree = build_raw_tree(root_group, children_by_parent, group_names, is_root=True)
+            raw_tree = build_raw_tree(root_group, root_children_by_parent, group_names, is_root=True)
             raw_roots.append(raw_tree)
 
-            event_infos = fetch_event_infos(midata_service, set(subtree_ids))
+            event_infos = fetch_event_infos(midata_service, config, set(subtree_ids))
             log_info(f"Fetched {len(event_infos)} events ({now_s(start_time)})")
 
             categorized_tree = categorize_group_tree(raw_tree)
-            categorized_tree = enrich_tree_with_events(categorized_tree, event_infos)
+            categorized_tree = enrich_tree_with_events(categorized_tree, config, event_infos)
             categorized_roots.append(categorized_tree)
 
         write_json_file(RAW_ROOTS_JSON_FILE, raw_roots)
@@ -1012,16 +896,17 @@ def main() -> None:
 
         log_info(f"Wrote {RAW_ROOTS_JSON_FILE} and {CATEGORIZED_ROOTS_JSON_FILE} ({now_s(start_time)})")
 
-    # Keycloak Token laden
+    # Load the Keycloak token
     keycloak_service.token = keycloak_service.get_token()
 
-    # Alle Roots unter dem konfigurierten Root importieren
+    # Import all roots under the configured Keycloak root
     for root in categorized_roots:
         import_group_tree_to_keycloak(
             node=root,
             parent_group_id=root_kc_id,
             keycloak_service=keycloak_service,
             midata_service=midata_service,
+            config=config,
         )
 
     log_info(f"Import finished ({now_s(start_time)})")

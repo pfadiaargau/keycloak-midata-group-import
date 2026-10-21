@@ -33,14 +33,14 @@ def _extract_string_meta(value, label: str, enum_cls: type[Enum]) -> str:
 
     raise ValueError(
         f"{enum_cls.__module__}.{enum_cls.__name__}: "
-        f"{label} muss ein String sein, ist aber {value!r}"
+        f"{label} must be a string, but is {value!r}"
     )
 
 
 def _get_event_type(enum_cls: type[Enum]) -> str:
     if not hasattr(enum_cls, "EVENT_TYPE"):
         raise ValueError(
-            f"{enum_cls.__module__}.{enum_cls.__name__}: EVENT_TYPE fehlt"
+            f"{enum_cls.__module__}.{enum_cls.__name__}: EVENT_TYPE is missing"
         )
 
     raw_event_type = getattr(enum_cls, "EVENT_TYPE")
@@ -48,7 +48,7 @@ def _get_event_type(enum_cls: type[Enum]) -> str:
 
     if not event_type.strip():
         raise ValueError(
-            f"{enum_cls.__module__}.{enum_cls.__name__}: EVENT_TYPE darf nicht leer sein"
+            f"{enum_cls.__module__}.{enum_cls.__name__}: EVENT_TYPE must not be empty"
         )
 
     return event_type
@@ -57,7 +57,7 @@ def _get_event_type(enum_cls: type[Enum]) -> str:
 def _get_event_prefix(enum_cls: type[Enum], event_type: str) -> str:
     if not hasattr(enum_cls, "EVENT_PREFIX"):
         raise ValueError(
-            f"{enum_cls.__module__}.{enum_cls.__name__}: EVENT_PREFIX fehlt"
+            f"{enum_cls.__module__}.{enum_cls.__name__}: EVENT_PREFIX is missing"
         )
 
     raw_event_prefix = getattr(enum_cls, "EVENT_PREFIX")
@@ -73,7 +73,7 @@ def load_role_definitions(package_name: str = "model.events.roles") -> None:
         package = importlib.import_module(package_name)
     except Exception as e:
         raise RuntimeError(
-            f"Das Paket {package_name!r} konnte nicht importiert werden:\n{e}"
+            f"Could not import package {package_name!r}:\n{e}"
         ) from e
 
     role_enum_classes: list[type[Enum]] = []
@@ -88,7 +88,7 @@ def load_role_definitions(package_name: str = "model.events.roles") -> None:
             module = importlib.import_module(module_name)
         except Exception as e:
             raise RuntimeError(
-                f"Fehler beim Import von Modul {module_name!r}:\n{e}"
+                f"Error importing module {module_name!r}:\n{e}"
             ) from e
 
         for _, obj in inspect.getmembers(module, inspect.isclass):
@@ -112,14 +112,14 @@ def load_role_definitions(package_name: str = "model.events.roles") -> None:
                 member_name = member.name
                 role_value = member.value
 
-                # Meta-Members überspringen
+                # Skip meta members
                 if member_name in {"EVENT_TYPE", "EVENT_PREFIX"}:
                     continue
 
                 if not isinstance(role_value, str):
                     raise ValueError(
-                        f"Ungültiger Rollenwert in {obj.__module__}.{obj.__name__}.{member_name}: "
-                        f"{role_value!r} ist kein String"
+                        f"Invalid role value in {obj.__module__}.{obj.__name__}.{member_name}: "
+                        f"{role_value!r} is not a string"
                     )
 
                 role_locations[role_value] = RoleLocation(
@@ -148,13 +148,13 @@ def load_role_definitions(package_name: str = "model.events.roles") -> None:
 def print_role_registry_summary() -> None:
     print("Role Registry Summary")
     print("====================")
-    print(f"Gefundene Rollenklassen: {len(ROLE_ENUM_CLASSES)}")
-    print(f"Gefundene Gruppentypen:  {len(EVENT_TYPE_ROLES)}")
-    print(f"Gefundene Rollen:        {len(ROLE_TO_EVENT_TYPE)}")
+    print(f"Role classes found: {len(ROLE_ENUM_CLASSES)}")
+    print(f"Event types found:  {len(EVENT_TYPE_ROLES)}")
+    print(f"Roles found:        {len(ROLE_TO_EVENT_TYPE)}")
     print()
 
     for event_type, roles in EVENT_TYPE_ROLES.items():
-        print(f"{event_type} ({len(roles)} Rollen)")
+        print(f"{event_type} ({len(roles)} roles)")
         for role in roles:
             loc = ROLE_LOCATIONS.get(role)
             if loc:

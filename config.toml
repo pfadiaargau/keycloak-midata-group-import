@@ -1,0 +1,152 @@
+# Configuration for import.py
+# Credentials and URLs belong in .env, everything structural goes here.
+# Another file can be used with `python3 import.py --config <file>`.
+
+# Name or path of the Keycloak group to import into (e.g. "midata" or "extern/midata")
+keycloak_group_root = "midata"
+
+# Number of parallel requests to MIDATA (group names, events)
+fetch_workers = 10
+
+
+# ---------------------------------------------------------------------------
+# Root groups
+# Each root is imported including all its subgroups. The roots must be of the same type.
+# - id:            MIDATA group ID
+# - only_subtrees: optional, only import these groups including their subgroups.
+#                  Their parent groups up to the root are imported as well, all others are not.
+# - note:          optional, documentation only
+# ---------------------------------------------------------------------------
+
+[[roots]]
+id = 4691
+note = "Pfadi Aargau"
+
+[[roots]]
+id = 3
+note = "Pfadi Kanton Solothurn: nur Kalei (11) > AG Ausbildung (22)"
+only_subtrees = [22]
+
+
+# ---------------------------------------------------------------------------
+# Settings per specific MIDATA group (on top of the GroupTypeDefinition)
+# - note:              optional, documentation only
+# - role_subgroups:    false = no role subgroups, members end up in the "Rollen" folder
+# - roles_add:         additional role subgroups (must be in allowed_roles of the type)
+# - roles_remove:      roles from default_roles that get no subgroup
+# - collections:       false = no collection groups (neither from the group type nor extra_collections)
+# - extra_collections: additional collection groups. Anyone with one of the roles in this group
+#                      or a group below it becomes a member. The same key overrides the
+#                      collection from the group type.
+#
+# Example:
+# [groups.400]
+# roles_add = ["Group::Abteilung::Webmaster", "Group::Abteilung::Materialwart"]
+# roles_remove = ["Group::Abteilung::Sekretariat"]
+# [[groups.400.extra_collections]]
+# key = "all_leaders"
+# label = "Alle Leitenden"
+# roles = ["Group::Woelfe::Einheitsleitung", "Group::Pfadi::Einheitsleitung"]
+# ---------------------------------------------------------------------------
+
+[groups.3]
+note = "Pfadi Kanton Solothurn"
+role_subgroups = false
+collections = false
+
+[groups.11]
+note = "Kalei - Kantonale Leitung"
+role_subgroups = false
+collections = false
+
+[groups.22]
+note = "AG Ausbildung"
+role_subgroups = false
+collections = false
+
+
+# ---------------------------------------------------------------------------
+# Events
+# [events.<MIDATA group ID>] contains lists with any name (here per year).
+# - id:         event ID
+# - short_name: optional, name of the group in Keycloak (default: course number, otherwise event name)
+# - comment:    optional, stored as the attribute "comment" in Keycloak
+# ---------------------------------------------------------------------------
+
+[events.4691]
+"2027" = [
+  { id = 35221, comment = "Zeltbasiskurs Pfadistufe (AG 121-27)" },
+  { id = 35081, comment = "Aufbau gemischt 2 (SO 252-27)" },
+  { id = 35083, comment = "Aufbau gemischt 3 (SO 253-27)" },
+  { id = 35222, comment = "Basiskurs gemischt 1 (AG 151-27)" },
+  { id = 35082, comment = "Aufbau gemischt 1 (SO 251-27)" },
+  { id = 35223, comment = "Basiskurs gemischt 2 (AG 152-27)" },
+  { id = 34849, comment = "Basiskurs Wolfstufe (AG 111-27)" },
+]
+"2026" = [
+  { id = 31600, comment = "Aufbaukurs Wolfstufe (AG 211-26)" },
+  { id = 31598, comment = "Aufbaukurs Pfadistufe (AG 221-26)" },
+  { id = 31599, comment = "Aufbaukurs gemischt (AG 251-26)" },
+  { id = 32108, comment = "Sicherheitsmodul Berg 2026 (PBS CH AG 563-26)" },
+  { id = 31603, comment = "Basiskurs gemischt (SO 122-26)" },
+]
+"2025" = [
+  { id = 29699, comment = "Futura 4 Herbst (AG 051-25)" },
+  { id = 27837, comment = "Basiskurs Wolfsstufe 1 (AG 111-25)" },
+  { id = 27830, comment = "Zeltbasiskurs Pfadistufe (AG 121-25)" },
+  { id = 28224, comment = "Hausbasiskurs Pfadistufe (AG 122-25)" },
+  { id = 27831, comment = "Aufbaukurs Pfadistufe (SO 221-25)" },
+  { id = 27832, comment = "Aufbaukurs gemischt (SO 252-25)" },
+  { id = 29069, comment = "MF Inklusion (PBS CH SO 555-25)" },
+]
+"2024" = [
+  { id = 24120, comment = "Aufbaukurs Pfadistufe (AG 221-24)" },
+  { id = 24121, comment = "Wochenendaufbaukurs Pfadistufe (AG 222-24)" },
+  { id = 24161, comment = "Futura 1 (SO 051-24)" },
+  { id = 24114, comment = "Basiskurs Wolfsstufe 1 (SO 111-24)" },
+  { id = 24115, comment = "Basiskurs Wolfsstufe 2 (SO 112-24)" },
+  { id = 24117, comment = "Hausbasiskurs Pfadistufe (SO 122-24)" },
+]
+"2023" = [
+  { id = 20799, comment = "Basiskurs Wolfsstufe 1 (AG 111-23)" },
+  { id = 20811, comment = "Zeltbasiskurs Pfadistufe (AG 121-23)" },
+  { id = 20812, comment = "Basiskurs Pfadistufe (AG 122-23)" },
+  { id = 21372, comment = "Modul Sanität (PBS CH AG 554-23) KS" },
+  { id = 20797, comment = "Aufbaukurs Wolfsstufe (SO 211-23)" },
+  { id = 20798, comment = "Aufbaukurs Pfadistufe (SO 221-23)" },
+  { id = 20800, comment = "Aufbaukurs Pfadistufe/Wolfsstufe (SO 251-23)" },
+]
+"2022" = [
+  { id = 18059, comment = "Aufbaukurs Pfadistufe 1 (AG 221-22)" },
+  { id = 18061, comment = "Aufbaukurs Pfadistufe/Wolfsstufe (AG 261-22)" },
+  { id = 18222, comment = "Modul Sanität (PBS CH AG 551-22)" },
+  { id = 18060, comment = "Basiskurs Wolfsstufe 1 (SO 111-22)" },
+  { id = 18065, comment = "Basiskurs Wolfsstufe 2 (SO 112-22)" },
+  { id = 18054, comment = "Zeltbasiskurs Pfadistufe (SO 121-22)" },
+  { id = 18057, comment = "Wochenendbasis Pfadistufe (SO 122-22)" },
+]
+"2021" = [
+  { id = 14405, comment = "Futura 1 (AG 051-21 C-19)" },
+  { id = 14056, comment = "Basiskurs Wolfsstufe (AG 111-21)" },
+  { id = 14060, comment = "Zeltbasiskurs Pfadistufe (AG 121-21 C-19)" },
+  { id = 14061, comment = "Basiskurs Pfadistufe (AG 122-21) (teildigital)" },
+  { id = 14276, comment = "Modul Wasser inkl. SLRG (PBS CH AG 551-21)" },
+  { id = 14063, comment = "Aufbaukurs Wolfsstufe 2 (SO 212-21)" },
+  { id = 14055, comment = "Aufbaukurs Pfadistufe 1 (SO 221-21)" },
+  { id = 14058, comment = "Aufbaukurs Pfadistufe 2 (SO 222-21)" },
+]
+"2020" = [
+  { id = 10589, comment = "Sockout 2 (AG 032-20 C-19)" },
+  { id = 10045, comment = "Aufbaukurs Wolfsstufe 2 (AG 212-20 C-19)" },
+  { id = 10042, comment = "Aufbaukurs Pfadistufe 1 (AG 221-20 C-19)" },
+  { id = 10050, comment = "Aufbaukurs Piostufe (AG 231-20 C-19)" },
+  { id = 10039, comment = "Basiskurs Wolfsstufe (SO 111-20 C-19)" },
+  { id = 13115, comment = "Herbstbasis Wolfsstufe 2 (SO 113-20)" },
+  { id = 10046, comment = "Basiskurs Pfadistufe Zelt (SO 121-20 C-19)" },
+  { id = 13116, comment = "Herbstbasis Pfadistufe (SO 124-20)" },
+]
+"2019" = [
+  { id = 7262, comment = "Basiskurs Pfadistufe Haus (AG 122-19)" },
+  { id = 7252, comment = "Aufbaukurs Wolfsstufe (SO 211-19)" },
+  { id = 7258, comment = "Aufbaukurs Pfadistufe 2 (SO 222-19)" },
+]

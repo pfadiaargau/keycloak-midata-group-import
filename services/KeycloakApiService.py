@@ -8,9 +8,9 @@ class KeycloakApiService:
         self.keycloak_user_realm = keycloak_user_realm
         self.keycloak_username = keycloak_username
         self.keycloak_password = keycloak_password
-        # Eine Session für alle Requests: hält die Verbindung offen (kein neuer TCP/TLS-Handshake pro Request)
+        # One session for all requests: keeps the connection open (no new TCP/TLS handshake per request)
         self.session = requests.Session()
-        # parent_id -> {name: group representation}; wird pro Parent einmal geladen
+        # parent_id -> {name: group representation}; loaded once per parent
         self._children_cache: dict[str, dict[str, dict]] = {}
         self.token = self.get_token()
 
@@ -105,7 +105,7 @@ class KeycloakApiService:
         return r.json()
 
     def get_group_children(self, group_id: str, page_size: int = 500) -> list:
-        """Lädt alle direkten Kinder inkl. Attribute (paginiert)."""
+        """Loads all direct children including attributes (paginated)."""
         children: list = []
         first = 0
         while True:
@@ -212,14 +212,14 @@ class KeycloakApiService:
     # --------- upsert helper ---------
 
     def _find_child(self, parent_id: str | None, name: str, refresh: bool = False) -> dict | None:
-        """Liefert die Repräsentation eines direkten Kindes (inkl. Attribute) oder None."""
+        """Returns the representation of a direct child (including attributes) or None."""
         if parent_id is None:
             gid = self.find_child_by_name(None, name)
             return self.get_group(gid) if gid else None
 
         child = self._get_children_map(parent_id, refresh=refresh).get(name)
         if child is not None and "attributes" not in child:
-            # Ältere Keycloak-Versionen liefern evtl. keine Attribute in der Kinderliste
+            # Older Keycloak versions may not return attributes in the children list
             child = self.get_group(child["id"])
             self._children_cache[parent_id][name] = child
         return child
@@ -237,7 +237,7 @@ class KeycloakApiService:
         current_attrs = current.get("attributes") or {}
         existing_group_id = self._extract_first_attr(current_attrs, "group_id")
 
-        # echter Namenskonflikt zwischen zwei realen MIDATA-Gruppen
+        # Real name conflict between two actual MIDATA groups
         if existing_group_id and incoming_group_id and existing_group_id != incoming_group_id:
             print(
                 f"[ERROR] Duplicate group name detected {context}: "
@@ -252,7 +252,7 @@ class KeycloakApiService:
         for k in remove_attributes or ():
             merged_attrs.pop(k, None)
 
-        # Nur schreiben, wenn sich wirklich etwas geändert hat
+        # Only write if something actually changed
         if merged_attrs != current_attrs:
             self.update_group(current["id"], {"name": name, "attributes": merged_attrs})
             current["attributes"] = merged_attrs
@@ -293,7 +293,7 @@ class KeycloakApiService:
 
         created_id = self.create_group(payload, parent_id=parent_id)
 
-        # Erfolgreich neu erstellt
+        # Successfully created
         if created_id:
             if parent_id is not None:
                 self._children_cache[parent_id][name] = {
@@ -303,7 +303,7 @@ class KeycloakApiService:
                 }
             return created_id
 
-        # 409: Cache ist veraltet -> Kinder neu laden und nochmal nachschauen
+        # 409: cache is stale -> reload children and look again
         current = self._find_child(parent_id, name, refresh=True)
         if not current:
             raise RuntimeError(
@@ -329,10 +329,10 @@ class KeycloakApiService:
 
             created = self.create_group({"name": group}, parent_id=parent_id)
             if parent_id is not None:
-                # Kinderliste ist jetzt veraltet
+                # The children list is now stale
                 self._children_cache.pop(parent_id, None)
             if created is None:
-                # Falls 409: nochmal auflösen
+                # On 409: resolve again
                 created = self.find_child_by_name(parent_id, group)
                 if not created:
                     raise RuntimeError(
